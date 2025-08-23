@@ -1,12 +1,16 @@
 import { loadPlatformComponent } from './utils/platformLoader'
 import type { WrapperProps } from './components/wrapper'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// 使用新的API，传入完整的组件路径
 const Wrapper = loadPlatformComponent<WrapperProps>('../components/wrapper/index.tsx')
 
 function App() {
   return (
-    <Wrapper>11</Wrapper>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Wrapper>11</Wrapper>} />
+      </Routes>
+    </Router>
   )
 }
 
