@@ -4,12 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev:pc": "vite --mode pc",
-    "dev:h5": "vite --mode h5",
-    "build:pc": "tsc -b && vite build --mode pc",
-    "build:h5": "tsc -b && vite build --mode h5",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview:pc": "vite preview"
   },
   "dependencies": {
     "react": "^19.1.1",
@@ -17,6 +15,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
+    "@types/node": "^24.3.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
