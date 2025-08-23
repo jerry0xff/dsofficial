@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+    <script>
+       (function () {
+        const designWidth = 1440;
+        const minWidth = 1440;
+        const baseFontSize = 100;
+        function setRem() {
+          const clientWidth = Math.max(Math.min(document.documentElement.clientWidth, designWidth), minWidth);
+          const scale = clientWidth / designWidth;
+          const effectiveScale = Math.max(scale, minWidth / designWidth);
+          document.documentElement.style.fontSize = baseFontSize * effectiveScale + 'px';
+        }
+        window.addEventListener('resize', setRem);
+        setRem();
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
