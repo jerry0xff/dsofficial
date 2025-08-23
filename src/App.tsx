@@ -1,14 +1,11 @@
-import { loadPlatformComponent } from './utils/platformLoader'
-import type { WrapperProps } from './components/wrapper'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-const Wrapper = loadPlatformComponent<WrapperProps>('../components/wrapper/index.tsx')
+import Home from './pages/home';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Wrapper>11</Wrapper>} />
+        <Route path="/" element={<Home></Home>} />
       </Routes>
     </Router>
   )

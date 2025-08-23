@@ -12,11 +12,19 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   min-height: 100vh;
   background-color: #000;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+img {
+  display: block;
 }
 
 a {
@@ -30,7 +38,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -71,4 +78,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+* {
+  box-sizing: border-box;
 }
