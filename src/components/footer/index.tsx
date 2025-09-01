@@ -12,7 +12,7 @@ export default function Footer() {
     })}>
         <div className={styles.left}>
             <img src={c} className={styles.c} />
-            2025 dYdX International Ltd.All rights reserved.
+            2025 deshare International Ltd.All rights reserved.
         </div>
         <div className={styles.right}>
             <img src={github} className={styles.github} />
