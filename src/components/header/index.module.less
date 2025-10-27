@@ -36,18 +36,30 @@
 
   &.h5 {
     padding: 14px 24px 8px;
-    border-bottom: 1px solid #808080;
+    // border-bottom: 1px solid #808080;
 
-    .logo {
-      width: 101px;
-      height: 20px;
+    .logoContainer {
+      margin-left: 4px;
     }
-
+    .logo {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+    .logoText {
+      margin-left: 0px;
+      display: block;
+      height: 17px;
+    }
     .launch {
       width: 94px;
-      height: 32px;
+      height: 24px;
+      border-radius: 4px;
       font-size: 12px;
-      line-height: 32px;
+      font-weight: 400;
+      font-family: Arial;
+      line-height: 1;
     }
   }
 
@@ -96,5 +108,69 @@
     display: flex;
 
     /* 当 header 被 styles.h5 命中时，想隐藏就用 media 或直接在 .h5 .hideOnMobile 里写 display:none */
+  }
+
+  /* ============ Mobile 新增样式 ============ */
+  .mobileWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #fff;
+    background: #000;
+    box-sizing: border-box;
+  }
+
+  /* 第一行：左logo + 右侧lang+按钮 */
+  .mobileTopRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    position: relative;
+    margin: 0 -24px; /* 抵消 header 的左右 padding，撑满屏宽 */
+    padding: 0 16px 8px 8px; /* 恢复内部间距 */
+    border-bottom: 1px solid #808080;
+  }
+
+  /* 右边那块（语言图标 + Launch App）横向排 */
+  .mobileRight {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  /* 第二行：底部导航横排 */
+  .mobileNavBar {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #666;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0 -8px;
+  }
+  .mobileNavBar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 每个导航项 */
+  .mobileNavItem {
+    flex-shrink: 0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    padding-right: 24px;
+    white-space: nowrap;
+  }
+
+  /* 语言图标尺寸，给一个固定高宽避免挤 */
+  .langIcon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    cursor: pointer;
   }
 }

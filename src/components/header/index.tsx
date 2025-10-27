@@ -23,45 +23,82 @@ export default function Header() {
         [styles.h5]: !isPC,
       })}
     >
-      {/* 左侧：Logo */}
-      <div className={styles.logoContainer}>
-        <img className={styles.logo} src={logo} alt="logo" />
-        <img className={styles.logoText} src={logoText} alt="DeShare" />
-      </div>
+      {/* ===================== PC layout ===================== */}
+      {isPC && (
+        <>
+          {/* 左侧：Logo */}
+          <div className={styles.logoContainer}>
+            <img className={styles.logo} src={logo} alt="logo" />
+            <img className={styles.logoText} src={logoText} alt="DeShare" />
+          </div>
 
-      {/* 中间：导航链接（PC 显示，移动端可以隐藏或下拉） */}
-      <nav
-        className={cx(styles.nav, {
-          [styles.hideOnMobile]: !isPC,
-        })}
-      >
-        <a className={styles.navItem} href="#how-it-works">
-          How it works
-        </a>
-        <a className={styles.navItem} href="#faq">
-          FAQ
-        </a>
-        <a className={styles.navItem} href="#white-paper" target="_blank" rel="noopener noreferrer">
-          White Paper
-        </a>
+          {/* 中间 / 右侧：导航 + 语言 + Launch */}
+          <nav className={styles.nav}>
+            <a className={styles.navItem} href="#how-it-works">
+              How it works
+            </a>
+            <a className={styles.navItem} href="#faq">
+              FAQ
+            </a>
+            <a className={styles.navItem} href="#white-paper" target="_blank" rel="noopener noreferrer">
+              White Paper
+            </a>
 
-        <span className={styles.divider} />
+            <span className={styles.divider} />
 
-        {/* <button className={styles.langSwitcher} onClick={toggleLang}> */}
-        <img
-          className={styles.langIcon}
-          src={lang === "en" ? langSwitchEn : langswitchCn}
-          alt="lang"
-          onClick={toggleLang}
-        />
-        {/* <span className={styles.langText}>{lang === "en" ? "EN" : "中"}</span> */}
-        {/* </button> */}
+            <img
+              className={styles.langIcon}
+              src={lang === "en" ? langSwitchEn : langswitchCn}
+              alt="lang"
+              onClick={toggleLang}
+            />
 
-        <span className={styles.divider} />
-        <button className={styles.launch} onClick={launchApp}>
-          Launch App
-        </button>
-      </nav>
+            <span className={styles.divider} />
+
+            <button className={styles.launch} onClick={launchApp}>
+              Launch App
+            </button>
+          </nav>
+        </>
+      )}
+
+      {/* ===================== Mobile layout ===================== */}
+      {!isPC && (
+        <div className={styles.mobileWrapper}>
+          {/* 第一行：左logo + 右侧语言按钮&Launch按钮 */}
+          <div className={styles.mobileTopRow}>
+            <div className={styles.logoContainer}>
+              <img className={styles.logo} src={logo} alt="logo" />
+              <img className={styles.logoText} src={logoText} alt="DeShare" />
+            </div>
+
+            <div className={styles.mobileRight}>
+              <img
+                className={styles.langIcon}
+                src={lang === "en" ? langSwitchEn : langswitchCn}
+                alt="lang"
+                onClick={toggleLang}
+              />
+              <button className={styles.launch} onClick={launchApp}>
+                Launch App
+              </button>
+            </div>
+          </div>
+
+          {/* 第二行：导航（整行平铺） */}
+          <div className={styles.mobileNavBar}>
+            <a className={styles.mobileNavItem} href="#how-it-works">
+              How it works
+            </a>
+            <a className={styles.mobileNavItem} href="#faq">
+              FAQ
+            </a>
+            <a className={styles.mobileNavItem} href="#white-paper" target="_blank" rel="noopener noreferrer">
+              White Paper
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   )
 }
