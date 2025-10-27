@@ -16,8 +16,9 @@ export default function SixthSection() {
         [styles.h5]: !isPC,
       })}
     >
+      {!isPC ? <img src={FAQ} className={styles.FAQ} /> : null}
       <div className={styles.card}>
-        <img src={FAQ} className={styles.FAQ} />
+        {isPC ? <img src={FAQ} className={styles.FAQ} /> : null}
 
         {/* 列表 */}
         <ul className={styles.list}>
