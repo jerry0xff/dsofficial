@@ -47,6 +47,7 @@
   &.h5 {
     height: 280px;
     background-position: 0 @h5-main-bg-offset-y;
+    margin-bottom: 80px;
 
     .content {
       padding-top: 30px;
@@ -57,7 +58,7 @@
       }
 
       .desc {
-        margin: 20px 0 24px;
+        margin: 10px 0 12px;
         width: 312px;
         font-size: 12px;
         text-align: center;
@@ -68,6 +69,31 @@
         height: 40px;
         font-size: 16px;
       }
+    }
+    .statsBar {
+      flex-wrap: nowrap; /* 禁止换行 */
+      gap: 16px; /* 移动端列距更小 */
+      padding: 0;
+      justify-content: space-around; /* 让三列平均分散 */
+    }
+    .statItem {
+      min-width: 0;
+      flex-shrink: 1; /* 移动端可以允许一点压缩 */
+    }
+    .number {
+      font-size: 22px;
+      .rollingNumberWrapper {
+        font-size: 22px;
+      }
+    }
+    .label {
+      font-size: 12px;
+      margin-top: 6px;
+    }
+    .btn {
+      width: 245px;
+      height: 36px;
+      font-size: 14px;
     }
   }
 
@@ -80,14 +106,7 @@
     margin: 0 auto;
     padding-top: 32px;
     padding-bottom: 24px;
-  }
-
-  .h5 {
-    /* 移动端（非PC）可以改成竖向排列 */
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 24px;
+    flex-wrap: nowrap;
   }
 
   .statItem {
@@ -97,6 +116,7 @@
     align-items: center;
     color: #fff;
     min-width: 180px; /* 防止挤在一起 */
+    flex-shrink: 0;
   }
 
   .number {
@@ -138,10 +158,8 @@
     overflow: hidden;
     line-height: 1em;
 
-    /* 防止被别的样式把它设成 display:none / visibility:hidden 等 */
-    visibility: visible;
-    opacity: 1;
-    color: inherit;
+    overflow: hidden;
+    flex-shrink: 0; /* 不要压缩到0再折行 */
   }
 
   /* 逗号位：不滚动，只显示逗号 */
