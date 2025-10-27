@@ -1,4 +1,5 @@
 import FirstSection from "@/components/first-section"
+import { LanguageProvider } from "@/contexts/LanguageContext"
 import { isPC } from "@/utils/platform"
 import cx from "classnames"
 import { lazy } from "react"
@@ -12,18 +13,20 @@ const Footer = lazy(() => import("@/components/footer"))
 
 export default function Home() {
   return (
-    <div
-      className={cx(styles.wrapper, {
-        [styles.h5]: !isPC,
-      })}
-    >
-      <FirstSection />
-      <SecSection />
-      <ThirdSection />
-      <ForthSection />
-      <FifthSection />
-      <SixthSection />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div
+        className={cx(styles.wrapper, {
+          [styles.h5]: !isPC,
+        })}
+      >
+        <FirstSection />
+        <SecSection />
+        <ThirdSection />
+        <ForthSection />
+        <FifthSection />
+        <SixthSection />
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }

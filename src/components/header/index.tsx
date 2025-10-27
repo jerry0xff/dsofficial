@@ -2,20 +2,16 @@ import langswitchCn from "@/assets/lang-switch-cn.svg"
 import langSwitchEn from "@/assets/lang-switch-en.svg"
 import logoText from "@/assets/logo-text.svg"
 import logo from "@/assets/logo.svg"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { texts } from "@/contexts/texts"
 import { isPC } from "@/utils/platform"
 import { launchApp } from "@/utils/utils"
 import cx from "classnames"
-import { useState } from "react"
 import styles from "./index.module.less"
 
 export default function Header() {
-  const [lang, setLang] = useState<"en" | "zh">(() => (localStorage.getItem("lang") as "en" | "zh") || "en")
-
-  const toggleLang = () => {
-    const next = lang === "en" ? "zh" : "en"
-    setLang(next)
-    localStorage.setItem("lang", next)
-  }
+  const { lang, toggleLang } = useLanguage()
+  const t = texts[lang]
 
   return (
     <header
@@ -35,13 +31,13 @@ export default function Header() {
           {/* 中间 / 右侧：导航 + 语言 + Launch */}
           <nav className={styles.nav}>
             <a className={styles.navItem} href="#how-it-works">
-              How it works
+              {t.header.howItWorks}
             </a>
             <a className={styles.navItem} href="#faq">
-              FAQ
+              {t.header.faq}
             </a>
             <a className={styles.navItem} href="#white-paper" target="_blank" rel="noopener noreferrer">
-              White Paper
+              {t.header.whitePaper}
             </a>
 
             <span className={styles.divider} />
@@ -56,7 +52,7 @@ export default function Header() {
             <span className={styles.divider} />
 
             <button className={styles.launch} onClick={launchApp}>
-              Launch App
+              {t.header.launchApp}
             </button>
           </nav>
         </>
@@ -80,7 +76,7 @@ export default function Header() {
                 onClick={toggleLang}
               />
               <button className={styles.launch} onClick={launchApp}>
-                Launch App
+                {t.header.launchApp}
               </button>
             </div>
           </div>
@@ -88,13 +84,13 @@ export default function Header() {
           {/* 第二行：导航（整行平铺） */}
           <div className={styles.mobileNavBar}>
             <a className={styles.mobileNavItem} href="#how-it-works">
-              How it works
+              {t.header.howItWorks}
             </a>
             <a className={styles.mobileNavItem} href="#faq">
-              FAQ
+              {t.header.faq}
             </a>
             <a className={styles.mobileNavItem} href="#white-paper" target="_blank" rel="noopener noreferrer">
-              White Paper
+              {t.header.whitePaper}
             </a>
           </div>
         </div>
