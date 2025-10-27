@@ -28,7 +28,15 @@ export default function SecSection() {
           <span className={styles.itemTitle}>
             2000+ Stocks
             <br />
-            Truly decentralized, No Pre-Deposit
+            {isPC ? (
+              <>Truly decentralized, No Pre-Deposit</>
+            ) : (
+              <>
+                Truly decentralized,
+                <br />
+                No Pre-Deposit
+              </>
+            )}
           </span>
         </div>
       </div>
