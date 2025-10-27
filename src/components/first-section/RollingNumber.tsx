@@ -24,7 +24,7 @@ export default function RollingNumber({
   value,
   baseDuration = 2000,
   delayBetweenDigits = 80,
-  extraTurnsFastest = 3,
+  extraTurnsFastest = 5,
 }: RollingNumberProps) {
   const formatted = new Intl.NumberFormat("en-US").format(typeof value === "number" ? value : parseInt(value, 10))
   const chars = formatted.split("")
