@@ -1,74 +1,74 @@
-@import '@/style-vars/common.less';
+@import "@/style-vars/common.less";
 
 .secSection {
-    margin-top: -@main-bg-offset-y;
-    padding-left: 120px;
+  // margin-top: @main-bg-offset-y;
+  padding-left: 120px;
+
+  .nextBg {
+    display: block;
+    width: 777px;
+    height: 55px;
+    align-self: flex-start;
+  }
+
+  .content {
+    height: 571px;
+    padding-top: 84px;
+    background-image: url("@/assets/sec-com.png");
+    background-size: 1040px 100%;
+    background-repeat: no-repeat;
+    background-position: right 0;
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 44px;
+
+      .itemImg {
+        margin-right: 20px;
+        width: 34px;
+        height: 34px;
+      }
+
+      .itemTitle {
+        color: #fff;
+        font-family: Arial;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  &.h5 {
+    margin-top: 40px;
+    padding-left: 24px;
 
     .nextBg {
-        display: block;
-        width: 777px;
-        height: 55px;
-        align-self: flex-start;
+      width: 259px;
+      height: 16px;
     }
 
     .content {
-        height: 571px;
-        padding-top: 84px;
-        background-image: url('@/assets/sec-com.png');
-        background-size: 1040px 100%;
-        background-repeat: no-repeat;
-        background-position: right 0;
+      height: 160px;
+      padding-top: 20px;
+      background-size: 267px 146px;
+      background-repeat: no-repeat;
+      background-position: right bottom;
 
-        .item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 44px;
+      .item {
+        height: 16px;
+        margin-bottom: 19px;
 
-            .itemImg {
-                margin-right: 20px;
-                width: 34px;
-                height: 34px;
-            }
-
-            .itemTitle {
-                color: #fff;
-                font-family: Arial;
-                font-weight: 400;
-                font-size: 26px;
-                line-height: 26px;
-            }
+        .itemImg {
+          width: 14px;
+          height: 14px;
         }
+
+        .itemTitle {
+          font-size: 14px;
+        }
+      }
     }
-
-    &.h5 {
-        margin-top: 40px;
-        padding-left: 24px;
-
-        .nextBg {
-            width: 259px;
-            height: 16px;
-        }
-
-        .content {
-            height: 160px;
-            padding-top: 20px;
-            background-size: 267px 146px;
-            background-repeat: no-repeat;
-            background-position: right bottom;
-
-            .item {
-                height: 16px;
-                margin-bottom: 19px;
-
-                .itemImg {
-                    width: 14px;
-                    height: 14px;
-                }
-
-                .itemTitle {
-                    font-size: 14px;
-                }
-            }
-        }
-    }
+  }
 }
