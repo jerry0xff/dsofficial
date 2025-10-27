@@ -1,4 +1,5 @@
-import langSwitch from "@/assets/lang-switch.svg"
+import langswitchCn from "@/assets/lang-switch-cn.svg"
+import langSwitchEn from "@/assets/lang-switch-en.svg"
 import logoText from "@/assets/logo-text.svg"
 import logo from "@/assets/logo.svg"
 import { isPC } from "@/utils/platform"
@@ -8,12 +9,12 @@ import { useState } from "react"
 import styles from "./index.module.less"
 
 export default function Header() {
-  // 简单的中英文开关，本地状态版
-  const [lang, setLang] = useState<"en" | "zh">("en")
+  const [lang, setLang] = useState<"en" | "zh">(() => (localStorage.getItem("lang") as "en" | "zh") || "en")
 
-  function toggleLang() {
-    setLang((prev) => (prev === "en" ? "zh" : "en"))
-    // 这里如果你后面接 i18n，可以在这里塞真正的语言切换逻辑
+  const toggleLang = () => {
+    const next = lang === "en" ? "zh" : "en"
+    setLang(next)
+    localStorage.setItem("lang", next)
   }
 
   return (
@@ -47,7 +48,12 @@ export default function Header() {
         <span className={styles.divider} />
 
         {/* <button className={styles.langSwitcher} onClick={toggleLang}> */}
-        <img className={styles.langIcon} src={langSwitch} alt="lang" onClick={toggleLang} />
+        <img
+          className={styles.langIcon}
+          src={lang === "en" ? langSwitchEn : langswitchCn}
+          alt="lang"
+          onClick={toggleLang}
+        />
         {/* <span className={styles.langText}>{lang === "en" ? "EN" : "中"}</span> */}
         {/* </button> */}
 
