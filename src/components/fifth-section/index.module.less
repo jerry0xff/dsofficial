@@ -1,0 +1,54 @@
+.fifthSection {
+  padding: 0px 120px 128px 120px;
+
+  .investorsAndPartners {
+    width: 545px;
+    height: 55px;
+    margin: 0 auto;
+  }
+
+  .scrollWrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 44px auto 0 auto;
+  }
+
+  .scrollTrack {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    width: max-content;
+    animation: scroll-left 25s linear infinite; /* 动画时间可调 */
+  }
+
+  /* 动画定义：不断左移 */
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .logoItem {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #fff;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  .logoImg {
+    height: 40px;
+    width: auto;
+    margin-right: 12px;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  .scrollWrapper:hover .scrollTrack {
+    animation-play-state: paused;
+  }
+}
