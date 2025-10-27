@@ -13,8 +13,9 @@ export default function ThirdSection() {
         [styles.h5]: !isPC,
       })}
     >
+      {!isPC ? <div className={styles.tip}>Security System Screen</div> : null}
       <img src={real} className={styles.real} />
-      <div className={styles.tip}>Security System Screen</div>
+      {isPC ? <div className={styles.tip}>Security System Screen</div> : null}
       <div className={styles.content}>
         <div className={styles.item}>
           <img src={third1} className={styles.itemImg} />
