@@ -2,11 +2,15 @@ import gupiao from "@/assets/gupiao.svg"
 import jiaoyi from "@/assets/jiaoyi.svg"
 import nextBg from "@/assets/next-gen.svg"
 import quanqiu from "@/assets/quanqiu.svg"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { texts } from "@/contexts/texts"
 import { isPC } from "@/utils/platform"
 import cx from "classnames"
 import styles from "./index.module.less"
 
 export default function SecSection() {
+  const { lang } = useLanguage()
+  const t = texts[lang]
   return (
     <section
       className={cx(styles.secSection, {
@@ -17,24 +21,27 @@ export default function SecSection() {
       <div className={styles.content}>
         <div className={styles.item}>
           <img src={quanqiu} className={styles.itemImg} />
-          <span className={styles.itemTitle}>Barrier-Free Global Stock Trading</span>
+          <span className={styles.itemTitle}>{t.secSection.barrierFreeTrading}</span>
         </div>
         <div className={styles.item}>
           <img src={jiaoyi} className={styles.itemImg} />
-          <span className={styles.itemTitle}>24/7 Trading</span>
+          <span className={styles.itemTitle}>{t.secSection.aroundClockTrading}</span>
         </div>
         <div className={styles.item}>
           <img src={gupiao} className={styles.itemImg} />
           <span className={styles.itemTitle}>
-            2000+ Stocks
+            {t.secSection.stocks2000Plus}
             <br />
             {isPC ? (
-              <>Truly decentralized, No Pre-Deposit</>
+              <>
+                {t.secSection.trulyDecentralized}
+                {t.secSection.noPreDeposit}
+              </>
             ) : (
               <>
-                Truly decentralized,
+                {t.secSection.trulyDecentralized}
                 <br />
-                No Pre-Deposit
+                {t.secSection.noPreDeposit}
               </>
             )}
           </span>
