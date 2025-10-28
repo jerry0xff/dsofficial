@@ -32,7 +32,12 @@ export default function FifthSection() {
         [styles.h5]: !isPC,
       })}
     >
-      <img src={t.fifthSection.investorsAndPartners} className={styles.investorsAndPartners} />
+      <img
+        src={t.fifthSection.investorsAndPartners}
+        className={cx(styles.investorsAndPartners, {
+          [styles.zhH5]: !isPC && lang === "zh",
+        })}
+      />
 
       {/* 横向滚动容器 */}
       <div className={styles.scrollWrapper}>

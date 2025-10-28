@@ -13,6 +13,14 @@ import cn_investorsAndPartners from "@/assets/cn-investors-and-partners.svg"
 import cn_mainWord from "@/assets/cn-main-word.svg"
 import cn_nextGen from "@/assets/cn-next-gen.svg"
 import cn_real from "@/assets/cn-real.svg"
+import build1H5 from "@/assets/h5-build-1.svg"
+import build2H5 from "@/assets/h5-build-2.svg"
+import build3H5 from "@/assets/h5-build-3.svg"
+import build4H5 from "@/assets/h5-build-4.svg"
+import cn_build1H5 from "@/assets/h5-cn-build-1.svg"
+import cn_build2H5 from "@/assets/h5-cn-build-2.svg"
+import cn_build3H5 from "@/assets/h5-cn-build-3.svg"
+import cn_build4H5 from "@/assets/h5-cn-build-4.svg"
 import cn_h5_investorsAndPartners from "@/assets/h5-cn-investors-and-partners.svg"
 import h5_investorsAndPartners from "@/assets/h5-investors-and-partners.svg"
 import investorsAndPartners from "@/assets/investors-and-partners.svg"
@@ -58,6 +66,10 @@ export const texts: Record<Lang, {
     build3Svg: string
     build4Svg: string
     h5_investorsAndPartners: string
+    build1H5Svg: string
+    build2H5Svg: string
+    build3H5Svg: string
+    build4H5Svg: string
   },
   fifthSection: {
     investorsAndPartners: string
@@ -102,6 +114,10 @@ export const texts: Record<Lang, {
       build2Svg: build2,
       build3Svg: build3,
       build4Svg: build4,
+      build1H5Svg: build1H5,
+      build2H5Svg: build2H5,
+      build3H5Svg: build3H5,
+      build4H5Svg: build4H5,
       h5_investorsAndPartners: h5_investorsAndPartners,
     },
     fifthSection: {
@@ -160,6 +176,10 @@ export const texts: Record<Lang, {
       build2Svg: cn_build2,
       build3Svg: cn_build3,
       build4Svg: cn_build4,
+      build1H5Svg: cn_build1H5,
+      build2H5Svg: cn_build2H5,
+      build3H5Svg: cn_build3H5,
+      build4H5Svg: cn_build4H5,
       h5_investorsAndPartners: cn_h5_investorsAndPartners,
     },
     fifthSection: {
