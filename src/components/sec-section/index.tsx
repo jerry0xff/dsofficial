@@ -1,6 +1,5 @@
 import gupiao from "@/assets/gupiao.svg"
 import jiaoyi from "@/assets/jiaoyi.svg"
-import nextBg from "@/assets/next-gen.svg"
 import quanqiu from "@/assets/quanqiu.svg"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { texts } from "@/contexts/texts"
@@ -17,7 +16,7 @@ export default function SecSection() {
         [styles.h5]: !isPC,
       })}
     >
-      <img src={nextBg} alt="nextBg" className={styles.nextBg} />
+      <img src={t.secSection.nextGenSvg} alt="nextBg" className={styles.nextBg} />
       <div className={styles.content}>
         <div className={styles.item}>
           <img src={quanqiu} className={styles.itemImg} />

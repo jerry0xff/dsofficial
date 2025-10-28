@@ -1,4 +1,3 @@
-import mainWord from "@/assets/main-word.svg"
 import Header from "@/components/header"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { texts } from "@/contexts/texts"
@@ -19,7 +18,7 @@ export default function FirstSection() {
     >
       <Header></Header>
       <div className={styles.content}>
-        <img src={mainWord} alt="mainWord" className={styles.mainWord} />
+        <img src={t.firstSection.mainWordSvg} alt="mainWord" className={styles.mainWord} />
         <div className={styles.desc}>{t.firstSection.description}</div>
         <StatsBar />
         <button className={styles.btn} onClick={launchApp}>

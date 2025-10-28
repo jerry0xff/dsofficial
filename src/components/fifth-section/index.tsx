@@ -1,4 +1,3 @@
-import investorsAndPartners from "@/assets/investors-and-partners.svg"
 import Binance from "@/assets/investors/Binance.svg"
 import Bingx from "@/assets/investors/bingx.svg"
 import Dgcap from "@/assets/investors/DGCapital.svg"
@@ -7,6 +6,8 @@ import IBKR from "@/assets/investors/IBKR.svg"
 import Iobc from "@/assets/investors/IOBC.svg"
 import Itiger from "@/assets/investors/Itiger.svg"
 import Okx from "@/assets/investors/OKX.svg"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { texts } from "@/contexts/texts"
 import { isPC } from "@/utils/platform"
 import cx from "classnames"
 import styles from "./index.module.less"
@@ -23,13 +24,15 @@ const logos = [
 ]
 
 export default function FifthSection() {
+  const { lang } = useLanguage()
+  const t = texts[lang]
   return (
     <section
       className={cx(styles.fifthSection, {
         [styles.h5]: !isPC,
       })}
     >
-      <img src={investorsAndPartners} className={styles.investorsAndPartners} />
+      <img src={t.fifthSection.investorsAndPartners} className={styles.investorsAndPartners} />
 
       {/* 横向滚动容器 */}
       <div className={styles.scrollWrapper}>

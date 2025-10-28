@@ -1,4 +1,3 @@
-import real from "@/assets/real.svg"
 import third1 from "@/assets/third-1.svg"
 import third2 from "@/assets/third-2.svg"
 import third3 from "@/assets/third-3.svg"
@@ -18,7 +17,12 @@ export default function ThirdSection() {
       })}
     >
       {/* {!isPC ? <div className={styles.tip}>Security System Screen</div> : null} */}
-      <img src={real} className={styles.real} />
+      <img
+        src={t.thirdSection.realSvg}
+        className={cx(styles.real, {
+          [styles.zhH5]: !isPC && lang === "zh",
+        })}
+      />
       {/* {isPC ? <div className={styles.tip}>Security System Screen</div> : null} */}
       <div className={styles.content}>
         <div className={styles.item}>
