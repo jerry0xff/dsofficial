@@ -36,7 +36,7 @@ export default function Header() {
             <a className={styles.navItem} href="#faq">
               {t.header.faq}
             </a>
-            <a className={styles.navItem} href="#white-paper" target="_blank" rel="noopener noreferrer">
+            <a className={styles.navItem} href="https://doc.deshare.finance/" target="_blank" rel="noopener noreferrer">
               {t.header.whitePaper}
             </a>
 
