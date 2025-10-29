@@ -15,6 +15,7 @@ export default function SixthSection() {
   }
   return (
     <section
+      id="faq"
       className={cx(styles.sixthSection, {
         [styles.h5]: !isPC,
       })}
