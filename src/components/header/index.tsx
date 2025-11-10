@@ -1,5 +1,3 @@
-import langswitchCn from "@/assets/lang-switch-cn.svg"
-import langSwitchEn from "@/assets/lang-switch-en.svg"
 import logoText from "@/assets/logo-text.svg"
 import logo from "@/assets/logo.svg"
 import { useLanguage } from "@/contexts/LanguageContext"
@@ -8,9 +6,10 @@ import { isPC } from "@/utils/platform"
 import { launchApp } from "@/utils/utils"
 import cx from "classnames"
 import styles from "./index.module.less"
+import LanguageMenu from "./languageMenu"
 
 export default function Header() {
-  const { lang, toggleLang } = useLanguage()
+  const { lang, langMenu, setLangMenu } = useLanguage()
   const t = texts[lang]
 
   return (
@@ -42,11 +41,19 @@ export default function Header() {
 
             <span className={styles.divider} />
 
-            <img
+            {/* <img
               className={styles.langIcon}
               src={lang === "en" ? langSwitchEn : langswitchCn}
               alt="lang"
               onClick={toggleLang}
+            /> */}
+
+            <LanguageMenu
+              value={langMenu}
+              onChange={(next) => {
+                setLangMenu(next)
+              }}
+              className={styles.langMenuGap}
             />
 
             <span className={styles.divider} />
@@ -69,11 +76,18 @@ export default function Header() {
             </div>
 
             <div className={styles.mobileRight}>
-              <img
+              {/* <img
                 className={styles.langIcon}
                 src={lang === "en" ? langSwitchEn : langswitchCn}
                 alt="lang"
                 onClick={toggleLang}
+              /> */}
+              <LanguageMenu
+                value={langMenu}
+                onChange={(next) => {
+                  setLangMenu(next)
+                }}
+                className={styles.langMenuGap}
               />
               <button className={styles.launch} onClick={launchApp}>
                 {t.header.launchApp}
