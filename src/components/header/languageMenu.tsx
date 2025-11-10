@@ -1,7 +1,7 @@
 import langSwitchNormal from "@/assets/lang-switch-normal.svg"
 import langSwitchSelected from "@/assets/lang-switch-selected.svg"
 import cx from "classnames"
-import React, { useEffect, useMemo, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styles from "./languageMenu.module.less"
 
 /** 你的项目里用哪个 key 存语言，这里统一一下 */
@@ -61,7 +61,7 @@ const LanguageMenu: React.FC<LanguageMenuProps> = ({ value, onChange, className 
   const [activeIndex, setActiveIndex] = useState<number>(-1)
 
   const current = value ?? internalLang
-  const currentItem = useMemo(() => LANGUAGE_OPTIONS.find((o) => o.code === current) ?? LANGUAGE_OPTIONS[0], [current])
+  // const currentItem = useMemo(() => LANGUAGE_OPTIONS.find((o) => o.code === current) ?? LANGUAGE_OPTIONS[0], [current])
 
   useEffect(() => {
     if (value) setInternalLang(value)
