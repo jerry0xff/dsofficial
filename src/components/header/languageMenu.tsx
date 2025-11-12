@@ -1,5 +1,6 @@
 import langSwitchNormal from "@/assets/lang-switch-normal.svg"
 import langSwitchSelected from "@/assets/lang-switch-selected.svg"
+import { isPC } from "@/utils/platform"
 import cx from "classnames"
 import React, { useEffect, useRef, useState } from "react"
 import styles from "./languageMenu.module.less"
@@ -53,7 +54,7 @@ export interface LanguageMenuProps {
   className?: string
 }
 
-const LanguageMenu: React.FC<LanguageMenuProps> = ({ value, onChange, className }) => {
+const LanguageMenu: React.FC<LanguageMenuProps> = ({ value, onChange }) => {
   const [open, setOpen] = useState(false)
   const [internalLang, setInternalLang] = useState<LangCode>(() => getInitialLang(value))
   const btnRef = useRef<HTMLButtonElement | null>(null)
@@ -111,7 +112,11 @@ const LanguageMenu: React.FC<LanguageMenuProps> = ({ value, onChange, className 
   }
 
   return (
-    <div className={cx(styles.wrap, className)}>
+    <div
+      className={cx(styles.wrap, {
+        [styles.h5]: !isPC,
+      })}
+    >
       <button
         ref={btnRef}
         aria-haspopup="listbox"
