@@ -1,6 +1,6 @@
 import c from "@/assets/c.svg"
-import discord from "@/assets/discord.svg"
 import github from "@/assets/github.svg"
+import telegram from "@/assets/telegram.svg"
 import x from "@/assets/x.svg"
 import { isPC } from "@/utils/platform"
 import cx from "classnames"
@@ -18,8 +18,12 @@ export default function Footer() {
         2025 deshare International Ltd.All rights reserved.
       </div>
       <div className={styles.right}>
-        <img src={github} className={styles.github} />
-        <img src={discord} className={styles.discord} />
+        <a href="https://doc.deshare.finance/" target="_blank">
+          <img src={github} className={styles.discord} />
+        </a>
+        <a href="https://t.me/desharefinance" target="_blank">
+          <img src={telegram} className={styles.discord} />
+        </a>
         <a href="https://x.com/Deshare_finance" target="_blank">
           <img src={x} className={styles.x} />
         </a>
