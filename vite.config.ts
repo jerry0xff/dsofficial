@@ -7,7 +7,7 @@ export default defineConfig(() => {
   return {
     plugins: [react()],
     css: {
-      postcss: './postcss.config.cjs',
+      postcss: './postcss.config.js',
     },
     resolve: {
       alias: {
