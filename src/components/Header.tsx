@@ -1,5 +1,26 @@
+import { useEffect, useRef, useState } from "react"
+import LanguagePicker from "./LanguagePicker"
+
 export default function Header() {
   const navTextClass = "cursor-pointer text-white/70 hover:text-white"
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false)
+  const languageRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (!isLanguageOpen) return
+
+    function handleClickOutside(event: MouseEvent) {
+      if (!languageRef.current) return
+      if (!languageRef.current.contains(event.target as Node)) {
+        setIsLanguageOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [isLanguageOpen])
 
   return (
     <header className="h-[60px] bg-[#0A0A17] text-white">
@@ -22,11 +43,20 @@ export default function Header() {
         <div className="hidden items-center gap-5 text-[12px] font-semibold text-white/70 md:flex geist-mono">
           <span className={navTextClass}>FAQ</span>
           <span className={navTextClass}>WHITEPAPER</span>
-          <img
-            src="/assets/earth.svg"
-            alt="Language"
-            className="h-6 w-6 cursor-pointer opacity-100 transition hover:opacity-70"
-          />
+          <div className="relative" ref={languageRef}>
+            <button
+              type="button"
+              className="flex h-6 w-6 items-center justify-center opacity-100 transition hover:opacity-70"
+              onClick={() => setIsLanguageOpen((open) => !open)}
+              aria-expanded={isLanguageOpen}
+              aria-haspopup="listbox"
+            >
+              <img src="/assets/earth.svg" alt="Language" className="h-6 w-6" />
+            </button>
+            {isLanguageOpen ? (
+              <LanguagePicker onSelect={() => setIsLanguageOpen(false)} />
+            ) : null}
+          </div>
           <button className="h-[40px] w-[122px] rounded-full bg-[#21D2D2] px-[24px] py-[8px] text-[12px] font-bold tracking-normal text-[#0b0c1c] transition hover:opacity-90">
             LAUNCH APP
           </button>
