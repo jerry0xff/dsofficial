@@ -23,7 +23,7 @@ export default function Header() {
   }, [isLanguageOpen])
 
   return (
-    <header className="h-[60px] bg-[#0A0A17] text-white">
+    <header className="fixed left-0 top-0 z-50 h-[60px] w-full bg-[#0A0A17] text-white">
       <div className="mx-auto flex h-full items-center justify-between px-6">
         <div className="flex items-center gap-8">
           <div className="flex items-center gap-3">
