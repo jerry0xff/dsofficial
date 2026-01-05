@@ -15,7 +15,7 @@ export default function LanguagePicker({ onSelect }: LanguagePickerProps) {
   const { langMenu, setLangMenu } = useLanguage()
 
   return (
-    <div className="absolute left-1/2 top-full z-20 mt-3 w-[151px] -translate-x-1/2">
+    <div className="absolute left-1/2 top-full z-20 mt-4 w-[151px] -translate-x-1/2">
       <div className="animate-[fadeIn_160ms_ease-out] border border-[#3B3B45] bg-[#161623] px-[12px] py-[24px] text-[12px] text-white">
         <div className="text-center mb-2 font-[400] text-white/50 geist-mono">Language</div>
         <div role="listbox" className="geist-mono whitespace-nowrap">
