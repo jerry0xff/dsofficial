@@ -140,7 +140,7 @@ export default function PageOne() {
       </div>
 
       <TickerStrip />
-      <div className="mt-[73px] text-center text-[48px] font-black uppercase text-white font-['DM_Sans',system-ui,sans-serif]">
+      <div className="mt-[73px] z-10 text-center text-[48px] font-black uppercase text-white font-['DM_Sans',system-ui,sans-serif]">
         Trade global stock with crypto
       </div>
       <div className="mt-[30px] text-center text-[16px] font-medium uppercase tracking-[0.02em] text-white font-['DM_Sans',system-ui,sans-serif] shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
