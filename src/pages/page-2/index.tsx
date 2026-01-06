@@ -9,7 +9,11 @@ export default function PageTwo() {
           <img src="/assets/page-1/map-empty.svg" className="w-full h-full object-contain" alt="" />
         </div>
       </div>
-      <div className="relative z-10 h-[60vh]" />
+      <div className="relative flex w-full flex-col items-center">
+        <div className="mt-[30px] text-center text-[12px] font-[300] uppercase tight-sm text-[#21D2D2] geist-mono">
+          [ GLOBAL ACCESS ]
+        </div>
+      </div>
     </section>
   )
 }
