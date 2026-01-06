@@ -96,7 +96,7 @@ export default function PageOne() {
   const topPercent = canRenderCurrent && currentConfig.point ? (currentConfig.point.y / originalHeight) * 100 : 0
 
   return (
-    <section className="relative flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 overflow-hidden bg-[#0a0a0a]">
+    <section className="relative flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 overflow-hidden  bg-[#0A0A17]">
       <div
         className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"
         style={{ transform: "translateY(-5%)" }}
