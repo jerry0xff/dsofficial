@@ -21,8 +21,8 @@ const items: TickerItem[] = [
 ]
 
 export default function TickerStrip() {
-  const speedPerItemSeconds = 0.35
-  const durationSeconds = Math.max(items.length * speedPerItemSeconds, 10)
+  const speedPerItemSeconds = 0.3
+  const durationSeconds = Math.max(items.length * speedPerItemSeconds, 12)
 
   return (
     <div className="w-full overflow-hidden">
