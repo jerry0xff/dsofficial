@@ -32,6 +32,32 @@
   }
 }
 
+@keyframes calloutFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes calloutFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.callout-fade-in {
+  animation: calloutFadeIn 300ms ease;
+}
+
+.callout-fade-out {
+  animation: calloutFadeOut 300ms ease;
+}
+
 .ticker-track {
   display: flex;
   width: max-content;

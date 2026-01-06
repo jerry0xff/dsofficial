@@ -1,36 +1,144 @@
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
+import MapCallout from "./MapCallout"
 import PartnersRow from "./PartnersRow"
 import StatsRow from "./StatsRow"
 import TickerStrip from "./TickerStrip"
 
 export default function PageOne() {
-  const backgrounds = [
-    "/assets/page-1/map-empty.svg",
-    "/assets/page-1/map-nyc.svg",
-    "/assets/page-1/map-sf.svg",
-    "/assets/page-1/map-sh.svg",
-    "/assets/page-1/map-tokyo.svg",
-  ]
+  const originalWidth = 1272.48
+  const originalHeight = 660.6
+
+  const mapConfigs = useMemo(
+    () => [
+      {
+        src: "/assets/page-1/map-empty.svg",
+        point: null,
+        data: null,
+      },
+      {
+        src: "/assets/page-1/map-nyc.svg",
+        point: { x: 293, y: 217 },
+        data: {
+          title: "NYC",
+          price: "$412.30",
+          subtitle: "Manhattan Exchange",
+          change: "+1.24%",
+        },
+      },
+      {
+        src: "/assets/page-1/map-sf.svg",
+        point: { x: 70, y: 300 },
+        data: {
+          title: "SF",
+          price: "$188.45",
+          subtitle: "Bay Area Hub",
+          change: "+0.82%",
+        },
+      },
+      {
+        src: "/assets/page-1/map-sh.svg",
+        point: { x: 866, y: 302 },
+        data: {
+          title: "SH",
+          price: "$96.18",
+          subtitle: "Pudong Market",
+          change: "-0.34%",
+        },
+      },
+      {
+        src: "/assets/page-1/map-tokyo.svg",
+        point: { x: 974, y: 275 },
+        data: {
+          title: "Tokyo",
+          price: "$134.02",
+          subtitle: "Shinjuku Desk",
+          change: "+1.02%",
+        },
+      },
+    ],
+    []
+  )
+
   const [backgroundIndex, setBackgroundIndex] = useState(0)
+  const [prevIndex, setPrevIndex] = useState<number | null>(null)
+  const lastIndexRef = useRef(0)
+  const fadeTimeoutRef = useRef<number | null>(null)
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
-      setBackgroundIndex((current) => (current + 1) % backgrounds.length)
+      setBackgroundIndex((current) => (current + 1) % mapConfigs.length)
     }, 5000)
+    return () => window.clearInterval(intervalId)
+  }, [mapConfigs.length])
 
-    return () => {
-      window.clearInterval(intervalId)
+  useEffect(() => {
+    const previous = lastIndexRef.current
+    lastIndexRef.current = backgroundIndex
+    setPrevIndex(previous)
+    if (fadeTimeoutRef.current !== null) {
+      window.clearTimeout(fadeTimeoutRef.current)
     }
-  }, [backgrounds.length])
+    fadeTimeoutRef.current = window.setTimeout(() => {
+      setPrevIndex(null)
+    }, 300)
+    return () => {
+      if (fadeTimeoutRef.current !== null) {
+        window.clearTimeout(fadeTimeoutRef.current)
+      }
+    }
+  }, [backgroundIndex])
+
+  const currentConfig = mapConfigs[backgroundIndex] || mapConfigs[0]
+  const previousConfig = prevIndex !== null ? mapConfigs[prevIndex] || mapConfigs[0] : null
+  const canRenderCurrent = Boolean(currentConfig.point && currentConfig.data)
+  const canRenderPrevious = Boolean(previousConfig?.point && previousConfig?.data)
+  const leftPercent = canRenderCurrent && currentConfig.point ? (currentConfig.point.x / originalWidth) * 100 : 0
+  const topPercent = canRenderCurrent && currentConfig.point ? (currentConfig.point.y / originalHeight) * 100 : 0
 
   return (
-    <section
-      className="flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 bg-contain bg-no-repeat"
-      style={{
-        backgroundImage: `url('${backgrounds[backgroundIndex]}')`,
-        backgroundPosition: "center 70%",
-      }}
-    >
+    <section className="relative flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 overflow-hidden bg-[#0a0a0a]">
+      <div
+        className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"
+        style={{ transform: "translateY(-5%)" }}
+      >
+        <div className="relative w-full h-full max-w-[1272px] max-h-[660px] aspect-[1272.48/660.6]">
+          <img src={currentConfig.src} className="w-full h-full object-contain" alt="" />
+        </div>
+      </div>
+      <div
+        className="absolute inset-0 z-50 flex items-center justify-center pointer-events-none"
+        style={{ transform: "translateY(-5%)" }}
+      >
+        <div className="relative w-full h-full max-w-[1272px] max-h-[660px] aspect-[1272.48/660.6]">
+          {canRenderCurrent && currentConfig.data ? (
+            <div
+              className="absolute callout-fade-in"
+              style={{
+                left: `${leftPercent}%`,
+                top: `${topPercent}%`,
+                transform: "translate(-50%, -100%)",
+                pointerEvents: "auto",
+              }}
+            >
+              <MapCallout data={currentConfig.data} />
+            </div>
+          ) : null}
+          {canRenderPrevious && previousConfig?.data ? (
+            <div
+              className="absolute callout-fade-out"
+              style={{
+                left: `${(previousConfig!.point.x / originalWidth) * 100}%`,
+                top: `${(previousConfig!.point.y / originalHeight) * 100}%`,
+                transform: "translate(-50%, -100%)",
+                pointerEvents: "none",
+              }}
+            >
+              <MapCallout data={previousConfig.data} />
+            </div>
+          ) : null}
+        </div>
+      </div>
+
       <TickerStrip />
       <div className="mt-[73px] text-center text-[48px] font-black uppercase text-white font-['DM_Sans',system-ui,sans-serif]">
         Trade global stock with crypto
