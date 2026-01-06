@@ -1,5 +1,6 @@
-import TickerStrip from "./TickerStrip"
+import PartnersRow from "./PartnersRow"
 import StatsRow from "./StatsRow"
+import TickerStrip from "./TickerStrip"
 
 export default function PageOne() {
   return (
@@ -15,6 +16,7 @@ export default function PageOne() {
         The Most Comprehensive Tokenized Stock Trading Market
       </div>
       <StatsRow className="mt-[55px]" />
+      <PartnersRow />
     </section>
   )
 }
