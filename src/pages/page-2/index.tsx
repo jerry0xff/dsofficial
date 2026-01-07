@@ -1,4 +1,4 @@
-import GlobalAccessHeader from "./Content"
+import Content from "./Content"
 import FeatureCard from "./FeatureCard"
 
 export default function PageTwo() {
@@ -12,7 +12,7 @@ export default function PageTwo() {
           <img src="/assets/page-1/map-empty.svg" className="w-full h-full object-contain" alt="" />
         </div>
       </div>
-      <GlobalAccessHeader />
+      <Content />
       <div className="relative z-10 mt-auto flex w-full max-w-[1500px] flex-col items-center justify-center gap-0 px-4 md:flex-row md:items-start">
         {[
           {
