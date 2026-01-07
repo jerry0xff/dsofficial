@@ -1,3 +1,6 @@
+import FeatureCard from "./FeatureCard"
+import GlobalAccessHeader from "./GlobalAccessHeader"
+
 export default function PageTwo() {
   return (
     <section className="relative flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 overflow-hidden bg-[#0A0A17]">
@@ -9,10 +12,30 @@ export default function PageTwo() {
           <img src="/assets/page-1/map-empty.svg" className="w-full h-full object-contain" alt="" />
         </div>
       </div>
-      <div className="relative flex w-full flex-col items-center">
-        <div className="mt-[30px] text-center text-[12px] font-[300] uppercase tight-sm text-[#21D2D2] geist-mono">
-          [ GLOBAL ACCESS ]
-        </div>
+      <GlobalAccessHeader />
+      <div className="relative z-10 mt-auto flex w-full max-w-[1500px] flex-col items-center justify-center gap-0 px-4 md:flex-row md:items-start">
+        {[
+          {
+            title: "Spot Trading",
+            subtitle: "Trade tokenized stocks directly, on-chain.",
+            description:
+              "Buy and sell tokenized global stocks with transparent on-chain execution. No pre-deposit required - simply connect your wallet and trade instantly, with full control over your assets.",
+          },
+          {
+            title: "Leverage",
+            subtitle: "Leverage global markets with flexibility.",
+            description:
+              "Access derivative products with leverage, designed for more advanced trading strategies. Trade with precision while maintaining a non-custodial, on-chain experience.",
+          },
+          {
+            title: "New Listings",
+            subtitle: "Discover newly listed tokenized stocks.",
+            description:
+              "Get early access to newly listed tokenized stocks and emerging market opportunities. Explore new assets as they become available - all within a decentralized trading environment.",
+          },
+        ].map((card) => (
+          <FeatureCard key={card.title} title={card.title} subtitle={card.subtitle} description={card.description} />
+        ))}
       </div>
     </section>
   )
