@@ -1,5 +1,5 @@
+import GlobalAccessHeader from "./Content"
 import FeatureCard from "./FeatureCard"
-import GlobalAccessHeader from "./GlobalAccessHeader"
 
 export default function PageTwo() {
   return (

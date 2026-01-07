@@ -1,6 +1,7 @@
 import PageOne from "./page-1"
 import PageTwo from "./page-2"
 import PageThree from "./page-3"
+import PageFour from "./page-4"
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <PageOne />
       <PageTwo />
       <PageThree />
+      <PageFour />
     </div>
   )
 }
