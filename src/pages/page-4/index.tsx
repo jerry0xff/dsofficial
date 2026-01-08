@@ -1,4 +1,5 @@
-export default function PageTwo() {
+import Content from "./Content"
+export default function PageFour() {
   return (
     <section className="relative flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 overflow-hidden bg-[#0A0A17]">
       <div
@@ -9,6 +10,7 @@ export default function PageTwo() {
           <img src="/assets/page-1/map-empty.svg" className="w-full h-full object-contain" alt="" />
         </div>
       </div>
+      <Content />
     </section>
   )
 }
