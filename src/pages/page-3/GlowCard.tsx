@@ -52,7 +52,7 @@ export function GlowCard({
             className="
               pointer-events-none
               absolute left-1/2
-              -translate-x-1/2
+              -translate-x-1/2 -translate-y-1/2
               opacity-0
               transition-opacity duration-[2000ms] ease-linear
               group-hover:opacity-100
@@ -65,7 +65,7 @@ export function GlowCard({
         )}
 
         {/* content */}
-        <div className="relative z-[2]">{children}</div>
+        <div className="relative z-[2] text-[14px] font-bold leading-none text-white geist-mono">{children}</div>
       </div>
 
       {/* corner dots */}

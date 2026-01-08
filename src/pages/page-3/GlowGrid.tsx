@@ -25,35 +25,66 @@ function VerticalHighlightGroup({ label }: { label: string }) {
 }
 
 export default function GlowGrid() {
+  const cards = [
+    {
+      id: "top-left",
+      height: 108,
+      className: "col-start-1 row-start-1",
+      text: "On-Chain Orders",
+      imageSrc: "/assets/page-3/card1.svg",
+    },
+    {
+      id: "top-right",
+      height: 108,
+      className: "col-start-3 row-start-1",
+      text: "Stock Tokens",
+      imageSrc: "/assets/page-3/card2.svg",
+    },
+    {
+      id: "bottom-left",
+      height: 241,
+      className: "col-start-1 row-start-3",
+      text: "Liquidity",
+      imageSrc: "/assets/page-3/card3.svg",
+    },
+    {
+      id: "bottom-right",
+      height: 241,
+      className: "col-start-3 row-start-3",
+      text: "Backed by Real Stocks",
+      imageSrc: "/assets/page-3/card4.svg",
+    },
+  ] as const
+
+  const horizontalBars = [
+    { id: "top", className: "col-start-2 row-start-1" },
+    { id: "bottom", className: "col-start-2 row-start-3" },
+  ] as const
+
+  const verticalGroups = [
+    { id: "left", className: "col-start-1 row-start-2", label: "Broker-Consistent Pricing" },
+    { id: "right", className: "col-start-3 row-start-2", label: "1:1 Real-Time Custody, Verifiable" },
+  ] as const
+
   return (
     <div className="mt-[80px] flex w-full justify-center">
       <div className="grid grid-cols-[584px_32px_584px] grid-rows-[108px_32px_241px] items-center justify-items-center">
-        <GlowCard height={108} className="col-start-1 row-start-1">
-          <div className="text-sm text-white/80 geist-mono">Default content</div>
-        </GlowCard>
-        <div className="col-start-2 row-start-1 flex items-center justify-center">
-          <SlidingHighlightBar orientation="horizontal" direction="forward" />
-        </div>
-        <GlowCard height={108} className="col-start-3 row-start-1">
-          <div className="text-sm text-white/80 geist-mono">Default content</div>
-        </GlowCard>
+        {cards.map((card) => (
+          <GlowCard key={card.id} height={card.height} className={card.className} imageSrc={card.imageSrc}>
+            {card.text}
+          </GlowCard>
+        ))}
+        {horizontalBars.map((bar) => (
+          <div key={bar.id} className={`${bar.className} flex items-center justify-center`}>
+            <SlidingHighlightBar orientation="horizontal" direction="forward" />
+          </div>
+        ))}
 
-        <div className="col-start-1 row-start-2 w-full h-full">
-          <VerticalHighlightGroup label="Broker-Consistent Pricing" />
-        </div>
-        <div className="col-start-3 row-start-2 w-full h-full">
-          <VerticalHighlightGroup label="1:1 Real-Time Custody, Verifiable" />
-        </div>
-
-        <GlowCard height={241} className="col-start-1 row-start-3">
-          <div className="text-sm text-white/80 geist-mono">Default content</div>
-        </GlowCard>
-        <div className="col-start-2 row-start-3 flex items-center justify-center">
-          <SlidingHighlightBar orientation="horizontal" direction="forward" />
-        </div>
-        <GlowCard height={241} className="col-start-3 row-start-3">
-          <div className="text-sm text-white/80 geist-mono">Default content</div>
-        </GlowCard>
+        {verticalGroups.map((group) => (
+          <div key={group.id} className={`${group.className} w-full h-full`}>
+            <VerticalHighlightGroup label={group.label} />
+          </div>
+        ))}
       </div>
     </div>
   )
