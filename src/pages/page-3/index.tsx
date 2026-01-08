@@ -1,4 +1,5 @@
 import Content from "./Content"
+import { GlowCard } from "./GlowCard"
 
 export default function PageTwo() {
   return (
@@ -12,6 +13,10 @@ export default function PageTwo() {
         </div>
       </div>
       <Content />
+
+      <GlowCard height={241} imageSrc="/center-glow.png" imageY="45%">
+        <div className="text-white text-lg font-medium">这里是组件内容</div>
+      </GlowCard>
     </section>
   )
 }
