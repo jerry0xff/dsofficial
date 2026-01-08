@@ -13,7 +13,7 @@ type MapCalloutProps = {
 export default function MapCallout({ style, data }: MapCalloutProps) {
   return (
     <div className="absolute flex flex-col items-center z-100" style={style}>
-      <div className="h-[32px] w-[2px] bg-[#21D2D2]" />
+      <div className="h-[32px] w-[2px] bg-[color:var(--ColorCyanDefault)]" />
       <div className="relative w-[197px] rounded-[20px] bg-[#26263A33] px-3 py-2 text-white/80 backdrop-blur-[40px]">
         <img
           src="/assets/page-1/callout-bg.svg"
@@ -25,11 +25,11 @@ export default function MapCallout({ style, data }: MapCalloutProps) {
           <span className="text-white/80">{data.title}</span>
           <span className="text-white/60">{data.price}</span>
         </div>
-        <div className="mt-1 flex items-center justify-between text-[12px] tracking-[-0.02em] text-[#21D2D2]">
+        <div className="mt-1 flex items-center justify-between text-[12px] tracking-[-0.02em] text-[color:var(--ColorCyanDefault)]">
           <span className="min-w-0 flex-1 truncate font-normal text-white/40">{data.subtitle}</span>
           <span
             className={`ml-2 inline-flex items-center gap-1 whitespace-nowrap font-[700] ${
-              parseFloat(data.change) >= 0 ? "text-[#21D2D2]" : "text-[#E95F2D]"
+              parseFloat(data.change) >= 0 ? "text-[color:var(--ColorCyanDefault)]" : "text-[#E95F2D]"
             }`}
           >
             <img

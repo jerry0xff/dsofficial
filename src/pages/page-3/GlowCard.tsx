@@ -80,7 +80,8 @@ export function GlowCard({
 }
 
 function CornerDots() {
-  const base = "absolute w-[4px] h-[4px] rounded-full bg-white border border-[#21D2D2]"
+  const base =
+    "absolute w-[4px] h-[4px] rounded-full bg-white border border-[color:var(--ColorCyanDefault)]"
 
   return (
     <>

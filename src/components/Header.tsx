@@ -74,7 +74,7 @@ export default function Header() {
             </button>
             {isLanguageOpen ? <LanguagePicker onSelect={() => setIsLanguageOpen(false)} /> : null}
           </div>
-          <button className="h-[40px] w-[122px] rounded-full bg-[#21D2D2] px-[24px] py-[8px] text-[12px] font-bold tracking-normal text-[#0b0c1c] transition hover:bg-[#00FFFF]">
+          <button className="h-[40px] w-[122px] rounded-full bg-[color:var(--ColorCyanDefault)] px-[24px] py-[8px] text-[12px] font-bold tracking-normal text-[#0b0c1c] transition hover:bg-[#00FFFF]">
             LAUNCH APP
           </button>
         </div>

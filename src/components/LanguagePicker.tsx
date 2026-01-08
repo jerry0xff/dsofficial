@@ -34,7 +34,9 @@ export default function LanguagePicker({ onSelect }: LanguagePickerProps) {
                 }}
               >
                 <span>{language.label}</span>
-                {isSelected ? <span className="ml-2 h-1.5 w-1.5 rounded-full bg-[#21D2D2]" /> : null}
+              {isSelected ? (
+                <span className="ml-2 h-1.5 w-1.5 rounded-full bg-[color:var(--ColorCyanDefault)]" />
+              ) : null}
               </button>
             )
           })}

@@ -40,7 +40,7 @@ export default function TickerStrip() {
                 </div>
                 <div
                   className={`mt-1 flex items-center justify-between text-[12px] tracking-[-0.02em] ${
-                    item.trend === "up" ? "text-[#21D2D2]" : "text-[#E95F2D]"
+                    item.trend === "up" ? "text-[color:var(--ColorCyanDefault)]" : "text-[#E95F2D]"
                   }`}
                 >
                   <span className="min-w-0 flex-1 truncate font-normal text-white/40 font-[400]">{item.name}</span>

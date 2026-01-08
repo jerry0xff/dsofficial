@@ -36,8 +36,8 @@ export function SlidingHighlightBar({
   // your highlight gradient:
   // horizontal => 90deg, vertical => 0deg (top->bottom axis)
   const highlightGradient = isH
-    ? "linear-gradient(90deg, rgba(33, 210, 210, 0) 0%, #21D2D2 50%, rgba(33, 210, 210, 0) 100%)"
-    : "linear-gradient(0deg, rgba(33, 210, 210, 0) 0%, #21D2D2 50%, rgba(33, 210, 210, 0) 100%)"
+    ? "linear-gradient(90deg, color-mix(in srgb, var(--ColorCyanDefault) 0%, transparent) 0%, var(--ColorCyanDefault) 50%, color-mix(in srgb, var(--ColorCyanDefault) 0%, transparent) 100%)"
+    : "linear-gradient(0deg, color-mix(in srgb, var(--ColorCyanDefault) 0%, transparent) 0%, var(--ColorCyanDefault) 50%, color-mix(in srgb, var(--ColorCyanDefault) 0%, transparent) 100%)"
 
   return (
     <div
@@ -45,9 +45,11 @@ export function SlidingHighlightBar({
         "relative overflow-hidden",
         sizeClass,
         rounded ? "rounded-full" : "",
-        "bg-[#21D2D233]",
         className,
       ].join(" ")}
+      style={{
+        backgroundColor: "color-mix(in srgb, var(--ColorCyanDefault) 20%, transparent)",
+      }}
     >
       {/* moving highlight */}
       <span
