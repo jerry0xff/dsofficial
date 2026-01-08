@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom"
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 
 export default function AppLayout() {
   return (
@@ -10,9 +11,7 @@ export default function AppLayout() {
         <Outlet />
       </main>
 
-      <footer className="h-16 border-t flex items-center justify-center text-sm text-gray-500">
-        © {new Date().getFullYear()}
-      </footer>
+      <Footer />
     </div>
   )
 }
