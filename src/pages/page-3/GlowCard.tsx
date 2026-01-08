@@ -16,15 +16,7 @@ export function GlowCard({
   const heightClass = height === 108 ? "h-[108px]" : "h-[241px]"
 
   return (
-    <div
-      className={[
-        "group relative",
-        "w-[584px]",
-        heightClass,
-        "overflow-visible",
-        className,
-      ].join(" ")}
-    >
+    <div className={["group relative", "w-[584px]", heightClass, "overflow-visible", className].join(" ")}>
       <div
         className={[
           "relative",
@@ -41,11 +33,14 @@ export function GlowCard({
             pointer-events-none
             absolute inset-0
             opacity-0
-            transition-opacity duration-[3000ms] ease-linear
+            transition-opacity duration-[2000ms] ease-linear
             group-hover:opacity-100
           "
           style={{
-            boxShadow: "0px -20px 40px -15px var(--ColorCyanDefault) inset",
+            boxShadow: `
+    0px -20px 40px -15px var(--ColorCyanDefault) inset,
+    0px -20px 40px -5px var(--ColorCyanDefault) inset
+  `,
           }}
         />
 
@@ -59,7 +54,7 @@ export function GlowCard({
               absolute left-1/2
               -translate-x-1/2
               opacity-0
-              transition-opacity duration-[3000ms] ease-linear
+              transition-opacity duration-[2000ms] ease-linear
               group-hover:opacity-100
               z-[1]
             "
@@ -80,8 +75,7 @@ export function GlowCard({
 }
 
 function CornerDots() {
-  const base =
-    "absolute w-[4px] h-[4px] rounded-full bg-white border border-[color:var(--ColorCyanDefault)]"
+  const base = "absolute w-[4px] h-[4px] rounded-full bg-white border border-[color:var(--ColorCyanDefault)]"
 
   return (
     <>
