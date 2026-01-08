@@ -20,7 +20,7 @@ const faqs = [
 ]
 
 export default function FAQList() {
-  const [openIndex, setOpenIndex] = useState(0)
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
     <div className="flex flex-col items-center gap-6">
@@ -30,7 +30,7 @@ export default function FAQList() {
           title={item.title}
           content={item.content}
           isOpen={openIndex === index}
-          onToggle={() => setOpenIndex(index)}
+          onToggle={() => setOpenIndex((prev) => (prev === index ? null : index))}
         />
       ))}
     </div>

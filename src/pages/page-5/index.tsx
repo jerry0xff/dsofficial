@@ -13,7 +13,7 @@ export default function PageFive() {
           Frequently Asked Questions
         </div>
         <FAQList />
-        <div className="mt-[150px] text-[48px] font-bold tight-sm text-white font-['TASA_Orbiter',system-ui,sans-serif]">
+        <div className="mt-[120px] text-[48px] font-bold tight-sm text-white font-['TASA_Orbiter',system-ui,sans-serif]">
           Partners
         </div>
         <PartnersList />

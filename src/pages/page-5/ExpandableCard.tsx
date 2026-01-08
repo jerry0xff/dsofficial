@@ -16,7 +16,7 @@ export default function ExpandableCard({
       <button
         type="button"
         onClick={onToggle}
-        className="flex w-full items-center justify-between px-6 py-5 text-left"
+        className="group flex w-full items-center justify-between px-6 py-5 text-left"
         aria-expanded={isOpen}
       >
         <span className="text-[14px] font-medium text-white geist-mono">{title}</span>
@@ -24,10 +24,21 @@ export default function ExpandableCard({
           className={[
             "inline-flex h-[20px] w-[20px] items-center justify-center",
             "transition-transform duration-300",
-            isOpen ? "rotate-180" : "rotate-0",
+            isOpen ? "rotate-0" : "rotate-180",
           ].join(" ")}
         >
-          <img src="/assets/page-5/arrow.svg" alt="" className="h-[12px] w-[12px]" />
+          <span className="relative h-[12px] w-[12px]">
+            <img
+              src="/assets/page-5/arrow.svg"
+              alt=""
+              className="h-[12px] w-[12px] transition-opacity duration-200 group-hover:opacity-0"
+            />
+            <img
+              src="/assets/page-5/arrow-hover.svg"
+              alt=""
+              className="absolute left-0 top-0 h-[12px] w-[12px] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+            />
+          </span>
         </span>
       </button>
 
