@@ -1,3 +1,4 @@
+import { useState } from "react"
 import ExpandableCard from "./ExpandableCard"
 
 const faqs = [
@@ -19,6 +20,8 @@ const faqs = [
 ]
 
 export default function FAQList() {
+  const [openIndex, setOpenIndex] = useState(0)
+
   return (
     <div className="flex flex-col items-center gap-6">
       {faqs.map((item, index) => (
@@ -26,7 +29,8 @@ export default function FAQList() {
           key={item.title}
           title={item.title}
           content={item.content}
-          defaultOpen={index === 0}
+          isOpen={openIndex === index}
+          onToggle={() => setOpenIndex(index)}
         />
       ))}
     </div>

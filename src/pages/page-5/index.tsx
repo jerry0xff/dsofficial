@@ -1,4 +1,5 @@
 import FAQList from "./FAQList"
+import PartnersList from "./PartnersList"
 
 export default function PageFive() {
   return (
@@ -12,6 +13,10 @@ export default function PageFive() {
           Frequently Asked Questions
         </div>
         <FAQList />
+        <div className="mt-[150px] text-[48px] font-bold tight-sm text-white font-['TASA_Orbiter',system-ui,sans-serif]">
+          Partners
+        </div>
+        <PartnersList />
       </div>
     </section>
   )
