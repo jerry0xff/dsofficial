@@ -8,13 +8,7 @@ export type GlowCardProps = {
   children?: React.ReactNode
 }
 
-export function GlowCard({
-  height = 108,
-  imageSrc,
-  imageY = "50%",
-  className = "",
-  children,
-}: GlowCardProps) {
+export function GlowCard({ height = 108, imageSrc, imageY = "50%", className = "", children }: GlowCardProps) {
   const heightClass = height === 108 ? "h-[108px]" : "h-[241px]"
 
   return (
@@ -42,7 +36,7 @@ export function GlowCard({
           style={{
             boxShadow: `
     0px -20px 40px -15px var(--ColorCyanDefault) inset,
-    0px -20px 40px -5px var(--ColorCyanDefault) inset
+    0px -20px 40px -10px var(--ColorCyanDefault) inset
   `,
           }}
         />
@@ -59,7 +53,7 @@ export function GlowCard({
               opacity-0
               transition-opacity duration-[2000ms] ease-linear
               group-hover:opacity-100
-              z-[1]
+              z-100
             "
             style={{
               top: imageY,
