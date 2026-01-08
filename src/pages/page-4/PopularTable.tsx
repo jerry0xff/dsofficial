@@ -10,13 +10,15 @@ type PopularRow = {
 
 function buildSmoothPath(points: TrendPoint[], width: number, height: number) {
   const padding = 2
+  const extraBottom = -2
   const max = Math.max(...points)
   const min = Math.min(...points)
   const range = max - min || 1
 
   const coords = points.map((value, index) => {
     const x = (index / (points.length - 1)) * width
-    const y = height - padding - ((value - min) / range) * (height - padding * 2)
+    const rawY = height - padding + extraBottom - ((value - min) / range) * (height - padding * 2)
+    const y = Math.max(padding, Math.min(height, rawY))
     return { x, y }
   })
 
@@ -46,13 +48,22 @@ function buildSmoothPath(points: TrendPoint[], width: number, height: number) {
   return path.join(" ")
 }
 
-function Sparkline({ points, color }: { points: TrendPoint[]; color: string }) {
+function Sparkline({ points, color, id }: { points: TrendPoint[]; color: string; id: string }) {
   const width = 54
   const height = 24
   const path = buildSmoothPath(points, width, height)
+  const areaPath = `${path} L ${width} ${height} L 0 ${height} Z`
+  const gradientId = `sparkline-${id}`
 
   return (
     <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} fill="none">
+      <defs>
+        <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={color} stopOpacity="0.35" />
+          <stop offset="100%" stopColor={color} stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <path d={areaPath} fill={`url(#${gradientId})`} />
       <path d={path} stroke={color} strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   )
@@ -142,7 +153,7 @@ export default function PopularTable({ title = "Popular" }: { title?: string }) 
                   {row.change}
                 </div>
                 <div className="w-[54px]">
-                  <Sparkline points={row.trend} color={trendColor} />
+                  <Sparkline points={row.trend} color={trendColor} id={`${row.symbol}-${index}`} />
                 </div>
               </div>
             )
