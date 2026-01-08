@@ -1,5 +1,6 @@
 import { GlowCard } from "./GlowCard"
 import { SlidingHighlightBar } from "./HighlightBar"
+import InfoBadge from "./InfoBadge"
 
 function VerticalHighlightGroup({ label }: { label: string }) {
   return (
@@ -31,6 +32,7 @@ export default function GlowGrid() {
       height: 108,
       className: "col-start-1 row-start-1",
       text: "On-Chain Orders",
+      badges: null,
       imageSrc: "/assets/page-3/card1.svg",
     },
     {
@@ -38,6 +40,7 @@ export default function GlowGrid() {
       height: 108,
       className: "col-start-3 row-start-1",
       text: "Stock Tokens",
+      badges: null,
       imageSrc: "/assets/page-3/card2.svg",
     },
     {
@@ -45,6 +48,7 @@ export default function GlowGrid() {
       height: 241,
       className: "col-start-1 row-start-3",
       text: "Liquidity",
+      badges: ["IBKR Broker Order Flow", "DeShare Order Flow"],
       imageSrc: "/assets/page-3/card3.svg",
     },
     {
@@ -52,6 +56,7 @@ export default function GlowGrid() {
       height: 241,
       className: "col-start-3 row-start-3",
       text: "Backed by Real Stocks",
+      badges: null,
       imageSrc: "/assets/page-3/card4.svg",
     },
   ] as const
@@ -71,7 +76,16 @@ export default function GlowGrid() {
       <div className="grid grid-cols-[584px_32px_584px] grid-rows-[108px_32px_241px] items-center justify-items-center">
         {cards.map((card) => (
           <GlowCard key={card.id} height={card.height} className={card.className} imageSrc={card.imageSrc}>
-            {card.text}
+            <div className="flex flex-col items-center gap-6">
+              <div>{card.text}</div>
+              {card.badges && (
+                <div className="flex items-center gap-6">
+                  {card.badges.map((label) => (
+                    <InfoBadge key={label} text={label} />
+                  ))}
+                </div>
+              )}
+            </div>
           </GlowCard>
         ))}
         {horizontalBars.map((bar) => (

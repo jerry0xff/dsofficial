@@ -30,6 +30,7 @@ export function GlowCard({
         {/* hover inset glow */}
         <div
           className="
+          z-10
             pointer-events-none
             absolute inset-0
             opacity-0
