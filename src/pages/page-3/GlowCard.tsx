@@ -1,18 +1,20 @@
 export type CardHeight = 108 | 241
 
+export type GlowCardProps = {
+  height?: CardHeight
+  imageSrc?: string
+  imageY?: string // e.g. "50%", "40%", "60%", "20px"
+  className?: string
+  children?: React.ReactNode
+}
+
 export function GlowCard({
   height = 108,
   imageSrc,
   imageY = "50%",
   className = "",
   children,
-}: {
-  height?: CardHeight
-  imageSrc?: string
-  imageY?: string // e.g. "50%", "40%", "60%", "20px"
-  className?: string
-  children?: React.ReactNode
-}) {
+}: GlowCardProps) {
   const heightClass = height === 108 ? "h-[108px]" : "h-[241px]"
 
   return (
