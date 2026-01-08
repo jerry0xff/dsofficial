@@ -22,7 +22,7 @@ export default function StatsRow({ className = "" }: StatsRowProps) {
         <img src="/assets/page-1/star.png" alt="" className="h-[252px] w-[249px] object-none" aria-hidden="true" />
         <button
           type="button"
-          className="mt-[10px] inline-flex h-[40px] w-[135px] items-center gap-2 rounded-full bg-[#21D2D2] px-6 text-[12px] font-[700] uppercase text-black geist-mono transition hover:opacity-90"
+          className="mt-[10px] inline-flex h-[40px] w-[135px] items-center gap-2 rounded-full bg-[#21D2D2] px-6 text-[12px] font-[700] uppercase text-black geist-mono transition hover:bg-[#00FFFF]"
         >
           <img src="/assets/page-1/star.svg" alt="" className="h-[14px] w-[14px]" aria-hidden="true" />
           Trade now
