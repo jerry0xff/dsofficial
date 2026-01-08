@@ -71,7 +71,7 @@ export function GlowCard({ height = 108, imageSrc, imageY = "50%", className = "
   )
 }
 
-function CornerDots() {
+export function CornerDots() {
   const base = "absolute w-[4px] h-[4px] rounded-full bg-white border border-[color:var(--ColorCyanDefault)]"
 
   return (

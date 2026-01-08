@@ -1,4 +1,4 @@
-import PopularTable from "./PopularTable"
+import PopularTablesPanel from "./PopularTablesPanel"
 
 export default function GlobalAccessHeader() {
   return (
@@ -24,9 +24,7 @@ export default function GlobalAccessHeader() {
         <p>No deposits needed. One step to start trading.</p>
         <p className="mt-1">Simply connect your wallet to trade tokenized stocks instantly.</p>
       </div>
-      <div className="mt-[60px]">
-        <PopularTable />
-      </div>
+      <PopularTablesPanel />
     </div>
   )
 }

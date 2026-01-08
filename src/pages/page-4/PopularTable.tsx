@@ -1,6 +1,9 @@
+import { useId } from "react"
+import { CornerDots } from "../page-3/GlowCard"
+
 type TrendPoint = number
 
-type PopularRow = {
+export type PopularRow = {
   name: string
   symbol: string
   price: string
@@ -69,73 +72,26 @@ function Sparkline({ points, color, id }: { points: TrendPoint[]; color: string;
   )
 }
 
-export default function PopularTable({ title = "Popular" }: { title?: string }) {
-  const randomTrend = () => {
-    let value = 50 + Math.random() * 10
-    return Array.from({ length: 10 }, () => {
-      value += (Math.random() - 0.5) * 4
-      return value
-    })
-  }
-
-  const rows: PopularRow[] = [
-    {
-      name: "Apple Inc.",
-      symbol: "AAPL",
-      price: "$192.45",
-      change: "+0.84%",
-      trend: randomTrend(),
-    },
-    {
-      name: "Apple Inc.",
-      symbol: "AAPL",
-      price: "$192.45",
-      change: "+0.84%",
-      trend: randomTrend(),
-    },
-    {
-      name: "Apple Inc.",
-      symbol: "AAPL",
-      price: "$192.45",
-      change: "-0.84%",
-      trend: randomTrend(),
-    },
-    {
-      name: "Apple Inc.",
-      symbol: "AAPL",
-      price: "$192.45",
-      change: "+0.84%",
-      trend: randomTrend(),
-    },
-    {
-      name: "Apple Inc.",
-      symbol: "AAPL",
-      price: "$192.45",
-      change: "-0.84%",
-      trend: randomTrend(),
-    },
-    {
-      name: "Apple Inc.",
-      symbol: "AAPL",
-      price: "$192.45",
-      change: "+0.84%",
-      trend: randomTrend(),
-    },
-    {
-      name: "Apple Inc.",
-      symbol: "AAPL",
-      price: "$192.45",
-      change: "+0.84%",
-      trend: randomTrend(),
-    },
-  ]
+export default function PopularTable({
+  title = "Popular",
+  rows,
+  height,
+}: {
+  title?: string
+  rows: PopularRow[]
+  height?: number
+}) {
+  const gradientPrefix = useId().replace(/:/g, "")
 
   return (
-    <div className="w-[548px] overflow-hidden border border-[#3B3B45] bg-[#161623]">
+    <div
+      className="relative flex w-[548px] flex-col overflow-visible border border-[#3B3B45] bg-[#161623]"
+      style={height ? { height } : undefined}
+    >
       <div className="px-6 pt-5 text-[16px] font-extrabold text-white font-['TASA_Orbiter',system-ui,sans-serif]">
         {title}
       </div>
-      <div className="max-h-[386px] overflow-y-auto px-6 pb-5 pt-4 no-scrollbar">
+      <div className="flex-1 overflow-y-auto px-6 no-scrollbar mt-2">
         <div className="text-[12px] font-medium leading-none geist-mono tracking-[0.02em] text-white/80 shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
           {rows.map((row, index) => {
             const isUp = row.change.startsWith("+")
@@ -144,7 +100,7 @@ export default function PopularTable({ title = "Popular" }: { title?: string }) 
             return (
               <div
                 key={`${row.symbol}-${index}`}
-                className="flex items-center justify-between px-2 py-3 transition-colors duration-200 hover:bg-[#0A0A17] cursor-pointer"
+                className="flex items-center justify-between px-2 py-2 transition-colors duration-200 hover:bg-[#0A0A17] cursor-pointer"
               >
                 <div className="w-[140px] truncate">{row.name}</div>
                 <div className="w-[64px]">{row.symbol}</div>
@@ -153,13 +109,14 @@ export default function PopularTable({ title = "Popular" }: { title?: string }) 
                   {row.change}
                 </div>
                 <div className="w-[54px]">
-                  <Sparkline points={row.trend} color={trendColor} id={`${row.symbol}-${index}`} />
+                  <Sparkline points={row.trend} color={trendColor} id={`${gradientPrefix}-${index}`} />
                 </div>
               </div>
             )
           })}
         </div>
       </div>
+      <CornerDots />
     </div>
   )
 }
