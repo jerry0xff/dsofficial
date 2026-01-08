@@ -6,6 +6,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
   --ColorCyanDefault: #21d2d2;
+  --ColorDownDefault: #e95f2d;
 }
 
 .geist-mono {
@@ -126,4 +127,12 @@
 }
 .feature-card__button:hover {
   color: #21d2d2;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
 }

@@ -1,3 +1,5 @@
+import PopularTable from "./PopularTable"
+
 export default function GlobalAccessHeader() {
   return (
     <div className="relative flex w-full flex-col items-center">
@@ -21,6 +23,9 @@ export default function GlobalAccessHeader() {
       <div className="mt-[40px] text-center text-[14px] font-[400] text-white/80 geist-mono shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
         <p>No deposits needed. One step to start trading.</p>
         <p className="mt-1">Simply connect your wallet to trade tokenized stocks instantly.</p>
+      </div>
+      <div className="mt-[60px]">
+        <PopularTable />
       </div>
     </div>
   )
