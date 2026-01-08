@@ -39,14 +39,14 @@ export default function GlowGrid() {
       height: 108,
       className: "col-start-1 row-start-1",
       text: "On-Chain Orders",
-      imageSrc: "/assets/page-3/card1.svg",
+      imageSrc: "/assets/page-3/card1.png",
     },
     {
       id: "top-right",
       height: 108,
       className: "col-start-3 row-start-1",
       text: "Stock Tokens",
-      imageSrc: "/assets/page-3/card2.svg",
+      imageSrc: "/assets/page-3/card2.png",
     },
     {
       id: "bottom-left",
@@ -54,7 +54,7 @@ export default function GlowGrid() {
       className: "col-start-1 row-start-3",
       text: "Liquidity",
       badges: ["IBKR Broker Order Flow", "DeShare Order Flow"],
-      imageSrc: "/assets/page-3/card3.svg",
+      imageSrc: "/assets/page-3/card3.png",
       imageY: "45px",
     },
     {
@@ -62,7 +62,7 @@ export default function GlowGrid() {
       height: 241,
       className: "col-start-3 row-start-3",
       text: "Backed by Real Stocks",
-      imageSrc: "/assets/page-3/card4.svg",
+      imageSrc: "/assets/page-3/card4.png",
     },
   ]
 
