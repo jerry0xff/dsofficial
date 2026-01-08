@@ -1,0 +1,18 @@
+import FAQList from "./FAQList"
+
+export default function PageFive() {
+  return (
+    <section className="relative flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 overflow-hidden bg-[#0A0A17]">
+      <div
+        className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"
+        style={{ transform: "translateY(-5%)" }}
+      />
+      <div className="relative z-[1] mt-[80px] flex flex-col items-center">
+        <div className="text-[48px] mb-[20px] font-bold tight-sm text-white font-['TASA_Orbiter',system-ui,sans-serif]">
+          Frequently Asked Questions
+        </div>
+        <FAQList />
+      </div>
+    </section>
+  )
+}
