@@ -24,11 +24,11 @@ export function SlidingHighlightBar({
   const isH = orientation === "horizontal"
   const key = isH
     ? direction === "forward"
-      ? "shineX"
-      : "shineXRev"
+      ? "shineXRev"
+      : "shineX"
     : direction === "forward"
-    ? "shineY"
-    : "shineYRev"
+    ? "shineYRev"
+    : "shineY"
 
   // base size: 32 * 3 (px)
   const sizeClass = isH ? "w-[32px] h-[3px]" : "w-[3px] h-[32px]"
@@ -41,12 +41,7 @@ export function SlidingHighlightBar({
 
   return (
     <div
-      className={[
-        "relative overflow-hidden",
-        sizeClass,
-        rounded ? "rounded-full" : "",
-        className,
-      ].join(" ")}
+      className={["relative overflow-hidden", sizeClass, rounded ? "rounded-full" : "", className].join(" ")}
       style={{
         backgroundColor: "color-mix(in srgb, var(--ColorCyanDefault) 20%, transparent)",
       }}

@@ -1,3 +1,5 @@
+import GlowGrid from "./GlowGrid"
+
 export default function GlobalAccessHeader() {
   return (
     <div className="relative flex w-full flex-col items-center">
@@ -25,6 +27,7 @@ export default function GlobalAccessHeader() {
         </p>
         <p className="mt-1">ensuring your investments remain secure, transparent, and fully compliant.</p>
       </div>
+      <GlowGrid />
     </div>
   )
 }
