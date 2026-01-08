@@ -37,7 +37,7 @@ export default function PageOne() {
       },
       {
         src: "/assets/page-1/map-sh.svg",
-        point: { x: 866, y: 302 },
+        point: { x: 867, y: 302 },
         data: {
           title: "SH",
           price: "$96.18",
@@ -47,7 +47,7 @@ export default function PageOne() {
       },
       {
         src: "/assets/page-1/map-tokyo.svg",
-        point: { x: 974, y: 275 },
+        point: { x: 975, y: 275 },
         data: {
           title: "Tokyo",
           price: "$134.02",
