@@ -40,16 +40,21 @@ export default function HeaderMobile() {
           ].join(" ")}
         >
           <div className="flex flex-col gap-6 uppercase">
-            {mobileMenuItems.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-            <div className="flex items-center gap-2">
-              <span>PRE-IPO</span>
-              <span className="inline-flex items-center gap-1 rounded-full bg-[color:var(--ColorCyanDefault)] px-2 py-[2px] text-[10px] font-semibold text-[#0A0A17]">
-                <img src="/assets/page-1/star.svg" alt="" className="h-[7px] w-[7px]" />
-                NEW
-              </span>
-            </div>
+            {mobileMenuItems.map((item) => {
+              if (item === "PRE-IPO") {
+                return (
+                  <div key={item} className="flex items-center gap-2">
+                    <span>{item}</span>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-[color:var(--ColorCyanDefault)] px-2 py-[2px] text-[10px] font-semibold text-[#0A0A17]">
+                      <img src="/assets/page-1/star.svg" alt="" className="h-[7px] w-[7px]" />
+                      NEW
+                    </span>
+                  </div>
+                )
+              }
+
+              return <span key={item}>{item}</span>
+            })}
             <div className="relative flex flex-col gap-3">
               <button
                 type="button"
