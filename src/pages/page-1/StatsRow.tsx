@@ -17,6 +17,9 @@ type StatsRowProps = {
   valueWeight?: number
   labelSize?: number
   labelWeight?: number
+  starWidth?: number
+  buttonOffset?: number
+  starTranslateY?: number
 }
 
 export default function StatsRow({
@@ -25,14 +28,27 @@ export default function StatsRow({
   valueWeight = 900,
   labelSize = 14,
   labelWeight = 400,
+  starWidth = 400,
+  buttonOffset = 40,
+  starTranslateY = 50,
 }: StatsRowProps) {
   return (
     <div className={`relative flex flex-wrap items-center justify-center gap-10 text-center text-white ${className}`}>
-      <div className="absolute left-1/2 top-1/2 z-0 flex -translate-x-1/2 -translate-y-[50%] flex-col items-center w-[600px]">
-        <img src="/assets/page-1/star.png" alt="" className="h-auto w-[400px] object-contain" aria-hidden="true" />
+      <div
+        className="absolute left-1/2 top-1/2 z-0 flex -translate-x-1/2 flex-col items-center w-[600px]"
+        style={{ transform: `translate(-50%, -${starTranslateY}%)` }}
+      >
+        <img
+          src="/assets/page-1/star.png"
+          alt=""
+          className="h-auto object-contain"
+          style={{ width: starWidth }}
+          aria-hidden="true"
+        />
         <button
           type="button"
-          className="-mt-[40px] inline-flex h-[40px] w-[135px] items-center gap-2 rounded-full bg-[color:var(--ColorCyanDefault)] px-6 text-[12px] font-[700] uppercase text-black geist-mono transition hover:bg-[#00FFFF]"
+          className="inline-flex h-[40px] w-[135px] items-center gap-2 rounded-full bg-[color:var(--ColorCyanDefault)] px-6 text-[12px] font-[700] uppercase text-black geist-mono transition hover:bg-[#00FFFF]"
+          style={{ marginTop: -buttonOffset }}
         >
           <img src="/assets/page-1/star.svg" alt="" className="h-[14px] w-[14px]" aria-hidden="true" />
           Trade now

@@ -1,3 +1,4 @@
+import StatsRow from "./StatsRow"
 import TickerStrip from "./TickerStrip"
 
 type PageOneMobileProps = {
@@ -36,6 +37,16 @@ export default function PageOneMobile({ className = "" }: PageOneMobileProps) {
       <div className="z-10 mt-[20px] text-center text-[10px] font-medium tracking-[0.02em] text-white/80 geist-mono shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
         Decentralized Global Stock Platform
       </div>
+      <StatsRow
+        className="mt-[40px]"
+        valueSize={24}
+        valueWeight={800}
+        labelSize={10}
+        labelWeight={400}
+        starWidth={200}
+        buttonOffset={15}
+        starTranslateY={30}
+      />
     </section>
   )
 }
