@@ -34,12 +34,9 @@ export default function MobileFeatureCard({
           </div>
         </div>
         <img
-          src="/assets/page-5/arrow.svg"
+          src={isOpen ? "/assets/page-5/arrow-card.svg" : "/assets/page-5/arrow.svg"}
           alt=""
-          className={[
-            "h-[16px] w-[16px] transition-transform duration-[20ms] ease-out",
-            isOpen ? "rotate-0" : "rotate-180",
-          ].join(" ")}
+          className={["h-[16px] w-[16px]", isOpen ? "" : "rotate-180"].join(" ")}
         />
       </button>
 
