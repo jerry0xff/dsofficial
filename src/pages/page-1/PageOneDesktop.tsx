@@ -82,12 +82,12 @@ export default function PageOneDesktop({ className = "" }: PageOneDesktopProps) 
               <MapCallout data={currentConfig.data} />
             </div>
           ) : null}
-          {canRenderPrevious && previousConfig?.data ? (
+          {canRenderPrevious && previousConfig?.data && previousConfig?.point ? (
             <div
               className="absolute callout-fade-out"
               style={{
-                left: `${(previousConfig!.point.x / originalWidth) * 100}%`,
-                top: `${(previousConfig!.point.y / originalHeight) * 100}%`,
+                left: `${(previousConfig.point.x / originalWidth) * 100}%`,
+                top: `${(previousConfig.point.y / originalHeight) * 100}%`,
                 transform: "translate(-50%, -100%)",
                 pointerEvents: "none",
               }}

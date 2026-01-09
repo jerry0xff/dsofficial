@@ -1,3 +1,4 @@
+import PartnersRow from "./PartnersRow"
 import StatsRow from "./StatsRow"
 import TickerStrip from "./TickerStrip"
 
@@ -47,6 +48,7 @@ export default function PageOneMobile({ className = "" }: PageOneMobileProps) {
         buttonOffset={15}
         starTranslateY={30}
       />
+      <PartnersRow />
     </section>
   )
 }

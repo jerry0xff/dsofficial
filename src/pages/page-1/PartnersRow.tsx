@@ -20,7 +20,7 @@ export default function PartnersRow() {
       <div className="text-center text-[12px] font-[300] uppercase tracking-[0.02em] text-white/50 font-['DM_Sans',system-ui,sans-serif]">
         Investors & Partners
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-6 text-[10px] font-[300] tracking-[0.02em] text-white/50 font-['DM_Sans',system-ui,sans-serif]">
+      <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[10px] font-[300] tracking-[0.02em] text-white/50 font-['DM_Sans',system-ui,sans-serif]">
         {partners.map((partner) => (
           <div key={partner.name} className="flex items-center gap-1">
             <img src={partner.logo} alt={partner.name} className="h-5 w-auto" />
