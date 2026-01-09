@@ -1,7 +1,7 @@
 import type { LangMenu } from "@/contexts/LanguageContext"
 import { useLanguage } from "@/contexts/LanguageContext"
 
-const languages: Array<{ label: string; value: LangMenu }> = [
+export const languageOptions: Array<{ label: string; value: LangMenu }> = [
   { label: "English", value: "en-US" },
   { label: "简体中文（华语）", value: "zh-CN" },
   { label: "繁體中文（台灣）", value: "zh-TW" },
@@ -19,7 +19,7 @@ export default function LanguagePicker({ onSelect }: LanguagePickerProps) {
       <div className="animate-[fadeIn_160ms_ease-out] border border-[#3B3B45] bg-[#161623] px-[12px] py-[24px] text-[12px] text-white">
         <div className="text-center mb-2 font-[400] text-white/50 geist-mono">Language</div>
         <div role="listbox" className="geist-mono whitespace-nowrap">
-          {languages.map((language) => {
+          {languageOptions.map((language) => {
             const isSelected = language.value === langMenu
             return (
               <button
