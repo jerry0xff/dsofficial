@@ -26,7 +26,7 @@ export default function TickerStrip({
   const durationSeconds = Math.max(tickerItems.length * speedPerItemSeconds, minDurationSeconds)
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full">
       <div className="ticker-track pb-2" style={{ "--ticker-duration": `${durationSeconds}s` } as React.CSSProperties}>
         {[0, 1].map((group) => (
           <div key={group} className="ticker-group">
@@ -55,7 +55,10 @@ export default function TickerStrip({
                   >
                     {item.name}
                   </span>
-                  <span className="ml-2 inline-flex items-center gap-1 whitespace-nowrap font-[700]" style={{ fontSize: changeSize }}>
+                  <span
+                    className="ml-2 inline-flex items-center gap-1 whitespace-nowrap font-[700]"
+                    style={{ fontSize: changeSize }}
+                  >
                     <img
                       src={item.trend === "up" ? "/assets/page-1/up.svg" : "/assets/page-1/down.svg"}
                       alt={item.trend === "up" ? "Up" : "Down"}
