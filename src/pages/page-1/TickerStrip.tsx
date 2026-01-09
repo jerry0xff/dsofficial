@@ -36,7 +36,7 @@ export default function TickerStrip({
                 className="rounded-[20px] bg-[#161623] px-3 py-2 text-white/80"
                 style={{ width: cardWidth, height: cardHeight }}
               >
-                <div className="flex items-center justify-between font-[700] tight-sm geist-mono">
+                <div className="flex items-center justify-between font-[700] tracking-tight-sm geist-mono">
                   <span className="text-white/80 " style={{ fontSize: symbolSize }}>
                     {item.symbol}
                   </span>
@@ -45,7 +45,7 @@ export default function TickerStrip({
                   </span>
                 </div>
                 <div
-                  className={`mt-1 flex items-center justify-between tight-sm ${
+                  className={`mt-1 flex items-center justify-between tracking-tight-sm ${
                     item.trend === "up" ? "text-[color:var(--ColorCyanDefault)]" : "text-[#E95F2D]"
                   }`}
                 >

@@ -23,10 +23,18 @@ export default function PageOneMobile({ className = "" }: PageOneMobileProps) {
         changeSize={10}
         changeIconSize={10}
       />
-      <div className="mt-[90px] w-[100vw] -mx-4 overflow-hidden flex justify-center">
+      <div className="absolute left-1/2 top-[146px] w-[100vw] -translate-x-1/2 overflow-hidden flex justify-center pointer-events-none">
         <div className="h-[348px] w-[670px] flex-none">
           <img src="/assets/page-1/map-empty.svg" alt="" className="h-full w-full" />
         </div>
+      </div>
+      <div className="z-10 mt-[70px] text-center text-[24px] font-bold leading-[140%] tracking-tight-sm text-white font-['TASA_Orbiter',system-ui,sans-serif] shadow-[0px_2px_0px_0px_rgba(10,10,23,0.5)] whitespace-nowrap">
+        Borderless, Barrier-Free
+        <br />
+        Invest in Global Stocks On-Chain
+      </div>
+      <div className="z-10 mt-[20px] text-center text-[10px] font-medium tracking-[0.02em] text-white/80 geist-mono shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
+        Decentralized Global Stock Platform
       </div>
     </section>
   )
