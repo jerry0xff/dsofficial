@@ -15,7 +15,7 @@ export default function MobileFeatureCard({
     <div
       className={[
         "w-full py-3 px-6",
-        "transition-colors duration-[1000ms] ease-out",
+        "transition-colors duration-[800ms] ease-out",
         isOpen ? "bg-[color:var(--ColorCyanDefault)]" : "",
       ].join(" ")}
     >
@@ -26,7 +26,7 @@ export default function MobileFeatureCard({
           </div>
           <div
             className={[
-              "text-[12px] font-medium leading-[150%] geist-mono transition-colors duration-[1000ms] ease-out",
+              "text-[12px] font-medium leading-[150%] geist-mono transition-colors duration-[300ms] ease-out",
               isOpen ? "text-[#0A0A17]" : "text-[color:var(--ColorCyanDefault)]",
             ].join(" ")}
           >
@@ -42,7 +42,7 @@ export default function MobileFeatureCard({
 
       <div
         className={[
-          "grid transition-[grid-template-rows] duration-[1000ms] ease-out",
+          "grid transition-[grid-template-rows] duration-[800ms] ease-out",
           isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
         ].join(" ")}
       >
@@ -50,7 +50,7 @@ export default function MobileFeatureCard({
           <div
             className={[
               "mt-3 text-[10px] font-normal leading-[150%] text-[#3B3B45] geist-mono",
-              "transition-opacity duration-[1000ms] ease-out",
+              "transition-opacity duration-[300ms] ease-out",
               isOpen ? "opacity-100" : "opacity-0",
             ].join(" ")}
           >
