@@ -95,11 +95,11 @@ export default function PopularTable({
         .join(" ")}
       style={style}
     >
-      <div className="px-2 md:px-6 pt-3 text-[16px] font-extrabold text-white font-['TASA_Orbiter',system-ui,sans-serif]">
+      <div className="px-2 pt-2 md:px-6 md:pt-3 text-[16px] font-extrabold text-white font-['TASA_Orbiter',system-ui,sans-serif]">
         {title}
       </div>
       <div className="flex-1 overflow-y-auto px-0 md:px-4 no-scrollbar mt-0 md:mt-2">
-        <div className="text-[12px] font-medium leading-none geist-mono tracking-[0.02em] text-white/80 shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
+        <div className="text-[10px] md:text-[12px] font-medium leading-none geist-mono tracking-[0.02em] text-white/80 shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
           {rows.map((row, index) => {
             const isUp = row.change.startsWith("+")
             const trendColor = isUp ? "var(--ColorCyanDefault)" : "var(--ColorDownDefault)"
@@ -107,7 +107,7 @@ export default function PopularTable({
             return (
               <div
                 key={`${row.symbol}-${index}`}
-                className="flex items-center justify-between px-2 py-2 transition-colors duration-200 hover:bg-[#0A0A17] cursor-pointer"
+                className="flex items-center justify-between px-2 py-[5px] md:py-2 transition-colors duration-200 md:hover:bg-[#0A0A17] cursor-pointer"
               >
                 <div className="w-[140px] truncate">{row.name}</div>
                 <div className="w-[64px]">{row.symbol}</div>
