@@ -76,22 +76,29 @@ export default function PopularTable({
   title = "Popular",
   rows,
   height,
+  width = 548,
+  widthClassName,
 }: {
   title?: string
   rows: PopularRow[]
   height?: number
+  width?: number
+  widthClassName?: string
 }) {
   const gradientPrefix = useId().replace(/:/g, "")
+  const style = widthClassName ? (height ? { height } : undefined) : { width, ...(height ? { height } : {}) }
 
   return (
     <div
-      className="relative flex w-[548px] flex-col overflow-visible border border-[#3B3B45] bg-[#161623]"
-      style={height ? { height } : undefined}
+      className={["relative flex flex-col overflow-visible border border-[#3B3B45] bg-[#161623]", widthClassName]
+        .filter(Boolean)
+        .join(" ")}
+      style={style}
     >
-      <div className="px-6 pt-5 text-[16px] font-extrabold text-white font-['TASA_Orbiter',system-ui,sans-serif]">
+      <div className="px-2 md:px-6 pt-3 text-[16px] font-extrabold text-white font-['TASA_Orbiter',system-ui,sans-serif]">
         {title}
       </div>
-      <div className="flex-1 overflow-y-auto px-6 no-scrollbar mt-2">
+      <div className="flex-1 overflow-y-auto px-0 md:px-4 no-scrollbar mt-0 md:mt-2">
         <div className="text-[12px] font-medium leading-none geist-mono tracking-[0.02em] text-white/80 shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
           {rows.map((row, index) => {
             const isUp = row.change.startsWith("+")

@@ -3,10 +3,10 @@ import PopularTablesPanel from "./PopularTablesPanel"
 export default function GlobalAccessHeader() {
   return (
     <div className="relative flex w-full flex-col items-center">
-      <div className="mt-[30px] md:mt-[180px] text-center text-[10px] md:text-[12px] font-[300] uppercase tracking-tight-sm text-[color:var(--ColorCyanDefault)] geist-mono">
+      <div className="mt-[10px] md:mt-[180px] text-center text-[10px] md:text-[12px] font-[300] uppercase tracking-tight-sm text-[color:var(--ColorCyanDefault)] geist-mono">
         [ Market Insights ]
       </div>
-      <div className="mt-[16px] md:mt-[30px] text-center text-[24px] md:text-[48px] font-bold tracking-tight-sm text-white font-['TASA_Orbiter',system-ui,sans-serif] shadow-[0px_4px_0px_0px_rgba(10,10,23,0.7)]">
+      <div className="mt-[30px] text-center text-[24px] md:text-[48px] font-bold tracking-tight-sm text-white font-['TASA_Orbiter',system-ui,sans-serif] shadow-[0px_4px_0px_0px_rgba(10,10,23,0.7)]">
         Discover{" "}
         <span className="relative inline-flex items-center justify-center overflow-visible leading-none">
           <img
