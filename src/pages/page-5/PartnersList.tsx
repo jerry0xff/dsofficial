@@ -8,7 +8,7 @@ const partners = [
 
 export default function PartnersList() {
   return (
-    <div className="mt-[24px] flex items-center gap-8">
+    <div className="mt-[12px] md:mt-[24px] flex items-center gap-8">
       {partners.map((partner) => (
         <PartnerItem key={partner.name} name={partner.name} logo={partner.logo} />
       ))}

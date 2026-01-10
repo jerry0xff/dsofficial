@@ -12,14 +12,14 @@ export default function ExpandableCard({
   onToggle: () => void
 }) {
   return (
-    <div className="relative w-[1200px] overflow-visible border border-[#3B3B45] bg-[#161623]">
+    <div className="relative w-[345px] md:w-[1200px] overflow-visible border border-[#3B3B45] bg-[#161623]">
       <button
         type="button"
         onClick={onToggle}
-        className="group flex w-full items-center justify-between px-6 py-5 text-left"
+        className="group flex w-full items-center justify-between px-3 md:px-6 py-5 text-left"
         aria-expanded={isOpen}
       >
-        <span className="text-[14px] font-medium text-white geist-mono">{title}</span>
+        <span className="text-[12px] md:text-[14px] font-medium text-white geist-mono">{title}</span>
         <span
           className={[
             "inline-flex h-[20px] w-[20px] items-center justify-center",
@@ -51,7 +51,7 @@ export default function ExpandableCard({
         <div className="overflow-hidden">
           <div
             className={[
-              "px-6 pb-5 text-[12px] font-light leading-[150%] text-white/80 geist-mono",
+              "px-6 pb-5 text-[10px] md:text-[12px] font-light leading-[150%] text-white/80 geist-mono",
               "transition-opacity duration-300",
               isOpen ? "opacity-100" : "opacity-0",
             ].join(" ")}
