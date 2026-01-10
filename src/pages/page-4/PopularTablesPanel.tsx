@@ -44,7 +44,7 @@ const newListingsRows: PopularRow[] = [
 
 export default function PopularTablesPanel() {
   return (
-    <div className="mt-[60px] flex w-full justify-center gap-[32px]">
+    <div className="mt-[20px] md:mt-[60px] flex w-full justify-center gap-[32px]">
       <PopularTable title="Popular" rows={popularRows} height={386} />
       <div className="flex flex-col gap-[32px]">
         <PopularTable title="Top Gainers" rows={topGainersRows} height={177} />
