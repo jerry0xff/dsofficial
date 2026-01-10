@@ -40,7 +40,7 @@ export function GlowCard({
             absolute inset-0
             opacity-0
             transition-opacity duration-[2000ms] ease-linear
-            group-hover:opacity-100
+            md:group-hover:opacity-100
           "
           style={{
             boxShadow: `
@@ -61,7 +61,7 @@ export function GlowCard({
               -translate-x-1/2 -translate-y-1/2
               opacity-0
               transition-opacity duration-[2000ms] ease-linear
-              group-hover:opacity-100
+              md:group-hover:opacity-100
               z-100
             "
             style={{
