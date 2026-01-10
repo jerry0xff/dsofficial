@@ -20,8 +20,8 @@ function VerticalHighlightGroup({ label }: { label: string }) {
         className="
           absolute left-1/2 top-1/2
           -translate-x-1/2 -translate-y-1/2
-          whitespace-nowrap
-          text-[12px] font-semibold leading-none geist-mono
+          w-[100%] text-center
+          text-[10px] md:text-[12px] font-semibold leading-none geist-mono
           text-[color:var(--ColorCyanDefault)]
           shadow-[0px_1px_0px_0px_rgba(10,10,23,0.5)]
         "
@@ -92,10 +92,10 @@ export default function GlowGrid() {
             imageSrc={card.imageSrc}
             imageY={card.imageY}
           >
-            <div className="flex flex-col items-center gap-6">
-              <div>{card.text}</div>
+            <div className="flex flex-col items-center gap-3 md:gap-6">
+              <div className="text-center">{card.text}</div>
               {card.badges && (
-                <div className="flex items-center gap-6">
+                <div className="flex flex-wrap items-center justify-center gap-4 md:flex-nowrap md:gap-6">
                   {card.badges.map((label) => (
                     <InfoBadge key={label} text={label} />
                   ))}
