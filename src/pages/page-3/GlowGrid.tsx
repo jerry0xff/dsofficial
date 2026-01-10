@@ -77,13 +77,18 @@ export default function GlowGrid() {
   ] as const
 
   return (
-    <div className="mt-[80px] flex w-full justify-center">
-      <div className="grid grid-cols-[584px_32px_584px] grid-rows-[108px_32px_241px] items-center justify-items-center">
+    <div className="mt-[30px] md:mt-[80px] flex w-full justify-center">
+      <div className="grid grid-cols-[152px_32px_152px] grid-rows-[52px_32px_248px] items-center justify-items-center md:grid-cols-[584px_32px_584px] md:grid-rows-[108px_32px_241px]">
         {cards.map((card) => (
           <GlowCard
             key={card.id}
             height={card.height}
-            className={card.className}
+            className={[
+              card.className,
+              card.height === 108
+                ? "w-[152px] h-[52px] md:w-[584px] md:h-[108px]"
+                : "w-[152px] h-[248px] md:w-[584px] md:h-[241px]",
+            ].join(" ")}
             imageSrc={card.imageSrc}
             imageY={card.imageY}
           >

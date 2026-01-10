@@ -71,7 +71,7 @@ export function GlowCard({
         )}
 
         {/* content */}
-        <div className="relative z-[2] text-[14px] font-bold leading-none text-white geist-mono">{children}</div>
+        <div className="relative z-[2] text-[12px] md:text-[14px] font-bold leading-none text-white geist-mono">{children}</div>
       </div>
 
       {/* corner dots */}
