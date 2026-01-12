@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  --ColorCyanDefault: #21d2d2;
+  --ColorDownDefault: #e95f2d;
+}
+
+.geist-mono {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes calloutFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes calloutFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.callout-fade-in {
+  animation: calloutFadeIn 300ms ease;
+}
+
+.callout-fade-out {
+  animation: calloutFadeOut 300ms ease;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker var(--ticker-duration, 10s) linear infinite;
+  will-change: transform;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-group {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card__fill {
+  position: absolute;
+  inset: 0;
+  background: #21d2d2;
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 800ms linear;
+  z-index: 0;
+}
+
+.feature-card:hover .feature-card__fill {
+  clip-path: inset(0 0 0 0);
+}
+
+.feature-card__subtitle {
+  color: #21d2d2;
+  transition: color 1s linear;
+}
+
+.feature-card__desc {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 1s linear;
+}
+
+.feature-card:hover .feature-card__subtitle {
+  color: #0a0a17;
+}
+
+.feature-card:hover .feature-card__desc {
+  color: #3b3b45;
+}
+
+.feature-card__button {
+  opacity: 0;
+  transition: opacity 300ms linear;
+  color: #ffffff;
+  transition-property: opacity, color;
+  transition-duration: 300ms, 200ms;
+  transition-timing-function: linear, ease-in-out;
+}
+
+.feature-card:hover .feature-card__button {
+  opacity: 1;
+}
+.feature-card__button:hover {
+  color: #21d2d2;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
