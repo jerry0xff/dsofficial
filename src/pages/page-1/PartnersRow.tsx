@@ -16,7 +16,7 @@ const partners: Partner[] = [
 
 export default function PartnersRow() {
   return (
-    <div className="mt-auto flex w-full max-w-[1200px] flex-col items-center gap-6 pb-[80px]">
+    <div className="mt-[200px] md:mt-auto flex w-full max-w-[1200px] flex-col items-center gap-6 pb-[80px]">
       <div className="text-center text-[12px] font-[300] uppercase tracking-[0.02em] text-white/50 font-['DM_Sans',system-ui,sans-serif]">
         Investors & Partners
       </div>
