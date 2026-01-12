@@ -12,13 +12,13 @@ export default function GlobalAccessHeader() {
           <img
             src="/assets/page-4/circle.svg"
             alt=""
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
             style={{ width: 132, height: 76, marginLeft: 2 }}
             aria-hidden="true"
           />
           <span className="relative z-10">Trading</span>
         </span>{" "}
-        Opportunities
+        <span className="z-10 relative">Opportunities</span>
       </div>
       <div className="mt-[16px] md:mt-[40px] text-center text-[10px] md:text-[14px] font-[400] text-white/80 geist-mono shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
         <p>No deposits needed. One step to start trading.</p>
