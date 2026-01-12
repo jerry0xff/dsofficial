@@ -41,19 +41,39 @@ export default function HeaderMobile() {
         >
           <div className="flex flex-col gap-6 uppercase">
             {mobileMenuItems.map((item) => {
-              if (item === "PRE-IPO") {
+              if (item.label === "PRE-IPO") {
                 return (
-                  <div key={item} className="flex items-center gap-2">
-                    <span>{item}</span>
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={item.target}
+                    rel={item.rel}
+                    className="flex items-center gap-2"
+                  >
+                    <span>{item.label}</span>
                     <span className="inline-flex items-center gap-1 rounded-full bg-[color:var(--ColorCyanDefault)] px-2 py-[2px] text-[10px] font-semibold text-[#0A0A17]">
                       <img src="/assets/page-1/star.svg" alt="" className="h-[7px] w-[7px]" />
                       NEW
                     </span>
-                  </div>
+                  </a>
                 )
               }
 
-              return <span key={item}>{item}</span>
+              if (item.href) {
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={item.target}
+                    rel={item.rel}
+                    onClick={item.label === "FAQ" ? () => setIsMenuOpen(false) : undefined}
+                  >
+                    {item.label}
+                  </a>
+                )
+              }
+
+              return <span key={item.label}>{item.label}</span>
             })}
             <div className="relative flex flex-col gap-3">
               <button

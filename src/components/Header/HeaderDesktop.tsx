@@ -26,27 +26,51 @@ export default function HeaderDesktop() {
   return (
     <div className="hidden md:flex flex-1 items-center justify-between pl-8">
       <nav className="flex items-center gap-6 text-[12px] font-semibold text-white/85 geist-mono">
-        {desktopNavItems.map((item) => (
-          <span key={item} className={navTextClass}>
-            {item}
-          </span>
-        ))}
-        <div className="group relative h-6 w-[104px] cursor-pointer">
+        {desktopNavItems.map((item) =>
+          item.href ? (
+            <a
+              key={item.label}
+              href={item.href}
+              className={navTextClass}
+              target={item.target}
+              rel={item.rel}
+            >
+              {item.label}
+            </a>
+          ) : (
+            <span key={item.label} className={navTextClass}>
+              {item.label}
+            </span>
+          )
+        )}
+        <a href="https://app.deshare.finance/#/pre-ipo" className="group relative h-6 w-[104px] cursor-pointer">
           <img src="/assets/preipo.svg" alt="Pre-IPO" className="h-6 w-[104px] transition group-hover:opacity-0" />
           <img
             src="/assets/preipohover.svg"
             alt="Pre-IPO"
             className="absolute left-0 top-0 h-6 w-[104px] opacity-0 transition group-hover:opacity-100"
           />
-        </div>
+        </a>
       </nav>
 
       <div className="flex items-center gap-5 text-[12px] font-semibold text-white/85 geist-mono">
-        {desktopRightItems.map((item) => (
-          <span key={item} className={navTextClass}>
-            {item}
-          </span>
-        ))}
+        {desktopRightItems.map((item) =>
+          item.href ? (
+            <a
+              key={item.label}
+              href={item.href}
+              className={navTextClass}
+              target={item.target}
+              rel={item.rel}
+            >
+              {item.label}
+            </a>
+          ) : (
+            <span key={item.label} className={navTextClass}>
+              {item.label}
+            </span>
+          )
+        )}
         <div className="relative" ref={languageRef}>
           <button
             type="button"
@@ -75,9 +99,12 @@ export default function HeaderDesktop() {
           </button>
           {isLanguageOpen ? <LanguagePicker onSelect={() => setIsLanguageOpen(false)} /> : null}
         </div>
-        <button className="h-[40px] w-[122px] rounded-full bg-[color:var(--ColorCyanDefault)] px-[24px] py-[8px] text-[12px] font-bold tracking-normal text-[#0b0c1c] transition hover:bg-[#00FFFF]">
+        <a
+          href="https://app.deshare.finance/"
+          className="h-[40px] w-[122px] rounded-full bg-[color:var(--ColorCyanDefault)] px-[24px] py-[8px] text-[12px] font-bold tracking-normal text-[#0b0c1c] transition hover:bg-[#00FFFF] flex items-center justify-center"
+        >
           LAUNCH APP
-        </button>
+        </a>
       </div>
     </div>
   )
