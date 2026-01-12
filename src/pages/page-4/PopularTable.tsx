@@ -105,8 +105,9 @@ export default function PopularTable({
             const trendColor = isUp ? "var(--ColorCyanDefault)" : "var(--ColorDownDefault)"
 
             return (
-              <div
+              <a
                 key={`${row.symbol}-${index}`}
+                href={`https://app.deshare.finance/#/trade?symbol=${encodeURIComponent(row.symbol)}`}
                 className="flex items-center justify-between px-2 py-[5px] md:py-1 transition-colors duration-200 md:hover:bg-[#0A0A17] cursor-pointer"
               >
                 <div className="w-[140px] truncate">{row.name}</div>
@@ -118,7 +119,7 @@ export default function PopularTable({
                 <div className="w-[54px]">
                   <Sparkline points={row.trend} color={trendColor} id={`${gradientPrefix}-${index}`} />
                 </div>
-              </div>
+              </a>
             )
           })}
         </div>
