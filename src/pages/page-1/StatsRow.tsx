@@ -45,14 +45,14 @@ export default function StatsRow({
           style={{ width: starWidth }}
           aria-hidden="true"
         />
-        <button
-          type="button"
+        <a
+          href="https://app.deshare.finance/#/"
           className="inline-flex h-[40px] w-[135px] items-center gap-2 rounded-full bg-[color:var(--ColorCyanDefault)] px-6 text-[12px] font-[700] uppercase text-black geist-mono transition hover:bg-[#00FFFF]"
           style={{ marginTop: -buttonOffset }}
         >
           <img src="/assets/page-1/star.svg" alt="" className="h-[14px] w-[14px]" aria-hidden="true" />
           Trade now
-        </button>
+        </a>
       </div>
       {stats.map((stat) => {
         const displayValue = useCountUp({ end: stat.value })

@@ -56,12 +56,12 @@ export default function MobileFeatureCard({
           >
             {description}
           </div>
-          <button
-            type="button"
-            className="mt-3 inline-flex items-center rounded-full bg-[#0A0A17] px-6 py-2 text-[12px] font-bold uppercase text-white geist-mono"
-          >
-            Trade now
-          </button>
+              <a
+                href="https://app.deshare.finance/#/"
+                className="mt-3 inline-flex items-center rounded-full bg-[#0A0A17] px-6 py-2 text-[12px] font-bold uppercase text-white geist-mono"
+              >
+                Trade now
+              </a>
         </div>
       </div>
     </div>

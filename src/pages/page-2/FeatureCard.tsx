@@ -15,12 +15,12 @@ export default function FeatureCard({ title, subtitle, description }: FeatureCar
         <div className="feature-card__subtitle mt-3 text-[14px] font-bold geist-mono leading-[1.5]">{subtitle}</div>
         <p className="feature-card__desc mt-3 text-[12px] geist-mono leading-[1.5]">{description}</p>
       </div>
-      <button
-        type="button"
+      <a
+        href="https://app.deshare.finance/#/"
         className="feature-card__button absolute bottom-[36px] left-1/2 z-10 -translate-x-1/2 -translate-y-16 rounded-full bg-[#0A0A17] px-6 py-2 text-[12px] font-bold uppercase geist-mono"
       >
         Trade Now
-      </button>
+      </a>
     </div>
   )
 }
