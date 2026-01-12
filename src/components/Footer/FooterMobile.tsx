@@ -22,11 +22,23 @@ export default function FooterMobile({ className = "" }: FooterMobileProps) {
           {footerSections.map((section) => (
             <div key={section.title} className="flex flex-col gap-2">
               <span className="font-bold text-white">{section.title}</span>
-              {section.links.map((link) => (
-                <span key={link} className="text-[10px] font-normal text-white/80">
-                  {link}
-                </span>
-              ))}
+              {section.links.map((link) =>
+                link.href ? (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="text-[10px] font-normal text-white/80"
+                    target={link.target}
+                    rel={link.rel}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <span key={link.label} className="text-[10px] font-normal text-white/80">
+                    {link.label}
+                  </span>
+                )
+              )}
             </div>
           ))}
         </div> */}
@@ -39,9 +51,14 @@ export default function FooterMobile({ className = "" }: FooterMobileProps) {
             <div key={section.title} className="flex flex-col gap-2 text-center">
               <span className="font-bold text-white">{section.title}</span>
               {section.links.map((link) => (
-                <span key={link} className="text-[10px] font-normal text-white/80">
-                  {link}
-                </span>
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.target}
+                  className="text-[10px] font-normal text-white/80"
+                >
+                  {link.label}
+                </a>
               ))}
             </div>
           ))}

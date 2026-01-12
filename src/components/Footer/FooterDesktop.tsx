@@ -25,11 +25,23 @@ export default function FooterDesktop({ className = "" }: FooterDesktopProps) {
             {footerSections.map((section, index) => (
               <div key={section.title} className="flex flex-col gap-2" style={index === 0 ? { marginRight: "80px" } : undefined}>
                 <span className="font-bold text-white">{section.title}</span>
-                {section.links.map((link) => (
-                  <span key={link} className="font-normal text-white/80">
-                    {link}
-                  </span>
-                ))}
+                {section.links.map((link) =>
+                  link.href ? (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="font-normal text-white/80"
+                      target={link.target}
+                      rel={link.rel}
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <span key={link.label} className="font-normal text-white/80">
+                      {link.label}
+                    </span>
+                  )
+                )}
               </div>
             ))}
           </div>
