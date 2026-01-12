@@ -7,8 +7,7 @@ export default function GlobalAccessHeader() {
         [ Trusted Custody ]
       </div>
       <div className="mt-[16px] md:mt-[30px] text-center text-[24px] md:text-[48px] font-bold tracking-tight-sm text-white font-['TASA_Orbiter',system-ui,sans-serif] shadow-[0px_4px_0px_0px_rgba(10,10,23,0.7)]">
-        Your Assets, Held by{" "}
-        <br className="md:hidden" />
+        Your Assets, Held by <br className="md:hidden" />
         <span className="relative inline-flex items-center justify-center overflow-visible leading-none">
           <img
             src="/assets/page-3/circle.svg"
@@ -21,7 +20,7 @@ export default function GlobalAccessHeader() {
         </span>{" "}
         Institutions
       </div>
-      <div className="mt-[16px] md:mt-[40px] text-center text-[10px] md:text-[14px] leading-[1.5] font-[500] md:font-[400] text-white/80 geist-mono shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
+      <div className="mt-[26px] md:mt-[40px] text-center text-[10px] md:text-[14px] leading-[1.5] font-[500] md:font-[400] text-white/80 geist-mono shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
         <p>
           All underlying assets are kept in segregated accounts at Interactive Brokers (IBKR), a NYSE-listed
           institution,

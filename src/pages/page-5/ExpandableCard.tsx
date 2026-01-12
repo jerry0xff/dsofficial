@@ -31,12 +31,12 @@ export default function ExpandableCard({
             <img
               src="/assets/page-5/arrow.svg"
               alt=""
-              className="h-[12px] w-[12px] transition-opacity duration-200 group-hover:opacity-0"
+              className="h-[12px] w-[12px] transition-opacity duration-200 md:group-hover:opacity-0"
             />
             <img
               src="/assets/page-5/arrow-hover.svg"
               alt=""
-              className="absolute left-0 top-0 h-[12px] w-[12px] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+              className="absolute left-0 top-0 h-[12px] w-[12px] opacity-0 transition-opacity duration-200 md:group-hover:opacity-100"
             />
           </span>
         </span>
