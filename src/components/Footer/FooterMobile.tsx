@@ -6,10 +6,13 @@ type FooterMobileProps = {
 
 export default function FooterMobile({ className = "" }: FooterMobileProps) {
   return (
-    <footer className={["flex-none bg-[#0A0A17] text-white pt-20", className].join(" ")} style={{ paddingTop: "100px" }}>
+    <footer className={["flex-none bg-[#0A0A17] text-white pt-0", className].join(" ")} style={{ paddingTop: "10px" }}>
       <div className="mx-auto flex w-full max-w-[375px] flex-col items-center px-6 py-10 text-center">
         <img src="/assets/logo.svg" alt="DeShare" className="h-[24px] w-[129px]" />
-        <div className=" flex flex-col gap-2 text-[10px] font-[400] uppercase geist-mono text-white/80" style={{ marginTop: "16px" }}>
+        <div
+          className=" flex flex-col gap-2 text-[10px] font-[400] uppercase geist-mono text-white/80"
+          style={{ marginTop: "16px" }}
+        >
           {footerTagline.map((line) => (
             <span key={line}>{line}</span>
           ))}
@@ -28,7 +31,10 @@ export default function FooterMobile({ className = "" }: FooterMobileProps) {
           ))}
         </div> */}
 
-        <div className="flex w-full justify-between px-4 text-[12px] uppercase geist-mono" style={{ marginTop: "36px" }}>
+        <div
+          className="flex w-full justify-between px-4 text-[12px] uppercase geist-mono"
+          style={{ marginTop: "36px" }}
+        >
           {footerSections.map((section) => (
             <div key={section.title} className="flex flex-col gap-2 text-center">
               <span className="font-bold text-white">{section.title}</span>
@@ -41,7 +47,10 @@ export default function FooterMobile({ className = "" }: FooterMobileProps) {
           ))}
         </div>
 
-        <div className="text-center text-[10px] font-normal uppercase geist-mono text-white/80" style={{margin: "36px 0 80px 0"}}>
+        <div
+          className="text-center text-[10px] font-normal uppercase geist-mono text-white/80"
+          style={{ margin: "36px 0 80px 0" }}
+        >
           © {currentYear} DeShare International Ltd. All Rights Reserved.
         </div>
       </div>
