@@ -31,8 +31,9 @@ export default function TickerStrip({
         {[0, 1].map((group) => (
           <div key={group} className="ticker-group">
             {tickerItems.map((item) => (
-              <div
+              <a
                 key={`${group}-${item.symbol}`}
+                href={`https://app.deshare.finance/#/trade?symbol=${encodeURIComponent(item.symbol)}`}
                 className="rounded-[20px] bg-[#161623] px-3 py-2 text-white/80"
                 style={{ width: cardWidth, height: cardHeight }}
               >
@@ -67,7 +68,7 @@ export default function TickerStrip({
                     {item.change}
                   </span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         ))}
