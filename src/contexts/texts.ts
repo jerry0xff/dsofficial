@@ -118,6 +118,21 @@ const en = {
       },
     },
   },
+  page4: {
+    headerTag: "[ MARKET INSIGHTS ]",
+    hero: {
+      titlePrefix: "Discover",
+      titleHighlight: "Trading",
+      titleSuffix: "Opportunities",
+      line1: "No deposits needed. One step to start trading.",
+      line2: "Simply connect your wallet to trade tokenized stocks instantly.",
+    },
+    tables: {
+      popular: "Popular",
+      topGainers: "Top Gainers",
+      newListings: "New Listings",
+    },
+  },
   faq: {
     list: [
       {
@@ -273,6 +288,22 @@ const zh: TextSchema = {
       },
     },
   },
+  page4: {
+    headerTag: "[ 市场洞察 ]",
+    hero: {
+      titlePrefix: "发现",
+      titleHighlight: "交易",
+      titleSuffix: "机会",
+      line1: "无需充值，一步即可开始交易。",
+      line2: "只需连接您的钱包，即可即时交易代币化股票。",
+    },
+    tables: {
+      popular: "热门",
+      topGainers: "涨幅榜",
+      newListings: "新上线",
+    },
+  },
+
 }
 
 function makeZhHantFrom<T>(source: T): T {
