@@ -1,14 +1,16 @@
 import { useCountUp } from "@/hooks/useCountUp"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
 
 type StatItem = {
   value: number
-  label: string
+  labelKey: "hkStocks" | "nasdaqStocks" | "newYorkStocks"
 }
 
 const stats: StatItem[] = [
-  { value: 1214, label: "HK STOCKS" },
-  { value: 3789, label: "NASDAQ STOCKS" },
-  { value: 500, label: "NEW YORK STOCKS" },
+  { value: 1214, labelKey: "hkStocks" },
+  { value: 3789, labelKey: "nasdaqStocks" },
+  { value: 500, labelKey: "newYorkStocks" },
 ]
 
 type StatsRowProps = {
@@ -32,6 +34,9 @@ export default function StatsRow({
   buttonOffset = 40,
   starTranslateY = 50,
 }: StatsRowProps) {
+  const { lang } = useLanguage()
+  const { page1 } = getTexts(lang)
+
   return (
     <div className={`relative flex flex-wrap items-center justify-center gap-10 text-center text-white ${className}`}>
       <div
@@ -51,18 +56,18 @@ export default function StatsRow({
           style={{ marginTop: -buttonOffset }}
         >
           <img src="/assets/page-1/star.svg" alt="" className="h-[14px] w-[14px]" aria-hidden="true" />
-          Trade now
+          {page1.tradeNow}
         </a>
       </div>
       {stats.map((stat) => {
         const displayValue = useCountUp({ end: stat.value })
         return (
-          <div key={stat.label} className="relative z-10">
+          <div key={stat.labelKey} className="relative z-10">
             <div className="geist-mono" style={{ fontSize: valueSize, fontWeight: valueWeight }}>
               {displayValue}
             </div>
             <div className="mt-1 uppercase geist-mono" style={{ fontSize: labelSize, fontWeight: labelWeight }}>
-              {stat.label}
+              {page1.stats[stat.labelKey]}
             </div>
           </div>
         )

@@ -14,6 +14,47 @@ const en = {
     whitePaper: "WHITEPAPER",
     launchApp: "LAUNCH APP",
   },
+  page1: {
+    mobileHero: {
+      line1: "Borderless, Barrier-Free",
+      line2: "Invest in Global Stocks On-Chain",
+      subtitle: "Decentralized Global Stock Platform",
+    },
+    desktopHero: {
+      title: "Trade global stock with crypto",
+      subtitle: "The Most Comprehensive Tokenized Stock Trading Market",
+    },
+    stats: {
+      hkStocks: "HK STOCKS",
+      nasdaqStocks: "NASDAQ STOCKS",
+      newYorkStocks: "NEW YORK STOCKS",
+    },
+    tradeNow: "Trade now",
+    partnersTitle: "Investors & Partners",
+    mapSubtitles: {
+      nyc: "Manhattan Exchange",
+      sf: "Bay Area Hub",
+      sh: "Pudong Market",
+      tokyo: "Shinjuku Desk",
+    },
+    tickerNames: {
+      tencent: "Tencent Holdings Holdings",
+      alibabaGroup: "Alibaba Group",
+      apple: "Apple Inc.",
+      microsoft: "Microsoft Corp.",
+      nvidia: "NVIDIA Corp.",
+      toyota: "Toyota Motor",
+      tesla: "Tesla, Inc.",
+      alibabaAdr: "Alibaba ADR",
+      amazon: "Amazon.com, Inc.",
+      alphabet: "Alphabet Class A",
+      meta: "Meta Platforms",
+    },
+    tickerAlt: {
+      up: "Up",
+      down: "Down",
+    },
+  },
   faq: {
     list: [
       {
@@ -64,7 +105,48 @@ const zh: TextSchema = {
         a: '我们的订单流动性来源于双重保障：既依托于平台自身的链上流动性，也聚合了合作券商的传统流动性。通过整合这两种资源，我们确保您的订单能够获得优于或至少不逊于传统券商平台的交易价格和流动性体验。',
       }
     ]
-  }
+  },
+  page1: {
+    mobileHero: {
+      line1: "无国界，无壁垒",
+      line2: "链上投资全球股票",
+      subtitle: "去中心化全球股票平台",
+    },
+    desktopHero: {
+      title: "用加密货币交易全球股票",
+      subtitle: "最全面的代币化股票交易市场",
+    },
+    stats: {
+      hkStocks: "港股",
+      nasdaqStocks: "纳斯达克股票",
+      newYorkStocks: "纽约股票",
+    },
+    tradeNow: "立即交易",
+    partnersTitle: "投资方与合作伙伴",
+    mapSubtitles: {
+      nyc: "曼哈顿交易所",
+      sf: "湾区枢纽",
+      sh: "浦东市场",
+      tokyo: "新宿交易台",
+    },
+    tickerNames: {
+      tencent: "腾讯控股",
+      alibabaGroup: "阿里巴巴集团",
+      apple: "苹果公司",
+      microsoft: "微软公司",
+      nvidia: "英伟达公司",
+      toyota: "丰田汽车",
+      tesla: "特斯拉",
+      alibabaAdr: "阿里巴巴ADR",
+      amazon: "亚马逊公司",
+      alphabet: "Alphabet A类",
+      meta: "Meta Platforms",
+    },
+    tickerAlt: {
+      up: "上涨",
+      down: "下跌",
+    },
+  },
 }
 
 function makeZhHantFrom<T>(source: T): T {

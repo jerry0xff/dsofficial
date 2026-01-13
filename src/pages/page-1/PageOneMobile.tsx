@@ -1,12 +1,17 @@
 import PartnersRow from "./PartnersRow"
 import StatsRow from "./StatsRow"
 import TickerStrip from "./TickerStrip"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
 
 type PageOneMobileProps = {
   className?: string
 }
 
 export default function PageOneMobile({ className = "" }: PageOneMobileProps) {
+  const { lang } = useLanguage()
+  const { page1 } = getTexts(lang)
+
   return (
     <section
       className={[
@@ -31,12 +36,12 @@ export default function PageOneMobile({ className = "" }: PageOneMobileProps) {
         </div>
       </div>
       <div className="z-10 mt-[70px] text-center text-[24px] font-bold leading-[140%] tracking-tight-sm text-white font-['TASA_Orbiter',system-ui,sans-serif] shadow-[0px_2px_0px_0px_rgba(10,10,23,0.5)] whitespace-nowrap">
-        Borderless, Barrier-Free
+        {page1.mobileHero.line1}
         <br />
-        Invest in Global Stocks On-Chain
+        {page1.mobileHero.line2}
       </div>
       <div className="z-10 mt-[20px] text-center text-[10px] font-medium tracking-[0.02em] text-white/80 geist-mono shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
-        Decentralized Global Stock Platform
+        {page1.mobileHero.subtitle}
       </div>
       <StatsRow
         className="mt-[40px]"

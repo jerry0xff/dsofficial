@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
 import MapCallout from "./MapCallout"
 import PartnersRow from "./PartnersRow"
 import StatsRow from "./StatsRow"
 import TickerStrip from "./TickerStrip"
-import { mapConfigs } from "./data"
+import { getMapConfigs } from "./data"
 
 type PageOneDesktopProps = {
   className?: string
@@ -12,6 +14,9 @@ type PageOneDesktopProps = {
 export default function PageOneDesktop({ className = "" }: PageOneDesktopProps) {
   const originalWidth = 1272.48
   const originalHeight = 660.6
+  const { lang } = useLanguage()
+  const { page1 } = getTexts(lang)
+  const mapConfigs = getMapConfigs(page1.mapSubtitles)
 
   const [backgroundIndex, setBackgroundIndex] = useState(0)
   const [prevIndex, setPrevIndex] = useState<number | null>(null)
@@ -100,10 +105,10 @@ export default function PageOneDesktop({ className = "" }: PageOneDesktopProps) 
 
       <TickerStrip />
       <div className="mt-[73px] z-10 text-center text-[48px] font-black uppercase text-white font-['DM_Sans',system-ui,sans-serif]">
-        Trade global stock with crypto
+        {page1.desktopHero.title}
       </div>
       <div className="mt-[30px] text-center text-[16px] font-medium uppercase tracking-[0.02em] text-white font-['DM_Sans',system-ui,sans-serif] shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
-        The Most Comprehensive Tokenized Stock Trading Market
+        {page1.desktopHero.subtitle}
       </div>
       <StatsRow className="mt-[55px]" />
       <PartnersRow />

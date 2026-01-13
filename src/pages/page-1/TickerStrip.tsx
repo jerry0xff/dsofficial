@@ -1,4 +1,6 @@
-import { tickerItems } from "./data"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
+import { getTickerItems } from "./data"
 
 type TickerStripProps = {
   cardWidth?: number
@@ -23,6 +25,9 @@ export default function TickerStrip({
   changeSize = 12,
   changeIconSize = 12,
 }: TickerStripProps) {
+  const { lang } = useLanguage()
+  const { page1 } = getTexts(lang)
+  const tickerItems = getTickerItems(page1.tickerNames)
   const durationSeconds = Math.max(tickerItems.length * speedPerItemSeconds, minDurationSeconds)
 
   return (
@@ -62,7 +67,7 @@ export default function TickerStrip({
                   >
                     <img
                       src={item.trend === "up" ? "/assets/page-1/up.svg" : "/assets/page-1/down.svg"}
-                      alt={item.trend === "up" ? "Up" : "Down"}
+                      alt={item.trend === "up" ? page1.tickerAlt.up : page1.tickerAlt.down}
                       style={{ width: changeIconSize, height: changeIconSize }}
                     />
                     {item.change}
