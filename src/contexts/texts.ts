@@ -133,6 +133,10 @@ const en = {
       newListings: "New Listings",
     },
   },
+  page5: {
+    faqTitle: "Frequently Asked Questions",
+    partnersTitle: "Partners",
+  },
   faq: {
     list: [
       {
@@ -303,7 +307,10 @@ const zh: TextSchema = {
       newListings: "新上线",
     },
   },
-
+  page5: {
+    faqTitle: "常见问题",
+    partnersTitle: "合作伙伴",
+  },
 }
 
 function makeZhHantFrom<T>(source: T): T {

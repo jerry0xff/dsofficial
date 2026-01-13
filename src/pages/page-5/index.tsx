@@ -1,7 +1,12 @@
 import FAQList from "./FAQList"
 import PartnersList from "./PartnersList"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
 
 export default function PageFive() {
+  const { lang } = useLanguage()
+  const { page5 } = getTexts(lang)
+
   return (
     <section
       id="page-5"
@@ -13,11 +18,11 @@ export default function PageFive() {
       />
       <div className="relative z-[1] mt-[80px] flex flex-col items-center">
         <div className="text-[24px] md:text-[48px] mb-[20px] font-bold tracking-tight-sm text-white font-['TASA_Orbiter',system-ui,sans-serif]">
-          Frequently Asked Questions
+          {page5.faqTitle}
         </div>
         <FAQList />
         <div className="mt-[60px] md:mt-[120px] text-[24px] md:text-[48px] font-bold tracking-tight-sm text-white font-['TASA_Orbiter',system-ui,sans-serif]">
-          Partners
+          {page5.partnersTitle}
         </div>
         <PartnersList />
       </div>
