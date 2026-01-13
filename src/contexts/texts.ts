@@ -137,6 +137,21 @@ const en = {
     faqTitle: "Frequently Asked Questions",
     partnersTitle: "Partners",
   },
+  footer: {
+    tagline: ["Borderless, Barrier-Free", "Invest in Global Stocks On-Chain"],
+    sections: {
+      documentation: {
+        title: "Documentation",
+        whitepaper: "Whitepaper",
+      },
+      community: {
+        title: "Community",
+        telegram: "Telegram",
+        xTwitter: "X (Twitter)",
+      },
+    },
+    copyright: "© {year} DeShare International Ltd. All Rights Reserved.",
+  },
   faq: {
     list: [
       {
@@ -311,6 +326,22 @@ const zh: TextSchema = {
     faqTitle: "常见问题",
     partnersTitle: "合作伙伴",
   },
+  footer: {
+    tagline: ["无国界 · 无门槛", "链上投资全球股票"],
+    sections: {
+      documentation: {
+        title: "文档",
+        whitepaper: "白皮书",
+      },
+      community: {
+        title: "社区",
+        telegram: "Telegram",
+        xTwitter: "X（Twitter）",
+      },
+    },
+    copyright: "© {year} DeShare International Ltd. 保留所有权利。",
+  },
+
 }
 
 function makeZhHantFrom<T>(source: T): T {
