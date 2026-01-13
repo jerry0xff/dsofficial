@@ -1,14 +1,14 @@
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
 import { GlowCard, type GlowCardProps } from "./GlowCard"
 import { SlidingHighlightBar } from "./HighlightBar"
 import InfoBadge from "./InfoBadge"
-import { useLanguage } from "@/contexts/LanguageContext"
-import { getTexts } from "@/contexts/texts"
 
 type GlowGridCard = {
   id: string
   text: string
   className: string
-  badges?: string[]
+  badges?: readonly string[]
 } & Pick<GlowCardProps, "height" | "imageSrc" | "imageY">
 
 function VerticalHighlightGroup({ label }: { label: string }) {
