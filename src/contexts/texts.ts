@@ -55,6 +55,37 @@ const en = {
       down: "Down",
     },
   },
+  page2: {
+    headerTag: "[ GLOBAL ACCESS ]",
+    hero: {
+      titlePrefix: "Trade Global Stocks",
+      titleHighlight: "On-Chain,",
+      titleSuffix: "Anytime",
+      line1: "Barrier-free access to global markets, 24/7.",
+      line2: "Trade 5,000+ stocks in a truly decentralized way - no pre-deposit required.",
+    },
+    featureCards: [
+      {
+        title: "Spot Trading",
+        subtitle: "Trade tokenized stocks directly, on-chain.",
+        description:
+          "Buy and sell tokenized global stocks with transparent on-chain execution. No pre-deposit required - simply connect your wallet and trade instantly, with full control over your assets.",
+      },
+      {
+        title: "Leverage",
+        subtitle: "Leverage global markets with flexibility.",
+        description:
+          "Access derivative products with leverage, designed for more advanced trading strategies. Trade with precision while maintaining a non-custodial, on-chain experience.",
+      },
+      {
+        title: "New Listings",
+        subtitle: "Discover newly listed tokenized stocks.",
+        description:
+          "Get early access to newly listed tokenized stocks and emerging market opportunities. Explore new assets as they become available - all within a decentralized trading environment.",
+      },
+    ],
+    tradeNow: "Trade now",
+  },
   faq: {
     list: [
       {
@@ -146,6 +177,37 @@ const zh: TextSchema = {
       up: "上涨",
       down: "下跌",
     },
+  },
+  page2: {
+    headerTag: "[ 全球通达 ]",
+    hero: {
+      titlePrefix: "交易全球股票",
+      titleHighlight: "链上,",
+      titleSuffix: "随时可达",
+      line1: "全天候无门槛进入全球市场。",
+      line2: "以去中心化方式交易 5,000+ 股票，无需预存资金。",
+    },
+    featureCards: [
+      {
+        title: "现货交易",
+        subtitle: "直接在链上交易代币化股票。",
+        description:
+          "买卖全球代币化股票，链上执行透明可查。无需预存资金，只需连接钱包即可即时交易，并始终掌控资产。",
+      },
+      {
+        title: "杠杆",
+        subtitle: "更灵活地参与全球市场。",
+        description:
+          "提供带杠杆的衍生品，适合更高级的交易策略。在非托管、链上体验下进行更精准的交易。",
+      },
+      {
+        title: "新上市",
+        subtitle: "发现新上市的代币化股票。",
+        description:
+          "优先获取新上市代币化股票和新兴市场机会。资产一上线即可探索，完全在去中心化交易环境中完成。",
+      },
+    ],
+    tradeNow: "立即交易",
   },
 }
 

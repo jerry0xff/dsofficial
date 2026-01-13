@@ -1,3 +1,6 @@
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
+
 type FeatureCardProps = {
   title: string
   subtitle: string
@@ -5,6 +8,9 @@ type FeatureCardProps = {
 }
 
 export default function FeatureCard({ title, subtitle, description }: FeatureCardProps) {
+  const { lang } = useLanguage()
+  const { page2 } = getTexts(lang)
+
   return (
     <div className="feature-card flex h-[420px] w-[480px] flex-col items-center justify-center text-center text-white">
       <div className="feature-card__fill" aria-hidden="true" />
@@ -13,13 +19,13 @@ export default function FeatureCard({ title, subtitle, description }: FeatureCar
           {title}
         </h3>
         <div className="feature-card__subtitle mt-3 text-[14px] font-bold geist-mono leading-[1.5]">{subtitle}</div>
-        <p className="feature-card__desc mt-3 text-[12px] geist-mono leading-[1.5]">{description}</p>
+        <p className="feature-card__desc mt-3 text-[12px] geist-mono leading-[1.5] px-4">{description}</p>
       </div>
       <a
         href="https://app.deshare.finance/#/"
         className="feature-card__button absolute bottom-[36px] left-1/2 z-10 -translate-x-1/2 -translate-y-16 rounded-full bg-[#0A0A17] px-6 py-2 text-[12px] font-bold uppercase geist-mono"
       >
-        Trade Now
+        {page2.tradeNow}
       </a>
     </div>
   )

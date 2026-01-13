@@ -1,3 +1,6 @@
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
+
 export default function MobileFeatureCard({
   title,
   subtitle,
@@ -11,6 +14,9 @@ export default function MobileFeatureCard({
   isOpen: boolean
   onToggle: () => void
 }) {
+  const { lang } = useLanguage()
+  const { page2 } = getTexts(lang)
+
   return (
     <div
       className={[
@@ -56,12 +62,12 @@ export default function MobileFeatureCard({
           >
             {description}
           </div>
-              <a
-                href="https://app.deshare.finance/#/"
-                className="mt-3 inline-flex items-center rounded-full bg-[#0A0A17] px-6 py-2 text-[12px] font-bold uppercase text-white geist-mono"
-              >
-                Trade now
-              </a>
+          <a
+            href="https://app.deshare.finance/#/"
+            className="mt-3 inline-flex items-center rounded-full bg-[#0A0A17] px-6 py-2 text-[12px] font-bold uppercase text-white geist-mono"
+          >
+            {page2.tradeNow}
+          </a>
         </div>
       </div>
     </div>
