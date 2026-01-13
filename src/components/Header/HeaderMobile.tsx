@@ -1,12 +1,15 @@
 import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
 import { useMemo, useState } from "react"
 import { languageOptions } from "../LanguagePicker"
-import { mobileMenuItems } from "./headerData"
+import { getMobileMenuItems } from "./headerData"
 
 export default function HeaderMobile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMobileLangOpen, setIsMobileLangOpen] = useState(false)
-  const { langMenu, setLangMenu } = useLanguage()
+  const { lang, langMenu, setLangMenu } = useLanguage()
+  const { header } = getTexts(lang)
+  const mobileMenuItems = getMobileMenuItems(header)
   const currentLanguageLabel = useMemo(
     () => languageOptions.find((option) => option.value === langMenu)?.label ?? "English",
     [langMenu]
@@ -66,7 +69,7 @@ export default function HeaderMobile() {
                     href={item.href}
                     target={item.target}
                     rel={item.rel}
-                    onClick={item.label === "FAQ" ? () => setIsMenuOpen(false) : undefined}
+                    onClick={item.href === "#page-5" ? () => setIsMenuOpen(false) : undefined}
                   >
                     {item.label}
                   </a>
