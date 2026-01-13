@@ -1,12 +1,16 @@
 import Content from "./Content"
 import FeatureCard from "./FeatureCard"
-import { featureCards } from "./data"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
 
 type PageTwoDesktopProps = {
   className?: string
 }
 
 export default function PageTwoDesktop({ className = "" }: PageTwoDesktopProps) {
+  const { lang } = useLanguage()
+  const { page2 } = getTexts(lang)
+
   return (
     <section
       className={[
@@ -24,7 +28,7 @@ export default function PageTwoDesktop({ className = "" }: PageTwoDesktopProps) 
       </div>
       <Content />
       <div className="relative z-10 mt-auto flex w-full max-w-[1500px] flex-col items-center justify-center gap-0 px-4 md:flex-row md:items-start">
-        {featureCards.map((card) => (
+        {page2.featureCards.map((card) => (
           <FeatureCard key={card.title} title={card.title} subtitle={card.subtitle} description={card.description} />
         ))}
       </div>

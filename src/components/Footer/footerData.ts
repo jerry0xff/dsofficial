@@ -1,6 +1,20 @@
 export const currentYear = new Date().getFullYear()
 
-export const footerTagline = ["Borderless, Barrier-Free", "Invest in Global Stocks On-Chain"]
+export type FooterText = {
+  tagline: string[]
+  sections: {
+    documentation: {
+      title: string
+      whitepaper: string
+    }
+    community: {
+      title: string
+      telegram: string
+      xTwitter: string
+    }
+  }
+  copyright: string
+}
 
 export type FooterLink = {
   label: string
@@ -9,16 +23,29 @@ export type FooterLink = {
   rel?: string
 }
 
-export const footerSections: Array<{ title: string; links: FooterLink[] }> = [
-  {
-    title: "Documentation",
-    links: [{ label: "Whitepaper", href: "https://doc.deshare.finance/", target: "_blank", rel: "noreferrer" }],
-  },
-  {
-    title: "Community",
-    links: [
-      { label: "Telegram", href: "https://t.me/desharefinance", target: "_blank", rel: "noreferrer" },
-      { label: "X (Twitter)", href: "https://x.com/Deshare_finance", target: "_blank", rel: "noreferrer" },
-    ],
-  },
-]
+export function getFooterTagline(text: FooterText) {
+  return text.tagline
+}
+
+export function getFooterSections(text: FooterText): Array<{ title: string; links: FooterLink[] }> {
+  return [
+    {
+      title: text.sections.documentation.title,
+      links: [
+        {
+          label: text.sections.documentation.whitepaper,
+          href: "https://doc.deshare.finance/",
+          target: "_blank",
+          rel: "noreferrer",
+        },
+      ],
+    },
+    {
+      title: text.sections.community.title,
+      links: [
+        { label: text.sections.community.telegram, href: "https://t.me/desharefinance", target: "_blank", rel: "noreferrer" },
+        { label: text.sections.community.xTwitter, href: "https://x.com/Deshare_finance", target: "_blank", rel: "noreferrer" },
+      ],
+    },
+  ]
+}

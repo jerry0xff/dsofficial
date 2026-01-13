@@ -1,32 +1,4 @@
 // src/i18n/texts.ts
-import build1 from "@/assets/build-1.svg"
-import build2 from "@/assets/build-2.svg"
-import build3 from "@/assets/build-3.svg"
-import build4 from "@/assets/build-4.svg"
-import buildForEdge from "@/assets/build-for-edge.svg"
-import cn_build1 from "@/assets/cn-build-1.svg"
-import cn_build2 from "@/assets/cn-build-2.svg"
-import cn_build3 from "@/assets/cn-build-3.svg"
-import cn_build4 from "@/assets/cn-build-4.svg"
-import cn_buildForEdge from "@/assets/cn-build-for-edge.svg"
-import cn_investorsAndPartners from "@/assets/cn-investors-and-partners.svg"
-import cn_mainWord from "@/assets/cn-main-word.svg"
-import cn_nextGen from "@/assets/cn-next-gen.svg"
-import cn_real from "@/assets/cn-real.svg"
-import build1H5 from "@/assets/h5-build-1.svg"
-import build2H5 from "@/assets/h5-build-2.svg"
-import build3H5 from "@/assets/h5-build-3.svg"
-import build4H5 from "@/assets/h5-build-4.svg"
-import cn_build1H5 from "@/assets/h5-cn-build-1.svg"
-import cn_build2H5 from "@/assets/h5-cn-build-2.svg"
-import cn_build3H5 from "@/assets/h5-cn-build-3.svg"
-import cn_build4H5 from "@/assets/h5-cn-build-4.svg"
-import cn_h5_investorsAndPartners from "@/assets/h5-cn-investors-and-partners.svg"
-import h5_investorsAndPartners from "@/assets/h5-investors-and-partners.svg"
-import investorsAndPartners from "@/assets/investors-and-partners.svg"
-import mainWord from "@/assets/main-word.svg"
-import nextGen from "@/assets/next-gen.svg"
-import real from "@/assets/real.svg"
 import { Converter } from "opencc-js"
 
 export type Lang = "en" | "zh" | "zh-Hant"
@@ -35,48 +7,150 @@ const toHant = Converter({ from: "cn", to: "tw" })
 
 const en = {
   header: {
-    howItWorks: "How it works",
+    market: 'MARKET',
+    trade: 'TRADE',
+    portfolio: 'PORTFOLIO',
     faq: "FAQ",
-    whitePaper: "White Paper",
-    launchApp: "Launch App",
+    whitePaper: "WHITEPAPER",
+    launchApp: "LAUNCH APP",
   },
-  firstSection: {
-    description: "The Most Comprehensive Tokenized Stock Trading Market",
-    launchButton: "Launch App",
-    hkStocks: "HK Stocks",
-    nasdaqStocks: "Nasdaq Stocks",
-    newYorkStocks: "New York Stocks",
-    mainWordSvg: mainWord,
+  page1: {
+    mobileHero: {
+      line1: "Borderless, Barrier-Free",
+      line2: "Invest in Global Stocks On-Chain",
+      subtitle: "Decentralized Global Stock Platform",
+    },
+    desktopHero: {
+      title: "Trade global stock with crypto",
+      subtitle: "The Most Comprehensive Tokenized Stock Trading Market",
+    },
+    stats: {
+      hkStocks: "HK STOCKS",
+      nasdaqStocks: "NASDAQ STOCKS",
+      newYorkStocks: "NEW YORK STOCKS",
+    },
+    tradeNow: "Trade now",
+    partnersTitle: "Investors & Partners",
+    mapSubtitles: {
+      nyc: "Manhattan Exchange",
+      sf: "Bay Area Hub",
+      sh: "Pudong Market",
+      tokyo: "Shinjuku Desk",
+    },
+    tickerNames: {
+      tencent: "Tencent Holdings Holdings",
+      alibabaGroup: "Alibaba Group",
+      apple: "Apple Inc.",
+      microsoft: "Microsoft Corp.",
+      nvidia: "NVIDIA Corp.",
+      toyota: "Toyota Motor",
+      tesla: "Tesla, Inc.",
+      alibabaAdr: "Alibaba ADR",
+      amazon: "Amazon.com, Inc.",
+      alphabet: "Alphabet Class A",
+      meta: "Meta Platforms",
+    },
+    tickerAlt: {
+      up: "Up",
+      down: "Down",
+    },
   },
-  secSection: {
-    barrierFreeTrading: "Barrier-Free Global Stock Trading",
-    aroundClockTrading: "24/7 Trading",
-    stocks2000Plus: "2000+ Stocks",
-    trulyDecentralized: "Truly decentralized, ",
-    noPreDeposit: "No Pre-Deposit",
-    nextGenSvg: nextGen,
+  page2: {
+    headerTag: "[ GLOBAL ACCESS ]",
+    hero: {
+      titlePrefix: "Trade Global Stocks",
+      titleHighlight: "On-Chain,",
+      titleSuffix: "Anytime",
+      line1: "Barrier-free access to global markets, 24/7.",
+      line2: "Trade 5,000+ stocks in a truly decentralized way - no pre-deposit required.",
+    },
+    featureCards: [
+      {
+        title: "Spot Trading",
+        subtitle: "Trade tokenized stocks directly, on-chain.",
+        description:
+          "Buy and sell tokenized global stocks with transparent on-chain execution. No pre-deposit required - simply connect your wallet and trade instantly, with full control over your assets.",
+      },
+      {
+        title: "Leverage",
+        subtitle: "Leverage global markets with flexibility.",
+        description:
+          "Access derivative products with leverage, designed for more advanced trading strategies. Trade with precision while maintaining a non-custodial, on-chain experience.",
+      },
+      {
+        title: "New Listings",
+        subtitle: "Discover newly listed tokenized stocks.",
+        description:
+          "Get early access to newly listed tokenized stocks and emerging market opportunities. Explore new assets as they become available - all within a decentralized trading environment.",
+      },
+    ],
+    tradeNow: "Trade now",
   },
-  thirdSection: {
-    feature1: { title: "Non-Custodial Architecture", desc1: "Assets remain fully on-chain under user control", desc2: "Users retain full ownership of their funds" },
-    feature2: { title: "Contract Security Audits", desc1: "Multi-layered audit mechanism", desc2: "Continuous security monitoring" },
-    feature3: { title: "Zero Pooling Risk", desc1: "1:1 asset anchoring to real-world stocks", desc2: "Transparent asset audits" },
-    realSvg: real,
+  page3: {
+    headerTag: "[ TRUSTED CUSTODY ]",
+    hero: {
+      titlePrefix: "Your Assets, Held by",
+      titleHighlight: "Trusted",
+      titleSuffix: "Institutions",
+      line1:
+        "All underlying assets are kept in segregated accounts at Interactive Brokers (IBKR), a NYSE-listed institution,",
+      line2: "ensuring your investments remain secure, transparent, and fully compliant.",
+    },
+    glowGrid: {
+      cards: {
+        topLeft: {
+          text: "On-Chain Orders",
+        },
+        topRight: {
+          text: "Stock Tokens",
+        },
+        bottomLeft: {
+          text: "Liquidity",
+          badges: ["IBKR Broker Order Flow", "DeShare Order Flow"],
+        },
+        bottomRight: {
+          text: "Backed by Real Stocks",
+        },
+      },
+      verticalLabels: {
+        left: "Broker-Consistent Pricing",
+        right: "1:1 Real-Time Custody, Verifiable",
+      },
+    },
   },
-  fourthSection: {
-    description: "All underlying assets are held in segregated accounts at NYSE-listed Interactive Brokers (IBKR), ensuring maximum security and regulatory compliance for your investments.",
-    buildForEdgeSvg: buildForEdge,
-    build1Svg: build1,
-    build2Svg: build2,
-    build3Svg: build3,
-    build4Svg: build4,
-    build1H5Svg: build1H5,
-    build2H5Svg: build2H5,
-    build3H5Svg: build3H5,
-    build4H5Svg: build4H5,
-    h5_investorsAndPartners: h5_investorsAndPartners,
+  page4: {
+    headerTag: "[ MARKET INSIGHTS ]",
+    hero: {
+      titlePrefix: "Discover",
+      titleHighlight: "Trading",
+      titleSuffix: "Opportunities",
+      line1: "No deposits needed. One step to start trading.",
+      line2: "Simply connect your wallet to trade tokenized stocks instantly.",
+    },
+    tables: {
+      popular: "Popular",
+      topGainers: "Top Gainers",
+      newListings: "New Listings",
+    },
   },
-  fifthSection: {
-    investorsAndPartners: investorsAndPartners,
+  page5: {
+    faqTitle: "Frequently Asked Questions",
+    partnersTitle: "Partners",
+  },
+  footer: {
+    tagline: ["Borderless, Barrier-Free", "Invest in Global Stocks On-Chain"],
+    sections: {
+      documentation: {
+        title: "Documentation",
+        whitepaper: "Whitepaper",
+      },
+      community: {
+        title: "Community",
+        telegram: "Telegram",
+        xTwitter: "X (Twitter)",
+      },
+    },
+    copyright: "© {year} DeShare International Ltd. All Rights Reserved.",
   },
   faq: {
     list: [
@@ -106,48 +180,12 @@ type TextSchema = DeepString<typeof en>
 
 const zh: TextSchema = {
   header: {
-    howItWorks: "机制介绍",
+    market: '市场',
+    trade: '交易',
+    portfolio: '个人中心',
     faq: "常见问题",
     whitePaper: "白皮书",
     launchApp: "启动App",
-  },
-  firstSection: {
-    description: "最全的代币化股票交易市场",
-    launchButton: "启动App",
-    hkStocks: "港股",
-    nasdaqStocks: "纳斯达克",
-    newYorkStocks: "纽交所",
-    mainWordSvg: cn_mainWord,
-  },
-  secSection: {
-    barrierFreeTrading: "无门槛交易",
-    aroundClockTrading: "7*24小时交易",
-    stocks2000Plus: "2000+股票",
-    trulyDecentralized: "完全去中心化，",
-    noPreDeposit: "无需预充值",
-    nextGenSvg: cn_nextGen,
-  },
-  thirdSection: {
-    feature1: { title: "非托管架构", desc1: "资产完全在链上，由用户自主掌控", desc2: "用户始终拥有资金的完全所有权" },
-    feature2: { title: "合约安全审计", desc1: "多层审计机制", desc2: "持续的安全监控" },
-    feature3: { title: "零资金池风险", desc1: "与现实世界股票1:1锚定", desc2: "透明的资产审计" },
-    realSvg: cn_real,
-  },
-  fourthSection: {
-    description: "所有底层资产均存放于纽交所上市公司盈透证券的独立隔离账户，全面保障投资安全与监管合规",
-    buildForEdgeSvg: cn_buildForEdge,
-    build1Svg: cn_build1,
-    build2Svg: cn_build2,
-    build3Svg: cn_build3,
-    build4Svg: cn_build4,
-    build1H5Svg: cn_build1H5,
-    build2H5Svg: cn_build2H5,
-    build3H5Svg: cn_build3H5,
-    build4H5Svg: cn_build4H5,
-    h5_investorsAndPartners: cn_h5_investorsAndPartners,
-  },
-  fifthSection: {
-    investorsAndPartners: cn_investorsAndPartners,
   },
   faq: {
     list: [
@@ -164,7 +202,146 @@ const zh: TextSchema = {
         a: '我们的订单流动性来源于双重保障：既依托于平台自身的链上流动性，也聚合了合作券商的传统流动性。通过整合这两种资源，我们确保您的订单能够获得优于或至少不逊于传统券商平台的交易价格和流动性体验。',
       }
     ]
-  }
+  },
+  page1: {
+    mobileHero: {
+      line1: "无国界，无壁垒",
+      line2: "链上投资全球股票",
+      subtitle: "去中心化全球股票平台",
+    },
+    desktopHero: {
+      title: "用加密货币交易全球股票",
+      subtitle: "最全面的代币化股票交易市场",
+    },
+    stats: {
+      hkStocks: "港股",
+      nasdaqStocks: "纳斯达克股票",
+      newYorkStocks: "纽约股票",
+    },
+    tradeNow: "立即交易",
+    partnersTitle: "投资方与合作伙伴",
+    mapSubtitles: {
+      nyc: "曼哈顿交易所",
+      sf: "湾区枢纽",
+      sh: "浦东市场",
+      tokyo: "新宿交易台",
+    },
+    tickerNames: {
+      tencent: "腾讯控股",
+      alibabaGroup: "阿里巴巴集团",
+      apple: "苹果公司",
+      microsoft: "微软公司",
+      nvidia: "英伟达公司",
+      toyota: "丰田汽车",
+      tesla: "特斯拉",
+      alibabaAdr: "阿里巴巴ADR",
+      amazon: "亚马逊公司",
+      alphabet: "Alphabet A类",
+      meta: "Meta Platforms",
+    },
+    tickerAlt: {
+      up: "上涨",
+      down: "下跌",
+    },
+  },
+  page2: {
+    headerTag: "[ 全球通达 ]",
+    hero: {
+      titlePrefix: "交易全球股票",
+      titleHighlight: "链上,",
+      titleSuffix: "随时可达",
+      line1: "全天候无门槛进入全球市场。",
+      line2: "以去中心化方式交易 5,000+ 股票，无需预存资金。",
+    },
+    featureCards: [
+      {
+        title: "现货交易",
+        subtitle: "直接在链上交易代币化股票。",
+        description:
+          "买卖全球代币化股票，链上执行透明可查。无需预存资金，只需连接钱包即可即时交易，并始终掌控资产。",
+      },
+      {
+        title: "杠杆",
+        subtitle: "更灵活地参与全球市场。",
+        description:
+          "提供带杠杆的衍生品，适合更高级的交易策略。在非托管、链上体验下进行更精准的交易。",
+      },
+      {
+        title: "新上市",
+        subtitle: "发现新上市的代币化股票。",
+        description:
+          "优先获取新上市代币化股票和新兴市场机会。资产一上线即可探索，完全在去中心化交易环境中完成。",
+      },
+    ],
+    tradeNow: "立即交易",
+  },
+  page3: {
+    headerTag: "[ 可信托管 ]",
+    hero: {
+      titlePrefix: "您的资产，由",
+      titleHighlight: "可信",
+      titleSuffix: "机构托管",
+      line1:
+        "所有底层资产均存放于盈透证券（Interactive Brokers，IBKR）的独立托管账户中，作为一家在纽交所上市的机构，",
+      line2: "确保您的投资安全、透明，并完全符合监管要求。",
+    },
+    glowGrid: {
+      cards: {
+        topLeft: {
+          text: "链上订单",
+        },
+        topRight: {
+          text: "股票代币",
+        },
+        bottomLeft: {
+          text: "流动性",
+          badges: ["IBKR 经纪订单流", "DeShare 订单流"],
+        },
+        bottomRight: {
+          text: "真实股票资产支持",
+        },
+      },
+      verticalLabels: {
+        left: "与经纪商一致的定价",
+        right: "1:1 实时托管，可验证",
+      },
+    },
+  },
+  page4: {
+    headerTag: "[ 市场洞察 ]",
+    hero: {
+      titlePrefix: "发现",
+      titleHighlight: "交易",
+      titleSuffix: "机会",
+      line1: "无需充值，一步即可开始交易。",
+      line2: "只需连接您的钱包，即可即时交易代币化股票。",
+    },
+    tables: {
+      popular: "热门",
+      topGainers: "涨幅榜",
+      newListings: "新上线",
+    },
+  },
+  page5: {
+    faqTitle: "常见问题",
+    partnersTitle: "合作伙伴",
+  },
+  footer: {
+    tagline: ["无国界 · 无门槛", "链上投资全球股票"],
+    sections: {
+      documentation: {
+        title: "文档",
+        whitepaper: "白皮书",
+      },
+      community: {
+        title: "社区",
+        telegram: "Telegram",
+        xTwitter: "X（Twitter）",
+      },
+    },
+    copyright: "© {year} DeShare International Ltd. 保留所有权利。",
+  },
+
 }
 
 function makeZhHantFrom<T>(source: T): T {

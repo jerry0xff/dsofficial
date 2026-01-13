@@ -1,10 +1,17 @@
-import { currentYear, footerSections, footerTagline } from "./footerData"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
+import { currentYear, getFooterSections, getFooterTagline } from "./footerData"
 
 type FooterMobileProps = {
   className?: string
 }
 
 export default function FooterMobile({ className = "" }: FooterMobileProps) {
+  const { lang } = useLanguage()
+  const { footer } = getTexts(lang)
+  const footerTagline = getFooterTagline({ ...footer, tagline: [...footer.tagline] })
+  const footerSections = getFooterSections({ ...footer, tagline: [...footer.tagline] })
+
   return (
     <footer className={["flex-none bg-[#0A0A17] text-white pt-0", className].join(" ")} style={{ paddingTop: "10px" }}>
       <div className="mx-auto flex w-full max-w-[375px] flex-col items-center px-6 py-10 text-center">
@@ -68,7 +75,7 @@ export default function FooterMobile({ className = "" }: FooterMobileProps) {
           className="text-center text-[10px] font-normal uppercase geist-mono text-white/80"
           style={{ margin: "36px 0 80px 0" }}
         >
-          © {currentYear} DeShare International Ltd. All Rights Reserved.
+          {footer.copyright.replace("{year}", String(currentYear))}
         </div>
       </div>
     </footer>

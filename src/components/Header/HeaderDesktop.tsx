@@ -1,11 +1,17 @@
 import { useEffect, useRef, useState } from "react"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
 import LanguagePicker from "../LanguagePicker"
-import { desktopNavItems, desktopRightItems } from "./headerData"
+import { getDesktopNavItems, getDesktopRightItems } from "./headerData"
 
 export default function HeaderDesktop() {
   const navTextClass = "cursor-pointer text-white/85 hover:text-[#00FFFF]"
   const [isLanguageOpen, setIsLanguageOpen] = useState(false)
   const languageRef = useRef<HTMLDivElement | null>(null)
+  const { lang } = useLanguage()
+  const { header } = getTexts(lang)
+  const desktopNavItems = getDesktopNavItems(header)
+  const desktopRightItems = getDesktopRightItems(header)
 
   useEffect(() => {
     if (!isLanguageOpen) return
@@ -103,7 +109,7 @@ export default function HeaderDesktop() {
           href="https://app.deshare.finance/"
           className="h-[40px] w-[122px] rounded-full bg-[color:var(--ColorCyanDefault)] px-[24px] py-[8px] text-[12px] font-bold tracking-normal text-[#0b0c1c] transition hover:bg-[#00FFFF] flex items-center justify-center"
         >
-          LAUNCH APP
+          {header.launchApp}
         </a>
       </div>
     </div>

@@ -1,7 +1,8 @@
 import { useState } from "react"
 import Content from "./Content"
 import MobileFeatureCard from "./MobileFeatureCard"
-import { featureCards } from "./data"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
 
 type PageTwoMobileProps = {
   className?: string
@@ -9,6 +10,8 @@ type PageTwoMobileProps = {
 
 export default function PageTwoMobile({ className = "" }: PageTwoMobileProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const { lang } = useLanguage()
+  const { page2 } = getTexts(lang)
 
   return (
     <section
@@ -23,7 +26,7 @@ export default function PageTwoMobile({ className = "" }: PageTwoMobileProps) {
       </div>
       <Content />
       <div className="z-10 mt-[40px] flex flex-col gap-4 -mx-6">
-        {featureCards.map((card, index) => (
+        {page2.featureCards.map((card, index) => (
           <MobileFeatureCard
             key={card.title}
             title={card.title}

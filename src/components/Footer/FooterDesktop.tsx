@@ -1,10 +1,17 @@
-import { currentYear, footerSections, footerTagline } from "./footerData"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
+import { currentYear, getFooterSections, getFooterTagline } from "./footerData"
 
 type FooterDesktopProps = {
   className?: string
 }
 
 export default function FooterDesktop({ className = "" }: FooterDesktopProps) {
+  const { lang } = useLanguage()
+  const { footer } = getTexts(lang)
+  const footerTagline = getFooterTagline({ ...footer, tagline: [...footer.tagline] })
+  const footerSections = getFooterSections({ ...footer, tagline: [...footer.tagline] })
+
   return (
     <footer
       className={["basis-[300px] flex-none bg-[#0A0A17] text-white", className].join(" ")}
@@ -48,7 +55,7 @@ export default function FooterDesktop({ className = "" }: FooterDesktopProps) {
         </div>
 
         <div className="mt-auto text-center text-[12px] font-normal uppercase geist-mono text-white/80">
-          © {currentYear} DeShare International Ltd. All Rights Reserved.
+          {footer.copyright.replace("{year}", String(currentYear))}
         </div>
       </div>
     </footer>
