@@ -1,6 +1,8 @@
 import { GlowCard, type GlowCardProps } from "./GlowCard"
 import { SlidingHighlightBar } from "./HighlightBar"
 import InfoBadge from "./InfoBadge"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { getTexts } from "@/contexts/texts"
 
 type GlowGridCard = {
   id: string
@@ -33,27 +35,31 @@ function VerticalHighlightGroup({ label }: { label: string }) {
 }
 
 export default function GlowGrid() {
+  const { lang } = useLanguage()
+  const { page3 } = getTexts(lang)
+  const { cards: gridCards, verticalLabels } = page3.glowGrid
+
   const cards: GlowGridCard[] = [
     {
       id: "top-left",
       height: 108,
       className: "col-start-1 row-start-1",
-      text: "On-Chain Orders",
+      text: gridCards.topLeft.text,
       imageSrc: "/assets/page-3/card1.png",
     },
     {
       id: "top-right",
       height: 108,
       className: "col-start-3 row-start-1",
-      text: "Stock Tokens",
+      text: gridCards.topRight.text,
       imageSrc: "/assets/page-3/card2.png",
     },
     {
       id: "bottom-left",
       height: 241,
       className: "col-start-1 row-start-3",
-      text: "Liquidity",
-      badges: ["IBKR Broker Order Flow", "DeShare Order Flow"],
+      text: gridCards.bottomLeft.text,
+      badges: gridCards.bottomLeft.badges,
       imageSrc: "/assets/page-3/card3.png",
       imageY: "45px",
     },
@@ -61,7 +67,7 @@ export default function GlowGrid() {
       id: "bottom-right",
       height: 241,
       className: "col-start-3 row-start-3",
-      text: "Backed by Real Stocks",
+      text: gridCards.bottomRight.text,
       imageSrc: "/assets/page-3/card4.png",
     },
   ]
@@ -72,8 +78,8 @@ export default function GlowGrid() {
   ] as const
 
   const verticalGroups = [
-    { id: "left", className: "col-start-1 row-start-2", label: "Broker-Consistent Pricing" },
-    { id: "right", className: "col-start-3 row-start-2", label: "1:1 Real-Time Custody, Verifiable" },
+    { id: "left", className: "col-start-1 row-start-2", label: verticalLabels.left },
+    { id: "right", className: "col-start-3 row-start-2", label: verticalLabels.right },
   ] as const
 
   return (

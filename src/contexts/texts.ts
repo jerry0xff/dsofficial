@@ -86,6 +86,38 @@ const en = {
     ],
     tradeNow: "Trade now",
   },
+  page3: {
+    headerTag: "[ TRUSTED CUSTODY ]",
+    hero: {
+      titlePrefix: "Your Assets, Held by",
+      titleHighlight: "Trusted",
+      titleSuffix: "Institutions",
+      line1:
+        "All underlying assets are kept in segregated accounts at Interactive Brokers (IBKR), a NYSE-listed institution,",
+      line2: "ensuring your investments remain secure, transparent, and fully compliant.",
+    },
+    glowGrid: {
+      cards: {
+        topLeft: {
+          text: "On-Chain Orders",
+        },
+        topRight: {
+          text: "Stock Tokens",
+        },
+        bottomLeft: {
+          text: "Liquidity",
+          badges: ["IBKR Broker Order Flow", "DeShare Order Flow"],
+        },
+        bottomRight: {
+          text: "Backed by Real Stocks",
+        },
+      },
+      verticalLabels: {
+        left: "Broker-Consistent Pricing",
+        right: "1:1 Real-Time Custody, Verifiable",
+      },
+    },
+  },
   faq: {
     list: [
       {
@@ -208,6 +240,38 @@ const zh: TextSchema = {
       },
     ],
     tradeNow: "立即交易",
+  },
+  page3: {
+    headerTag: "[ 可信托管 ]",
+    hero: {
+      titlePrefix: "您的资产，由",
+      titleHighlight: "可信",
+      titleSuffix: "机构托管",
+      line1:
+        "所有底层资产均存放于盈透证券（Interactive Brokers，IBKR）的独立托管账户中，作为一家在纽交所上市的机构，",
+      line2: "确保您的投资安全、透明，并完全符合监管要求。",
+    },
+    glowGrid: {
+      cards: {
+        topLeft: {
+          text: "链上订单",
+        },
+        topRight: {
+          text: "股票代币",
+        },
+        bottomLeft: {
+          text: "流动性",
+          badges: ["IBKR 经纪订单流", "DeShare 订单流"],
+        },
+        bottomRight: {
+          text: "真实股票资产支持",
+        },
+      },
+      verticalLabels: {
+        left: "与经纪商一致的定价",
+        right: "1:1 实时托管，可验证",
+      },
+    },
   },
 }
 
