@@ -219,7 +219,7 @@ const zh: TextSchema = {
       newYorkStocks: "纽约股票",
     },
     tradeNow: "立即交易",
-    partnersTitle: "投资方与合作伙伴",
+    partnersTitle: "投资方",
     mapSubtitles: {
       nyc: "曼哈顿交易所",
       sf: "湾区枢纽",
