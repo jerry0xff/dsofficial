@@ -30,7 +30,7 @@ const en = {
       newYorkStocks: "NEW YORK STOCKS",
     },
     tradeNow: "Trade now",
-    partnersTitle: "Investors & Partners",
+    partnersTitle: "INVESTORS",
     mapSubtitles: {
       nyc: "Manhattan Exchange",
       sf: "Bay Area Hub",

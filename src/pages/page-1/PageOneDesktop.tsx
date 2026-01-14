@@ -103,15 +103,17 @@ export default function PageOneDesktop({ className = "" }: PageOneDesktopProps) 
         </div>
       </div>
 
-      <TickerStrip />
-      <div className="mt-[73px] z-10 text-center text-[48px] font-black uppercase text-white font-['DM_Sans',system-ui,sans-serif]">
-        {page1.desktopHero.title}
+      <div className="relative z-10 flex w-full flex-col items-center">
+        <TickerStrip />
+        <div className="mt-[73px] text-center text-[48px] font-black uppercase text-white font-['DM_Sans',system-ui,sans-serif]">
+          {page1.desktopHero.title}
+        </div>
+        <div className="mt-[30px] text-center text-[16px] font-medium uppercase tracking-[0.02em] text-white font-['DM_Sans',system-ui,sans-serif] shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
+          {page1.desktopHero.subtitle}
+        </div>
+        <StatsRow className="mt-[55px]" />
+        <PartnersRow />
       </div>
-      <div className="mt-[30px] text-center text-[16px] font-medium uppercase tracking-[0.02em] text-white font-['DM_Sans',system-ui,sans-serif] shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
-        {page1.desktopHero.subtitle}
-      </div>
-      <StatsRow className="mt-[55px]" />
-      <PartnersRow />
     </section>
   )
 }
