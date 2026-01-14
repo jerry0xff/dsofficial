@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { getTexts } from "@/contexts/texts"
+import { useEffect, useRef, useState } from "react"
 import MapCallout from "./MapCallout"
 import PartnersRow from "./PartnersRow"
 import StatsRow from "./StatsRow"
@@ -57,26 +57,22 @@ export default function PageOneDesktop({ className = "" }: PageOneDesktopProps) 
   return (
     <section
       className={[
-        "relative flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 overflow-hidden bg-[#0A0A17]",
+        "relative flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 overflow-hidden bg-[var(--ColorBackDefault)]",
         className,
       ].join(" ")}
     >
       <div
-        className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"
+        className={[
+          "absolute inset-0 flex items-center justify-center pointer-events-none",
+          currentConfig.data ? "z-10" : "z-0",
+        ].join(" ")}
         style={{ transform: "translateY(-5%)" }}
       >
-        <div className="relative w-full h-full max-w-[1272px] max-h-[660px] aspect-[1272.48/660.6]">
-          <img src={currentConfig.src} className="w-full h-full object-contain" alt="" />
-        </div>
-      </div>
-      <div
-        className="absolute inset-0 z-50 flex items-center justify-center pointer-events-none"
-        style={{ transform: "translateY(-5%)" }}
-      >
-        <div className="relative w-full h-full max-w-[1272px] max-h-[660px] aspect-[1272.48/660.6]">
+        <div className="relative w-full max-w-[1272px] aspect-[1272.48/660.6]">
+          <img src={currentConfig.src} className="w-full h-full object-fill" alt="" />
           {canRenderCurrent && currentConfig.data ? (
             <div
-              className="absolute callout-fade-in"
+              className="absolute callout-fade-in z-50"
               style={{
                 left: `${leftPercent}%`,
                 top: `${topPercent}%`,
@@ -103,15 +99,17 @@ export default function PageOneDesktop({ className = "" }: PageOneDesktopProps) 
         </div>
       </div>
 
-      <TickerStrip />
-      <div className="mt-[73px] z-10 text-center text-[48px] font-black uppercase text-white font-['DM_Sans',system-ui,sans-serif]">
-        {page1.desktopHero.title}
+      <div className="relative flex w-full flex-col items-center">
+        <TickerStrip />
+        <div className="mt-[73px] text-center text-[48px] font-black uppercase text-white font-['DM_Sans',system-ui,sans-serif]">
+          {page1.desktopHero.title}
+        </div>
+        <div className="mt-[30px] text-center text-[16px] font-medium uppercase tracking-[0.02em] text-white font-['DM_Sans',system-ui,sans-serif] shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
+          {page1.desktopHero.subtitle}
+        </div>
+        <StatsRow className="mt-[55px]" />
+        <PartnersRow />
       </div>
-      <div className="mt-[30px] text-center text-[16px] font-medium uppercase tracking-[0.02em] text-white font-['DM_Sans',system-ui,sans-serif] shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
-        {page1.desktopHero.subtitle}
-      </div>
-      <StatsRow className="mt-[55px]" />
-      <PartnersRow />
     </section>
   )
 }

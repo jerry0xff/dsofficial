@@ -10,7 +10,7 @@ export default function PageFive() {
   return (
     <section
       id="page-5"
-      className="relative flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 overflow-hidden bg-[#0A0A17]"
+      className="relative flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 overflow-hidden bg-[var(--ColorBackDefault)]"
     >
       <div
         className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"

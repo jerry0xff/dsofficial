@@ -15,7 +15,7 @@ export default function PageOneMobile({ className = "" }: PageOneMobileProps) {
   return (
     <section
       className={[
-        "relative flex min-h-[calc(100vh-60px)] flex-col items-center p-6 overflow-hidden bg-[#0A0A17]",
+        "relative flex min-h-[calc(100vh-60px)] flex-col items-center p-6 overflow-hidden bg-[var(--ColorBackDefault)]",
         className,
       ].join(" ")}
     >

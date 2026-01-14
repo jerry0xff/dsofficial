@@ -22,7 +22,7 @@ export default function PartnersRow() {
   const { page1 } = getTexts(lang)
 
   return (
-    <div className="mt-[200px] md:mt-auto flex w-full max-w-[1200px] flex-col items-center gap-6 pb-[80px]">
+    <div className="mt-[160px] md:mt-[240px] flex w-full max-w-[1200px] flex-col items-center gap-2 md:gap-4 pb-[80px]">
       <div className="text-center text-[12px] font-[300] uppercase tracking-[0.02em] text-white/50 font-['DM_Sans',system-ui,sans-serif]">
         {page1.partnersTitle}
       </div>

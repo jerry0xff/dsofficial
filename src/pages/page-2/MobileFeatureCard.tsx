@@ -33,7 +33,7 @@ export default function MobileFeatureCard({
           <div
             className={[
               "text-[12px] font-medium leading-[150%] geist-mono transition-colors duration-[300ms] ease-out",
-              isOpen ? "text-[#0A0A17]" : "text-[color:var(--ColorCyanDefault)]",
+              isOpen ? "text-[var(--ColorBackDefault)]" : "text-[color:var(--ColorCyanDefault)]",
             ].join(" ")}
           >
             {subtitle}
@@ -64,7 +64,7 @@ export default function MobileFeatureCard({
           </div>
           <a
             href="https://app.deshare.finance/#/"
-            className="mt-3 inline-flex items-center rounded-full bg-[#0A0A17] px-6 py-2 text-[12px] font-bold uppercase text-white geist-mono"
+            className="mt-3 inline-flex items-center rounded-full bg-[var(--ColorBackDefault)] px-6 py-2 text-[12px] font-bold uppercase text-white geist-mono"
           >
             {page2.tradeNow}
           </a>

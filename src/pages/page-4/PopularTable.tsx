@@ -99,7 +99,7 @@ export default function PopularTable({
         {title}
       </div>
       <div className="flex-1 overflow-y-auto px-0 md:px-4 no-scrollbar mt-0">
-        <div className="text-[10px] md:text-[12px] font-medium leading-none geist-mono tracking-[0.02em] text-white/80 shadow-[0px_1px_0px_0px_rgba(0,0,0,0.25)]">
+        <div className="text-[10px] md:text-[12px] font-medium leading-none geist-mono tracking-[0.02em] text-white/80">
           {rows.map((row, index) => {
             const isUp = row.change.startsWith("+")
             const trendColor = isUp ? "var(--ColorCyanDefault)" : "var(--ColorDownDefault)"
@@ -108,7 +108,7 @@ export default function PopularTable({
               <a
                 key={`${row.symbol}-${index}`}
                 href={`https://app.deshare.finance/#/trade?symbol=${encodeURIComponent(row.symbol)}`}
-                className="flex items-center justify-between px-2 py-[5px] md:py-1 transition-colors duration-200 md:hover:bg-[#0A0A17] cursor-pointer"
+                className="flex items-center justify-between px-2 py-[5px] md:py-1 transition-colors duration-200 md:hover:bg-[var(--ColorBackDefault)] cursor-pointer"
               >
                 <div className="w-[140px] truncate">{row.name}</div>
                 <div className="w-[64px]">{row.symbol}</div>

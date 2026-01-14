@@ -6,7 +6,7 @@ import PageFive from "./page-5"
 
 export default function Home() {
   return (
-    <div className="bg-[#0A0A17]">
+    <div className="bg-[var(--ColorBackDefault)]">
       <PageOne />
       <PageTwo />
       <PageThree />
