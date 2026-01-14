@@ -14,7 +14,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-color: #0a0a17;
+  background-color: var(--ColorBackDefault);
   z-index: -1;
 }
 
@@ -115,7 +115,7 @@ body::before {
 }
 
 .feature-card:hover .feature-card__subtitle {
-  color: #0a0a17;
+  color: var(--ColorBackDefault);
 }
 
 .feature-card:hover .feature-card__desc {

@@ -15,7 +15,7 @@ export default function PageTwoMobile({ className = "" }: PageTwoMobileProps) {
 
   return (
     <section
-      className={["relative flex min-h-[calc(100vh-60px)] flex-col items-center p-6  bg-[#0A0A17]", className].join(
+      className={["relative flex min-h-[calc(100vh-60px)] flex-col items-center p-6  bg-[var(--ColorBackDefault)]", className].join(
         " "
       )}
     >

@@ -8,7 +8,7 @@ export default function PageFourMobile({ className = "" }: PageFourMobileProps) 
   return (
     <section
       className={[
-        "relative flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 overflow-hidden bg-[#0A0A17]",
+        "relative flex min-h-[calc(100vh-60px)] flex-col items-center px-4 pt-2 overflow-hidden bg-[var(--ColorBackDefault)]",
         className,
       ].join(" ")}
     >

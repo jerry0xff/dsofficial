@@ -14,7 +14,7 @@ export default function FooterDesktop({ className = "" }: FooterDesktopProps) {
 
   return (
     <footer
-      className={["basis-[300px] flex-none bg-[#0A0A17] text-white", className].join(" ")}
+      className={["basis-[300px] flex-none bg-[var(--ColorBackDefault)] text-white", className].join(" ")}
       style={{ height: 300, minHeight: 300 }}
     >
       <div className="mx-auto flex h-full w-full max-w-[1200px] flex-col" style={{ padding: "100px 0 40px" }}>

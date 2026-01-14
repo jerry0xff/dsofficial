@@ -54,7 +54,7 @@ export default function HeaderMobile() {
                     className="flex items-center gap-2"
                   >
                     <span>{item.label}</span>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-[color:var(--ColorCyanDefault)] px-2 py-[2px] text-[10px] font-semibold text-[#0A0A17]">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-[color:var(--ColorCyanDefault)] px-2 py-[2px] text-[10px] font-semibold text-[var(--ColorBackDefault)]">
                       <img src="/assets/page-1/star.svg" alt="" className="h-[7px] w-[7px]" />
                       NEW
                     </span>

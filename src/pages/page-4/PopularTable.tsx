@@ -108,7 +108,7 @@ export default function PopularTable({
               <a
                 key={`${row.symbol}-${index}`}
                 href={`https://app.deshare.finance/#/trade?symbol=${encodeURIComponent(row.symbol)}`}
-                className="flex items-center justify-between px-2 py-[5px] md:py-1 transition-colors duration-200 md:hover:bg-[#0A0A17] cursor-pointer"
+                className="flex items-center justify-between px-2 py-[5px] md:py-1 transition-colors duration-200 md:hover:bg-[var(--ColorBackDefault)] cursor-pointer"
               >
                 <div className="w-[140px] truncate">{row.name}</div>
                 <div className="w-[64px]">{row.symbol}</div>

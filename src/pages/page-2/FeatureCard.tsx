@@ -23,7 +23,7 @@ export default function FeatureCard({ title, subtitle, description }: FeatureCar
       </div>
       <a
         href="https://app.deshare.finance/#/"
-        className="feature-card__button absolute bottom-[36px] left-1/2 z-10 -translate-x-1/2 -translate-y-16 rounded-full bg-[#0A0A17] px-6 py-2 text-[12px] font-bold uppercase geist-mono"
+        className="feature-card__button absolute bottom-[36px] left-1/2 z-10 -translate-x-1/2 -translate-y-16 rounded-full bg-[var(--ColorBackDefault)] px-6 py-2 text-[12px] font-bold uppercase geist-mono"
       >
         {page2.tradeNow}
       </a>
