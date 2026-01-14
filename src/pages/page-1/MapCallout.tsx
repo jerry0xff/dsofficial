@@ -13,8 +13,7 @@ type MapCalloutProps = {
 export default function MapCallout({ style, data }: MapCalloutProps) {
   return (
     <div className="absolute flex flex-col items-center z-100 -translate-x-1/2" style={style}>
-      <img src="/assets/page-1/glow.svg" alt="" className="h-[11px] w-[11px] translate-y-1/2" aria-hidden="true" />
-      <div className="h-[32px] w-[2px] bg-[color:var(--ColorCyanDefault)] translate-x-[-0.5px]" />
+      <div className="h-[32px] w-[2px] bg-[color:var(--ColorCyanDefault)]" />
       <div className="relative w-[197px] rounded-[20px] bg-[#26263A33] px-3 py-2 text-white/80 backdrop-blur-[40px]">
         <img
           src="/assets/page-1/callout-bg.svg"

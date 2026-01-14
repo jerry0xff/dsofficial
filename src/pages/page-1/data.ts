@@ -28,8 +28,8 @@ export function getMapConfigs(subtitles: MapSubtitles): MapConfig[] {
       data: null,
     },
     {
-      src: "/assets/page-1/map-empty.svg",
-      point: { x: 391, y: 213.298 },
+      src: "/assets/page-1/map-nyc.svg",
+      point: { x: 391.5, y: 213.298 },
       data: {
         title: "NYC",
         price: "$412.30",
@@ -38,8 +38,8 @@ export function getMapConfigs(subtitles: MapSubtitles): MapConfig[] {
       },
     },
     {
-      src: "/assets/page-1/map-empty.svg",
-      point: { x: 168, y: 301.5 },
+      src: "/assets/page-1/map-sf.svg",
+      point: { x: 168.5, y: 301.5 },
       data: {
         title: "SF",
         price: "$188.45",
@@ -48,8 +48,8 @@ export function getMapConfigs(subtitles: MapSubtitles): MapConfig[] {
       },
     },
     {
-      src: "/assets/page-1/map-empty.svg",
-      point: { x: 965, y: 300 },
+      src: "/assets/page-1/map-sh.svg",
+      point: { x: 965.5, y: 300.5 },
       data: {
         title: "SH",
         price: "$96.18",
@@ -58,8 +58,8 @@ export function getMapConfigs(subtitles: MapSubtitles): MapConfig[] {
       },
     },
     {
-      src: "/assets/page-1/map-empty.svg",
-      point: { x: 1073, y: 270.5 },
+      src: "/assets/page-1/map-tokyo.svg",
+      point: { x: 1073.5, y: 270.5 },
       data: {
         title: "Tokyo",
         price: "$134.02",
