@@ -52,10 +52,15 @@ export default function StatsRow({
         />
         <a
           href="https://app.deshare.finance/#/"
-          className="inline-flex h-[40px] w-[135px] items-center gap-2 rounded-full bg-[color:var(--ColorCyanDefault)] px-6 text-[12px] font-[700] uppercase text-black geist-mono transition hover:bg-[#00FFFF] whitespace-nowrap"
+          className="group inline-flex h-[40px] w-[135px] items-center gap-2 rounded-full bg-[color:var(--ColorCyanDefault)] px-6 text-[12px] font-[700] uppercase text-black geist-mono transition hover:bg-[#00FFFF] whitespace-nowrap"
           style={{ marginTop: -buttonOffset }}
         >
-          <img src="/assets/page-1/star.svg" alt="" className="h-[14px] w-[14px]" aria-hidden="true" />
+          <img
+            src="/assets/page-1/star.svg"
+            alt=""
+            className="h-[14px] w-[14px] transition-transform duration-200 group-hover:rotate-90"
+            aria-hidden="true"
+          />
           {page1.tradeNow}
         </a>
       </div>
