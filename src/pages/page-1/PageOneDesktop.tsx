@@ -64,7 +64,7 @@ export default function PageOneDesktop({ className = "" }: PageOneDesktopProps) 
       <div
         className={[
           "absolute inset-0 flex items-center justify-center pointer-events-none",
-          currentConfig.data ? "z-0" : "z-0",
+          currentConfig.data ? "z-10" : "z-0",
         ].join(" ")}
         style={{ transform: "translateY(-5%)" }}
       >
