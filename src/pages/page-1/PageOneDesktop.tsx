@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { getTexts } from "@/contexts/texts"
+import { useEffect, useRef, useState } from "react"
 import MapCallout from "./MapCallout"
 import PartnersRow from "./PartnersRow"
 import StatsRow from "./StatsRow"
@@ -62,21 +62,17 @@ export default function PageOneDesktop({ className = "" }: PageOneDesktopProps) 
       ].join(" ")}
     >
       <div
-        className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"
+        className={[
+          "absolute inset-0 flex items-center justify-center pointer-events-none",
+          currentConfig.data ? "z-10" : "z-0",
+        ].join(" ")}
         style={{ transform: "translateY(-5%)" }}
       >
-        <div className="relative w-full h-full max-w-[1272px] max-h-[660px] aspect-[1272.48/660.6]">
-          <img src={currentConfig.src} className="w-full h-full object-contain" alt="" />
-        </div>
-      </div>
-      <div
-        className="absolute inset-0 z-50 flex items-center justify-center pointer-events-none"
-        style={{ transform: "translateY(-5%)" }}
-      >
-        <div className="relative w-full h-full max-w-[1272px] max-h-[660px] aspect-[1272.48/660.6]">
+        <div className="relative w-full max-w-[1272px] aspect-[1272.48/660.6]">
+          <img src={currentConfig.src} className="w-full h-full object-fill" alt="" />
           {canRenderCurrent && currentConfig.data ? (
             <div
-              className="absolute callout-fade-in"
+              className="absolute callout-fade-in z-50"
               style={{
                 left: `${leftPercent}%`,
                 top: `${topPercent}%`,
@@ -103,7 +99,7 @@ export default function PageOneDesktop({ className = "" }: PageOneDesktopProps) 
         </div>
       </div>
 
-      <div className="relative z-10 flex w-full flex-col items-center">
+      <div className="relative flex w-full flex-col items-center">
         <TickerStrip />
         <div className="mt-[73px] text-center text-[48px] font-black uppercase text-white font-['DM_Sans',system-ui,sans-serif]">
           {page1.desktopHero.title}

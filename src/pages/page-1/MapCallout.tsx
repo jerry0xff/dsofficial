@@ -12,7 +12,7 @@ type MapCalloutProps = {
 
 export default function MapCallout({ style, data }: MapCalloutProps) {
   return (
-    <div className="absolute flex flex-col items-center z-100" style={style}>
+    <div className="absolute flex flex-col items-center z-100 -translate-x-1/2" style={style}>
       <div className="h-[32px] w-[2px] bg-[color:var(--ColorCyanDefault)]" />
       <div className="relative w-[197px] rounded-[20px] bg-[#26263A33] px-3 py-2 text-white/80 backdrop-blur-[40px]">
         <img

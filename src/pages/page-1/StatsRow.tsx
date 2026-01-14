@@ -1,6 +1,6 @@
-import { useCountUp } from "@/hooks/useCountUp"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { getTexts } from "@/contexts/texts"
+import { useCountUp } from "@/hooks/useCountUp"
 
 type StatItem = {
   value: number
@@ -67,7 +67,7 @@ export default function StatsRow({
       {stats.map((stat) => {
         const displayValue = useCountUp({ end: stat.value })
         return (
-          <div key={stat.labelKey} className="relative z-10">
+          <div key={stat.labelKey} className="relative z-0">
             <div className="geist-mono" style={{ fontSize: valueSize, fontWeight: valueWeight }}>
               {displayValue}
             </div>
@@ -80,4 +80,3 @@ export default function StatsRow({
     </div>
   )
 }
-
