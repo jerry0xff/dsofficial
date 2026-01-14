@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { getTexts } from "@/contexts/texts"
+import { useEffect, useRef, useState } from "react"
 import LanguagePicker from "../LanguagePicker"
 import { getDesktopNavItems, getDesktopRightItems } from "./headerData"
 
@@ -34,13 +34,7 @@ export default function HeaderDesktop() {
       <nav className="flex items-center gap-6 text-[12px] font-semibold text-white/85 geist-mono">
         {desktopNavItems.map((item) =>
           item.href ? (
-            <a
-              key={item.label}
-              href={item.href}
-              className={navTextClass}
-              target={item.target}
-              rel={item.rel}
-            >
+            <a key={item.label} href={item.href} className={navTextClass} target={item.target} rel={item.rel}>
               {item.label}
             </a>
           ) : (
@@ -62,13 +56,7 @@ export default function HeaderDesktop() {
       <div className="flex items-center gap-5 text-[12px] font-semibold text-white/85 geist-mono">
         {desktopRightItems.map((item) =>
           item.href ? (
-            <a
-              key={item.label}
-              href={item.href}
-              className={navTextClass}
-              target={item.target}
-              rel={item.rel}
-            >
+            <a key={item.label} href={item.href} className={navTextClass} target={item.target} rel={item.rel}>
               {item.label}
             </a>
           ) : (
@@ -107,7 +95,7 @@ export default function HeaderDesktop() {
         </div>
         <a
           href="https://app.deshare.finance/"
-          className="h-[40px] w-[122px] rounded-full bg-[color:var(--ColorCyanDefault)] px-[24px] py-[8px] text-[12px] font-bold tracking-normal text-[#0b0c1c] transition hover:bg-[#00FFFF] flex items-center justify-center"
+          className="h-[40px] w-[122px] rounded-full bg-[color:var(--ColorCyanDefault)] px-[10px] py-[8px] text-[12px] font-bold tracking-normal text-[#0b0c1c] transition hover:bg-[#00FFFF] flex items-center justify-center"
         >
           {header.launchApp}
         </a>
