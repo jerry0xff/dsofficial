@@ -21,16 +21,23 @@ export default function AppLayout() {
       <Header />
 
       <main className="flex-1 pt-[60px]">
-        {!isAtTop ? (
-          <div
-            className="fixed left-0 right-0 bottom-0 top-[60px] z-0 flex items-center justify-center pointer-events-none"
-            style={{ transform: "translateY(-5%)" }}
-          >
-            <div className="relative w-full h-full max-w-[1272px] max-h-[660px] aspect-[1272.48/660.6]">
-              <img src="/assets/page-1/map-empty.svg" className="w-full h-full object-fill" alt="" />
-            </div>
+        <div
+          className="fixed left-0 right-0 bottom-0 top-[60px] z-0 hidden items-center justify-center pointer-events-none md:flex"
+          style={{ transform: "translateY(-5%)" }}
+        >
+          <div className="relative w-full h-full max-w-[1272px] max-h-[660px] aspect-[1272.48/660.6]">
+            <img
+              src="/assets/page-1/map-empty.svg"
+              className={["w-full h-full", isAtTop ? "opacity-0" : "opacity-100"].join(" ")}
+              alt=""
+            />
           </div>
-        ) : null}
+        </div>
+        <div className="fixed left-1/2 top-[146px] z-0 flex w-[100vw] -translate-x-1/2 justify-center pointer-events-none md:hidden mt-[40px]">
+          <div className="h-[348px] w-[670px] flex-none">
+            <img src="/assets/page-1/map-empty.svg" alt="" className="h-full w-full" />
+          </div>
+        </div>
         <Outlet />
       </main>
 
