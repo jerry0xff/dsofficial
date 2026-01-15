@@ -29,7 +29,7 @@ export function getMapConfigs(subtitles: MapSubtitles): MapConfig[] {
     // },
     {
       src: "/assets/page-1/map-sf.svg",
-      point: { x: 168.5, y: 301.5 },
+      point: { x: 169, y: 301.5 },
       data: {
         title: "SF",
         price: "$188.45",
@@ -39,7 +39,7 @@ export function getMapConfigs(subtitles: MapSubtitles): MapConfig[] {
     },
     {
       src: "/assets/page-1/map-nyc.svg",
-      point: { x: 391.5, y: 213.298 },
+      point: { x: 392, y: 213.298 },
       data: {
         title: "NYC",
         price: "$412.30",
