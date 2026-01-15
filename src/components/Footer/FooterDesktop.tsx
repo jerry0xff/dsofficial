@@ -14,7 +14,7 @@ export default function FooterDesktop({ className = "" }: FooterDesktopProps) {
 
   return (
     <footer
-      className={["basis-[300px] flex-none bg-[var(--ColorBackDefault)] text-white", className].join(" ")}
+      className={["basis-[300px] flex-none text-white", className].join(" ")}
       style={{ height: 300, minHeight: 300 }}
     >
       <div className="mx-auto flex h-full w-full max-w-[1200px] flex-col" style={{ padding: "100px 0 40px" }}>
@@ -30,7 +30,11 @@ export default function FooterDesktop({ className = "" }: FooterDesktopProps) {
 
           <div className="flex pr-4 text-[12px] uppercase geist-mono">
             {footerSections.map((section, index) => (
-              <div key={section.title} className="flex flex-col gap-2" style={index === 0 ? { marginRight: "80px" } : undefined}>
+              <div
+                key={section.title}
+                className="flex flex-col gap-2"
+                style={index === 0 ? { marginRight: "80px" } : undefined}
+              >
                 <span className="font-bold text-white">{section.title}</span>
                 {section.links.map((link) =>
                   link.href ? (
