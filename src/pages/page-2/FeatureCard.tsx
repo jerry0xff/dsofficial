@@ -12,9 +12,9 @@ export default function FeatureCard({ title, subtitle, description }: FeatureCar
   const { page2 } = getTexts(lang)
 
   return (
-    <div className="feature-card flex h-[420px] w-[480px] flex-col items-center justify-center text-center text-white">
+    <div className="feature-card flex h-[420px] short:h-[360px] w-[480px] flex-col items-center justify-center text-center text-white">
       <div className="feature-card__fill" aria-hidden="true" />
-      <div className="relative z-10 flex flex-col items-center -translate-y-16">
+      <div className="relative z-10 flex flex-col items-center -translate-y-16 mb-[20px]">
         <h3 className="text-[48px] font-bold text-white font-['TASA_Orbiter',system-ui,sans-serif] tracking-tight-sm">
           {title}
         </h3>
