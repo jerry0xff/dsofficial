@@ -6,6 +6,9 @@ export default {
       letterSpacing: {
         "tight-sm": "-0.02em",
       },
+      screens: {
+        short: { raw: "(max-height: 800px)" },
+      },
     },
   },
   plugins: [],

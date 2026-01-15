@@ -83,7 +83,7 @@ export default function GlowGrid() {
   ] as const
 
   return (
-    <div className="mt-[30px] md:mt-[80px] flex w-full justify-center">
+    <div className="mt-[30px] short:mt-[18px] md:mt-[80px] short:md:mt-[25px] flex w-full justify-center">
       <div className="grid grid-cols-[152px_32px_152px] grid-rows-[52px_32px_248px] items-center justify-items-center md:grid-cols-[584px_32px_584px] md:grid-rows-[108px_32px_241px]">
         {cards.map((card) => (
           <GlowCard
