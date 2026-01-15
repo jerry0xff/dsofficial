@@ -22,10 +22,20 @@ export type MapConfig = {
 
 export function getMapConfigs(subtitles: MapSubtitles): MapConfig[] {
   return [
+    // {
+    //   src: "/assets/page-1/map-empty.svg",
+    //   point: null,
+    //   data: null,
+    // },
     {
-      src: "/assets/page-1/map-empty.svg",
-      point: null,
-      data: null,
+      src: "/assets/page-1/map-sf.svg",
+      point: { x: 168.5, y: 301.5 },
+      data: {
+        title: "SF",
+        price: "$188.45",
+        subtitle: subtitles.sf,
+        change: "+0.82%",
+      },
     },
     {
       src: "/assets/page-1/map-nyc.svg",
@@ -35,16 +45,6 @@ export function getMapConfigs(subtitles: MapSubtitles): MapConfig[] {
         price: "$412.30",
         subtitle: subtitles.nyc,
         change: "+1.24%",
-      },
-    },
-    {
-      src: "/assets/page-1/map-sf.svg",
-      point: { x: 168.5, y: 301.5 },
-      data: {
-        title: "SF",
-        price: "$188.45",
-        subtitle: subtitles.sf,
-        change: "+0.82%",
       },
     },
     {
