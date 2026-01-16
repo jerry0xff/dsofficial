@@ -13,7 +13,7 @@ export default function FooterMobile({ className = "" }: FooterMobileProps) {
   const footerSections = getFooterSections({ ...footer, tagline: [...footer.tagline] })
 
   return (
-    <footer className={["flex-none bg-[var(--ColorBackDefault)] text-white pt-0", className].join(" ")} style={{ paddingTop: "10px" }}>
+    <footer className={["flex-none text-white pt-0 z-10", className].join(" ")} style={{ paddingTop: "10px" }}>
       <div className="mx-auto flex w-full max-w-[375px] flex-col items-center px-6 py-10 text-center">
         <img src="/assets/logo.svg" alt="DeShare" className="h-[24px] w-[129px]" />
         <div
