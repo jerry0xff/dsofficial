@@ -1,3 +1,4 @@
+import { getHomepageIndices, type HomepageIndexItem } from "@/api/homepage"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { getTexts } from "@/contexts/texts"
 import { useEffect, useRef, useState } from "react"
@@ -16,7 +17,8 @@ export default function PageOneDesktop({ className = "" }: PageOneDesktopProps) 
   const originalHeight = 660.6
   const { lang } = useLanguage()
   const { page1 } = getTexts(lang)
-  const mapConfigs = getMapConfigs(page1.mapSubtitles)
+  const [indices, setIndices] = useState<HomepageIndexItem[] | null>(null)
+  const mapConfigs = getMapConfigs(page1.mapSubtitles, indices ?? undefined)
 
   const [backgroundIndex, setBackgroundIndex] = useState(0)
   const [prevIndex, setPrevIndex] = useState<number | null>(null)
@@ -31,6 +33,19 @@ export default function PageOneDesktop({ className = "" }: PageOneDesktopProps) 
     }, 5000)
     return () => window.clearInterval(intervalId)
   }, [isAtTop, mapConfigs.length])
+
+  useEffect(() => {
+    const controller = new AbortController()
+
+    getHomepageIndices(controller.signal)
+      .then((data) => setIndices(data.items))
+      .catch((error) => {
+        if (error instanceof DOMException && error.name === "AbortError") return
+        console.error("Failed to load homepage indices", error)
+      })
+
+    return () => controller.abort()
+  }, [])
 
   useEffect(() => {
     const previous = lastIndexRef.current
