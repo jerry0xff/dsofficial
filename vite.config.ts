@@ -3,9 +3,13 @@ import path from 'path'
 import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
+  const apiBaseUrl = mode === "development" ? "/api/v1" : "https://app.deshare.finance"
   return {
     plugins: [react()],
+    define: {
+      "import.meta.env.VITE_API_BASE_URL": JSON.stringify(apiBaseUrl),
+    },
     css: {
       postcss: './postcss.config.js',
     },
@@ -17,7 +21,13 @@ export default defineConfig(() => {
     server: {
       port: 5173,
       strictPort: false,
-      open: true
-    }
+      open: true,
+      proxy: {
+        "/api": {
+          target: "https://app.deshare.finance",
+          changeOrigin: true,
+        },
+      },
+    },
   }
 })
