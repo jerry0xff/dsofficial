@@ -1,4 +1,4 @@
-export const API_BASE_URL = __API_BASE_URL__
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 export async function apiGet<T>(path: string, init: RequestInit = {}) {
   const res = await fetch(`${API_BASE_URL}${path}`, { method: "GET", ...init })

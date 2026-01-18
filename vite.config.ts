@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     define: {
-      __API_BASE_URL__: JSON.stringify(apiBaseUrl),
+      "import.meta.env.VITE_API_BASE_URL": JSON.stringify(apiBaseUrl),
     },
     css: {
       postcss: './postcss.config.js',
