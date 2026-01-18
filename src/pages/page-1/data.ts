@@ -47,12 +47,12 @@ export function getMapConfigs(subtitles: MapSubtitles, indices?: HomepageIndexIt
     {
       src: "/assets/page-1/map-sf.svg",
       point: { x: 169, y: 301.5 },
-      subtitle: subtitles.sf,
+      subtitle: subtitles.nyc,
     },
     {
       src: "/assets/page-1/map-nyc.svg",
       point: { x: 392, y: 213.298 },
-      subtitle: subtitles.nyc,
+      subtitle: subtitles.sf,
     },
     {
       src: "/assets/page-1/map-sh.svg",
