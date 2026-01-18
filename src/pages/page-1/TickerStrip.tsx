@@ -1,6 +1,8 @@
-import { useLanguage } from "@/contexts/LanguageContext"
+import { useEffect, useState } from "react"
+import { getHomepageHotCached, type HomepageStockItem } from "@/api/homepage"
+import { toTraditionalIfNeeded, useLanguage } from "@/contexts/LanguageContext"
 import { getTexts } from "@/contexts/texts"
-import { getTickerItems } from "./data"
+import { type TickerItem } from "./data"
 
 type TickerStripProps = {
   cardWidth?: number
@@ -17,8 +19,8 @@ type TickerStripProps = {
 export default function TickerStrip({
   cardWidth = 197,
   cardHeight = 60,
-  speedPerItemSeconds = 0.3,
-  minDurationSeconds = 12,
+  speedPerItemSeconds = 0.1,
+  minDurationSeconds = 20,
   symbolSize = 16,
   priceSize = 16,
   nameSize = 12,
@@ -27,7 +29,39 @@ export default function TickerStrip({
 }: TickerStripProps) {
   const { lang } = useLanguage()
   const { page1 } = getTexts(lang)
-  const tickerItems = getTickerItems(page1.tickerNames)
+  const [tickerItems, setTickerItems] = useState<TickerItem[]>([])
+
+  useEffect(() => {
+    let isActive = true
+
+    function toTickerItems(items: HomepageStockItem[]): TickerItem[] {
+      return (items ?? []).map((item) => {
+        const isUp = item.change_pct >= 0
+        const sign = isUp ? "+" : ""
+        return {
+          symbol: item.symbol,
+          price: `$${item.price.toFixed(2)}`,
+          name: lang.startsWith("zh") ? toTraditionalIfNeeded(item.name_cn, lang) : item.name,
+          change: `${sign}${item.change_pct.toFixed(2)}%`,
+          trend: isUp ? "up" : "down",
+        }
+      })
+    }
+
+    getHomepageHotCached()
+      .then((data) => {
+        if (!isActive) return
+        setTickerItems(toTickerItems(data.items))
+      })
+      .catch((error) => {
+        if (!isActive) return
+        console.error("Failed to load ticker items", error)
+      })
+
+    return () => {
+      isActive = false
+    }
+  }, [lang])
   const durationSeconds = Math.max(tickerItems.length * speedPerItemSeconds, minDurationSeconds)
 
   return (

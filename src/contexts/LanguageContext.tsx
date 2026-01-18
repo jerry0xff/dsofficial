@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 import { createContext, useContext, useState } from "react"
+import { Converter } from "opencc-js"
 import type { Lang } from "./texts"
 
 /** 新增：下拉菜单可选值 */
@@ -7,6 +8,11 @@ export type LangMenu = "en-AU" | "en-CA" | "en-GB" | "en-US" | "zh-CN" | "zh-TW"
 
 const LS_LANG = "lang" // 仍然保持原有 key（en/zh/zh-Hant）
 const LS_LANG_MENU = "langMenu" // 新增，用于存菜单选项
+const toHant = Converter({ from: "cn", to: "tw" })
+
+export function toTraditionalIfNeeded(text: string, lang: Lang) {
+  return lang === "zh-Hant" ? toHant(text) : text
+}
 
 /** 从菜单值映射到 Lang */
 function menuToLang(m: LangMenu): Lang {

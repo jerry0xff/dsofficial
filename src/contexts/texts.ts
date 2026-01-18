@@ -32,10 +32,10 @@ const en = {
     tradeNow: "Trade now",
     partnersTitle: "INVESTORS",
     mapSubtitles: {
-      nyc: "Manhattan Exchange",
-      sf: "Bay Area Hub",
-      sh: "Pudong Market",
-      tokyo: "Shinjuku Desk",
+      sf: "Nasdaq-100",
+      nyc: "S&P 500",
+      sh: "SSE Composite Index",
+      tokyo: "Nikkei 225",
     },
     tickerNames: {
       tencent: "Tencent Holdings Holdings",
@@ -221,10 +221,10 @@ const zh: TextSchema = {
     tradeNow: "立即交易",
     partnersTitle: "投资方",
     mapSubtitles: {
-      nyc: "曼哈顿交易所",
-      sf: "湾区枢纽",
-      sh: "浦东市场",
-      tokyo: "新宿交易台",
+      sf: "纳斯达克100指数",
+      nyc: "标普500指数",
+      sh: "上证综合指数",
+      tokyo: "日经225指数",
     },
     tickerNames: {
       tencent: "腾讯控股",
@@ -381,4 +381,3 @@ export const texts = {
   zh,
   "zh-Hant": zhHant,
 } satisfies Record<Lang, TextSchema>
-
