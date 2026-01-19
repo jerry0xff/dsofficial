@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
-  const apiBaseUrl = mode === "development" ? "/api/v1" : "https://app.deshare.finance"
+  const apiBaseUrl = mode === "development" ? "/api/v1" : "https://app.deshare.finance/api/v1"
   return {
     plugins: [react()],
     define: {
