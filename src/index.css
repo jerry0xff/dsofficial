@@ -19,8 +19,8 @@ body::before {
 }
 
 .geist-mono {
-  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-    monospace;
+  font-family:
+    "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 @keyframes fadeIn {
@@ -92,7 +92,8 @@ body::before {
 }
 
 .ticker-viewport {
-  width: 100%;
+  width: 100vw;
+  margin-left: -24px;
   overflow: hidden;
 }
 
