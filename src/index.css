@@ -74,16 +74,26 @@ body::before {
   width: max-content;
   animation: ticker var(--ticker-duration, 10s) linear infinite;
   will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
-.ticker-track:hover {
-  animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+  .ticker-track:hover {
+    animation-play-state: paused;
+  }
 }
 
 .ticker-group {
   display: flex;
   gap: 16px;
   flex-shrink: 0;
+}
+
+.ticker-viewport {
+  width: 100%;
+  overflow: hidden;
 }
 
 .feature-card {
