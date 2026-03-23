@@ -34,7 +34,7 @@ export function getMobileMenuItems(labels: HeaderLabels): HeaderLink[] {
     { label: labels.market, href: "https://app.deshare.finance/" },
     { label: labels.trade, href: "https://app.deshare.finance/#/trade" },
     { label: labels.portfolio, href: "https://app.deshare.finance/#/portfolio" },
-    { label: "PRE-IPO", href: "https://app.deshare.finance/#/pre-ipo" },
+    { label: "PRE-IPO", href: "https://app.deshare.finance/#/preipo" },
     { label: labels.faq, href: "#page-5" },
     { label: labels.whitePaper, href: "https://doc.deshare.finance/", target: "_blank", rel: "noreferrer" },
   ]

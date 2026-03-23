@@ -43,7 +43,7 @@ export default function HeaderDesktop() {
             </span>
           )
         )}
-        <a href="https://app.deshare.finance/#/pre-ipo" className="group relative h-6 w-[104px] cursor-pointer">
+        <a href="https://app.deshare.finance/#/preipo" className="group relative h-6 w-[104px] cursor-pointer">
           <img src="/assets/preipo.svg" alt="Pre-IPO" className="h-6 w-[104px] transition group-hover:opacity-0" />
           <img
             src="/assets/preipohover.svg"
