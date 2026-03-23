@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
-  const apiBaseUrl = mode === "development" ? "/api/v1" : "https://app.deshare.finance/api/v1"
+  const apiBaseUrl = mode === "development" ? "/api/v1" : "https://api.deshare.finance/api/v1"
   return {
     plugins: [react()],
     define: {
@@ -24,7 +24,7 @@ export default defineConfig(({ mode }) => {
       open: true,
       proxy: {
         "/api": {
-          target: "https://app.deshare.finance",
+          target: "https://api.deshare.finance",
           changeOrigin: true,
         },
       },
