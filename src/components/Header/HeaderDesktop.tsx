@@ -1,5 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext"
 import { getTexts } from "@/contexts/texts"
+import { withRef } from "@/utils/ref"
 import { useEffect, useRef, useState } from "react"
 import LanguagePicker from "../LanguagePicker"
 import { getDesktopNavItems, getDesktopRightItems } from "./headerData"
@@ -43,7 +44,7 @@ export default function HeaderDesktop() {
             </span>
           )
         )}
-        <a href="https://app.deshare.finance/#/preipo" className="group relative h-6 w-[104px] cursor-pointer">
+        <a href={withRef("https://app.deshare.finance/#/preipo")} className="group relative h-6 w-[104px] cursor-pointer">
           <img src="/assets/preipo.svg" alt="Pre-IPO" className="h-6 w-[104px] transition group-hover:opacity-0" />
           <img
             src="/assets/preipohover.svg"
@@ -94,7 +95,7 @@ export default function HeaderDesktop() {
           {isLanguageOpen ? <LanguagePicker onSelect={() => setIsLanguageOpen(false)} /> : null}
         </div>
         <a
-          href="https://app.deshare.finance/"
+          href={withRef("https://app.deshare.finance/")}
           className="h-[40px] w-[122px] rounded-full bg-[color:var(--ColorCyanDefault)] px-[10px] py-[8px] text-[12px] font-bold tracking-normal text-[#0b0c1c] transition hover:bg-[#00FFFF] flex items-center justify-center"
         >
           {header.launchApp}

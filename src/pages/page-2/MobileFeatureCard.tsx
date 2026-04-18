@@ -1,5 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext"
 import { getTexts } from "@/contexts/texts"
+import { withRefInHash } from "@/utils/ref"
 
 export default function MobileFeatureCard({
   title,
@@ -63,7 +64,7 @@ export default function MobileFeatureCard({
             {description}
           </div>
           <a
-            href="https://app.deshare.finance/#/"
+            href={withRefInHash("https://app.deshare.finance/#/")}
             className="mt-3 inline-flex items-center rounded-full bg-[var(--ColorBackDefault)] px-6 py-2 text-[12px] font-bold uppercase text-white geist-mono"
           >
             {page2.tradeNow}

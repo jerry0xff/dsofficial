@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import { getHomepageHotCached, type HomepageStockItem } from "@/api/homepage"
 import { toTraditionalIfNeeded, useLanguage } from "@/contexts/LanguageContext"
 import { getTexts } from "@/contexts/texts"
+import { withRefInHash } from "@/utils/ref"
 import { type TickerItem } from "./data"
 
 type TickerStripProps = {
@@ -109,7 +110,7 @@ export default function TickerStrip({
               {tickerItems.map((item) => (
                 <a
                   key={`${group}-${item.symbol}`}
-                  href={`https://app.deshare.finance/#/trade?symbol=${encodeURIComponent(item.symbol)}`}
+                  href={withRefInHash(`https://app.deshare.finance/#/trade?symbol=${encodeURIComponent(item.symbol)}`)}
                   className="rounded-[20px] bg-[#161623] px-3 py-2 text-white/80"
                   style={{ width: cardWidth, height: cardHeight }}
                 >

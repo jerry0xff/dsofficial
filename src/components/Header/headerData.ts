@@ -1,3 +1,5 @@
+import { withRef } from "@/utils/ref"
+
 export type HeaderLink = {
   label: string
   href?: string
@@ -16,9 +18,9 @@ type HeaderLabels = {
 
 export function getDesktopNavItems(labels: HeaderLabels): HeaderLink[] {
   return [
-    { label: labels.market, href: "https://app.deshare.finance/" },
-    { label: labels.trade, href: "https://app.deshare.finance/#/trade" },
-    { label: labels.portfolio, href: "https://app.deshare.finance/#/portfolio" },
+    { label: labels.market, href: withRef("https://app.deshare.finance/") },
+    { label: labels.trade, href: withRef("https://app.deshare.finance/#/trade") },
+    { label: labels.portfolio, href: withRef("https://app.deshare.finance/#/portfolio") },
   ]
 }
 
@@ -31,10 +33,10 @@ export function getDesktopRightItems(labels: HeaderLabels): HeaderLink[] {
 
 export function getMobileMenuItems(labels: HeaderLabels): HeaderLink[] {
   return [
-    { label: labels.market, href: "https://app.deshare.finance/" },
-    { label: labels.trade, href: "https://app.deshare.finance/#/trade" },
-    { label: labels.portfolio, href: "https://app.deshare.finance/#/portfolio" },
-    { label: "PRE-IPO", href: "https://app.deshare.finance/#/preipo" },
+    { label: labels.market, href: withRef("https://app.deshare.finance/") },
+    { label: labels.trade, href: withRef("https://app.deshare.finance/#/trade") },
+    { label: labels.portfolio, href: withRef("https://app.deshare.finance/#/portfolio") },
+    { label: "PRE-IPO", href: withRef("https://app.deshare.finance/#/preipo") },
     { label: labels.faq, href: "#page-5" },
     { label: labels.whitePaper, href: "https://doc.deshare.finance/", target: "_blank", rel: "noreferrer" },
   ]

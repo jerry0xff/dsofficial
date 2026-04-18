@@ -1,5 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext"
 import { getTexts } from "@/contexts/texts"
+import { withRefInHash } from "@/utils/ref"
 
 type FeatureCardProps = {
   title: string
@@ -22,7 +23,7 @@ export default function FeatureCard({ title, subtitle, description }: FeatureCar
         <p className="feature-card__desc mt-3 text-[12px] geist-mono leading-[1.5] px-4">{description}</p>
       </div>
       <a
-        href="https://app.deshare.finance/#/"
+        href={withRefInHash("https://app.deshare.finance/#/")}
         className="feature-card__button absolute bottom-[36px] left-1/2 z-10 -translate-x-1/2 -translate-y-16 rounded-full bg-[var(--ColorBackDefault)] px-6 py-2 text-[12px] font-bold uppercase geist-mono"
       >
         {page2.tradeNow}
