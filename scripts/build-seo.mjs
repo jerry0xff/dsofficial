@@ -1,0 +1,31 @@
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { URL } from 'node:url'
+import { log } from 'node:console'
+import { guides } from './seo-content.mjs'
+
+const origin = 'https://deshare.finance'
+const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+const css = `:root{color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#f0f1f6;background:#0a0a17}*{box-sizing:border-box}body{margin:0}a{color:#65e2df;text-underline-offset:4px}a:hover{color:white}a:focus-visible{outline:2px solid #65e2df;outline-offset:5px}header,footer{max-width:1120px;margin:auto;padding:28px 24px}header{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid #30303f}header nav{display:flex;gap:20px;flex-wrap:wrap}.brand{color:#fff;font-size:24px;font-weight:700;text-decoration:none;letter-spacing:-1px}main{max-width:800px;margin:64px auto 80px;padding:0 24px}h1{font-size:clamp(30px,5vw,48px);line-height:1.25;letter-spacing:-1px;margin:24px 0}h2{font-size:25px;line-height:1.4;margin-top:44px}p,li{font-size:17px;line-height:1.95;color:#c5c8d4}li{margin:10px 0}.intro{font-size:20px;color:#e0e3ec}.notice{border-left:3px solid #21d2d2;padding:4px 20px;margin:32px 0}.notice p{font-size:15px}.guide-list{padding:0;list-style:none}.guide-list li{padding:22px 0;border-bottom:1px solid #30303f}.guide-list h2{margin:0;font-size:23px}.guide-list p{margin-bottom:0}.cta{display:inline-block;padding:12px 22px;background:#21d2d2;color:#0a0a17;font-weight:700;text-decoration:none;border-radius:6px}.cta:hover{background:#a5f4f0;color:#0a0a17}footer{border-top:1px solid #30303f}footer p{font-size:14px}.breadcrumbs{font-size:14px;color:#aeb3c6}.related{margin-top:50px;border-top:1px solid #30303f}@media(max-width:520px){header{align-items:flex-start}header nav{gap:12px;font-size:14px}main{margin-top:36px}h2{font-size:22px}}`
+const json = value => JSON.stringify(value).replaceAll('<', '\\u003c')
+const links = guides.map(g => `<li><h2><a href="/guides/${g.slug}/">${g.title}</a></h2><p>${g.description}</p></li>`).join('')
+function page({ title, description, path, body, article = false, noindex = false }) {
+  const url = origin + path
+  const schema = article ? { '@context':'https://schema.org', '@type':'Article', headline:title, description, inLanguage:'zh-Hans', mainEntityOfPage:url, author:{'@type':'Organization',name:'DeShare',url:origin}, publisher:{'@type':'Organization',name:'DeShare',url:origin} } : { '@context':'https://schema.org','@type':'CollectionPage', name:title, description, url, inLanguage:'zh-Hans' }
+  return `<!doctype html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)} | DeShare</title><meta name="description" content="${escape(description)}"><meta name="robots" content="${noindex ? 'noindex, follow' : 'index, follow'}"><link rel="canonical" href="${url}"><link rel="icon" href="/favicon.png"><meta property="og:type" content="${article ? 'article' : 'website'}"><meta property="og:site_name" content="DeShare"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${url}"><meta property="og:locale" content="zh_CN"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="${escape(title)}"><meta name="twitter:description" content="${escape(description)}"><style>${css}</style><script type="application/ld+json">${json(schema)}</script></head><body><header><a class="brand" href="/">DeShare</a><nav aria-label="主导航"><a href="/guides/">购买指南</a><a href="/guides/fees-and-risks/">费用与风险</a><a href="https://app.deshare.finance/">交易应用</a></nav></header><main>${body}<aside class="notice"><p>服务地区限制：DeShare 不向中国大陆及美国地区用户提供服务。其他地区仍须符合适用资格及产品条款。请勿绕过访问限制。</p><p>本文仅供一般教育参考，不构成投资、法律或税务建议。股票相关代币不应被默认等同于券商账户中的直接持股。交易可能导致本金损失。</p></aside><a class="cta" href="https://app.deshare.finance/">查看 DeShare 交易应用</a></main><footer><a href="/">官网首页</a> · <a href="/guides/">全部指南</a> · <a href="https://doc.deshare.finance/">产品文档</a><p>© DeShare. 请以现行产品文件、服务条款与订单确认信息为准。</p></footer></body></html>`
+}
+function save(path, html) {
+  const dir = new URL(`../dist/${path}`, import.meta.url)
+  mkdirSync(dir, { recursive: true })
+  writeFileSync(new URL('index.html', dir.href + '/'), html)
+}
+save('guides', page({title:'美股、港股购买指南',description:'了解美股怎么买、港股怎么买，以及 USDT 交易股票相关产品的流程、费用、持有权利与风险。',path:'/guides/',body:`<p class="breadcrumbs"><a href="/">首页</a> / 购买指南</p><h1>美股、港股购买指南</h1><p class="intro">先看懂购买方式、总成本和资产权利，再决定如何参与。这里的指南帮助你比较传统证券账户与股票相关链上产品。</p><ul class="guide-list">${links}</ul>`}))
+for (const guide of guides) {
+  const sources = guide.sources?.map(([label,href]) => `<li><a href="${href}">${label}</a></li>`).join('')
+  const body = `<article><p class="breadcrumbs"><a href="/">首页</a> / <a href="/guides/">购买指南</a></p><h1>${guide.title}</h1><p class="intro">${guide.intro}</p>${guide.sections.map(([title,text]) => `<section><h2>${title}</h2>${text.startsWith('<') ? text : `<p>${text}</p>`}</section>`).join('')}${sources ? `<section><h2>参考资料</h2><ul>${sources}</ul><p>外部资料用于一般概念解释，不表示相关机构认可或背书 DeShare。</p></section>` : ''}</article><nav class="related" aria-label="相关指南"><h2>继续了解</h2><ul>${guides.filter(g=>g.slug!==guide.slug).map(g=>`<li><a href="/guides/${g.slug}/">${g.title}</a></li>`).join('')}</ul></nav>`
+  save(`guides/${guide.slug}`, page({...guide,path:`/guides/${guide.slug}/`,body,article:true}))
+}
+writeFileSync(new URL('../dist/robots.txt',import.meta.url), `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`)
+const paths = ['/', '/guides/', ...guides.map(g=>`/guides/${g.slug}/`)]
+writeFileSync(new URL('../dist/sitemap.xml',import.meta.url), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map(path=>`<url><loc>${origin}${path}</loc></url>`).join('')}</urlset>\n`)
+writeFileSync(new URL('../dist/404.html',import.meta.url),page({title:'页面不存在',description:'请求的页面不存在，请返回官网或浏览购买指南。',path:'/404.html',noindex:true,body:'<h1>页面不存在</h1><p>请检查链接，或前往<a href="/guides/">购买指南</a>。</p>'}))
+log(`Generated ${guides.length} static SEO guides, hub, sitemap, robots and 404.`)
